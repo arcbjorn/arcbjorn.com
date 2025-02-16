@@ -1,0 +1,29 @@
+.category-title {
+  @apply px-5;
+
+  color: var(--titleColor);
+}
+
+.book-entry {
+  @apply flex;
+}
+
+.book-entry:hover {
+  color: var(--bookEntryHoverColor);
+  background-color: var(--bookEntryBackgroundHoverColor);
+}
+
+.book-entry:active {
+  color: var(--bookEntryHoverColor);
+  background-color: var(--bookEntryBackgroundHoverColor);
+}
+
+.book-entry .tree-node {
+  @apply hidden md:block;
+
+  stroke: var(--color);
+}
+
+.book-entry:hover .tree-node {
+  stroke: var(--bookEntryHoverColor);
+}
