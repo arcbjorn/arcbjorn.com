@@ -48,9 +48,7 @@ const FontAwesomeIcon: Component<{ icon: IconDefinition; title: string }> = prop
 };
 
 const LinkIcon: Component<LinkIconProps> = props => {
-  const isFontAwesome = () =>
-    [EIconLibrary.BRANDS, EIconLibrary.SOLID].includes(props.link.iconPrefix);
-
+  const isFontAwesome = () => props.link.iconPrefix === EIconLibrary.FONT_AWESOME;
   const isMaterialIcon = () => props.link.iconPrefix === EIconLibrary.MATERIAL;
 
   return (
