@@ -9,11 +9,11 @@ import {
   faGoodreads,
 } from '@fortawesome/free-brands-svg-icons';
 import { faTerminal, faEarthAmericas, faBook } from '@fortawesome/free-solid-svg-icons';
-import { EIconLibrary, TLink } from '@/types';
+import { EIconLibrary, TLink, IPlatformLinkPartial, IHomePageLinkPartial } from '@/types';
 import { IconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 
 interface LinkIconProps {
-  link: TLink;
+  link: TLink | TLink<IPlatformLinkPartial> | TLink<IHomePageLinkPartial>;
   class?: string;
 }
 
