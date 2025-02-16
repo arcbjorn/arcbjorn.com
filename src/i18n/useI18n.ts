@@ -8,7 +8,25 @@ import { dict as seDict } from './se';
 import { dict as ptDict } from './pt';
 import { dict as jaDict } from './ja';
 
-export type Locale = 'en' | 'es' | 'de' | 'ru' | 'se' | 'pt' | 'ja';
+export enum Language {
+  EN = 'en',
+  ES = 'es',
+  DE = 'de',
+  RU = 'ru',
+  SE = 'se',
+  PT = 'pt',
+  JA = 'ja',
+}
+
+export const languages = [
+  Language.EN,
+  Language.ES,
+  Language.DE,
+  Language.RU,
+  Language.SE,
+  Language.PT,
+  Language.JA,
+];
 
 const dictionaries = {
   en: enDict,
@@ -21,14 +39,14 @@ const dictionaries = {
 };
 
 export function useI18n() {
-  const [locale, setLocale] = createSignal<Locale>('en');
+  const [language, setLanguage] = createSignal<Language>(Language.EN);
 
-  const dict = createMemo(() => i18n.flatten(dictionaries[locale()]));
+  const dict = createMemo(() => i18n.flatten(dictionaries[language()]));
   const t = i18n.translator(dict, i18n.resolveTemplate);
 
   return {
-    locale,
-    setLocale,
+    language,
+    setLanguage,
     t,
   };
 }
