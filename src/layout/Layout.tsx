@@ -1,5 +1,5 @@
 import { Component, JSX } from 'solid-js';
-import Header from '@/components/Header';
+import Header from '@/components/header/Header';
 
 interface LayoutProps {
   children: JSX.Element;
