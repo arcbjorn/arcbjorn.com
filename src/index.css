@@ -71,3 +71,35 @@ body.dark {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.icon {
+  @apply mr-3 text-lg sm:text-2xl;
+}
+
+.quickLink {
+  @apply my-2 mr-4 flex items-center rounded border px-4 py-2 text-base sm:text-lg;
+
+  color: var(--quickLinkButtonColor);
+  border-color: var(--quickLinkButtonBorderColor);
+  background-color: var(--quickLinkButtonBackgroundColor);
+}
+
+.quickLink:hover {
+  color: var(--quickLinkButtonHoverColor);
+  border-color: var(--quickLinkButtonBorderHoverColor);
+  background-color: var(--quickLinkButtonBackgroundHoverColor);
+}
+
+.quickLink:active {
+  color: var(--quickLinkButtonHoverColor);
+  border-color: var(--quickLinkButtonBorderHoverColor);
+  background-color: var(--quickLinkButtonBackgroundHoverColor);
+}
+
+.cvLink {
+  @apply pr-5;
+
+  color: var(--quickLinkButtonHoverColor);
+  background-color: var(--focusColor);
+  border-color: transparent;
+}
