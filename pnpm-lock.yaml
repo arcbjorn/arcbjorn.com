@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@solid-primitives/i18n':
+        specifier: ^2.2.0
+        version: 2.2.0(solid-js@1.9.3)
       '@tailwindcss/vite':
         specifier: ^4.0.6
         version: 4.0.6(vite@6.0.0(jiti@2.4.2)(lightningcss@1.29.1))
@@ -456,6 +459,11 @@ packages:
     resolution: {integrity: sha512-3j4jx1TppORdTAoBJRd+/wJRGCPC0ETWkXOecJ6PPZLj6SptXkrXcNqdj0oclbKML6FkQltdz7bBA3rUSirZug==}
     cpu: [x64]
     os: [win32]
+
+  '@solid-primitives/i18n@2.2.0':
+    resolution: {integrity: sha512-OY1IvGNefg4espiv3JL7gi38rcOaDdgRsderms6cHboDfHdye6HGI1mLkdrQxonN9TrsOBHeWtP/ptLBgSevfQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
 
   '@tailwindcss/node@4.0.6':
     resolution: {integrity: sha512-jb6E0WeSq7OQbVYcIJ6LxnZTeC4HjMvbzFBMCrQff4R50HBlo/obmYNk6V2GCUXDeqiXtvtrQgcIbT+/boB03Q==}
@@ -1666,6 +1674,10 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.27.4':
     optional: true
+
+  '@solid-primitives/i18n@2.2.0(solid-js@1.9.3)':
+    dependencies:
+      solid-js: 1.9.3
 
   '@tailwindcss/node@4.0.6':
     dependencies:

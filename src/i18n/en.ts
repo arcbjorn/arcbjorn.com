@@ -1,0 +1,59 @@
+export const dict = {
+  name: 'arcbjorn',
+
+  notFound: {
+    title: 'Page not found',
+    backButtonTitle: 'Go back',
+  },
+
+  header: {
+    about: 'about',
+    extra: 'extra',
+    location: 'Buenos Aires',
+  },
+
+  home: {
+    file: 'about_me',
+    greeting: "Hi, I'm Oleg",
+    position: 'Software engineer',
+    formerly: 'formerly',
+    interests: 'Web • Systems • AI • Blockchain',
+    cv: 'CV',
+  },
+
+  extra: {
+    platforms: {
+      title: 'Me on other platforms',
+      allSocials: 'All socials',
+      names: {
+        myTravelMap: 'My travel map',
+        blog: 'Blog',
+      },
+    },
+    books: {
+      title: 'Books that I like',
+      categories: {
+        software: 'Software',
+        psychology: 'Psychology',
+        fantasy: 'Fantasy',
+      },
+    },
+    languages: {
+      title: 'Languages',
+      english: 'English',
+      russian: 'Russian',
+      spanish: 'Spanish',
+      german: 'German',
+      portuguese: 'Portuguese',
+      japanese: 'Japanese',
+      swedish: 'Swedish',
+      levels: {
+        native: 'Native',
+        fluent: 'Fluent',
+        basic: 'Basic',
+      },
+    },
+  },
+} as const;
+
+export type Dictionary = typeof dict;
