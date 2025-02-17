@@ -4,7 +4,7 @@ import { Ei18nToken } from '@i18n/types';
 export enum EDocumentDescription {
   INDEX_PAGE = '',
   EXTRA = 'extra',
-  COPY_LINKS = 'copy_links',
+  ACCESS_LINKS = 'access_links',
   NOT_FOUND_PAGE = 'Not Found',
 }
 
