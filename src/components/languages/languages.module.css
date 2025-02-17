@@ -1,0 +1,36 @@
+.languages {
+  @apply flex flex-col pt-2;
+  height: 300px;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.languages::-webkit-scrollbar {
+  display: none;
+}
+
+.language-entry {
+  @apply flex;
+}
+
+.language-entry:hover {
+  color: var(--languageEntryHoverColor);
+  background-color: var(--languageEntryBackgroundHoverColor);
+}
+
+.language-entry:active {
+  color: var(--languageEntryHoverColor);
+  background-color: var(--languageEntryBackgroundHoverColor);
+}
+
+.language-entry .tree-node {
+  @apply hidden md:block;
+  stroke: var(--color);
+}
+
+.language-entry:hover .tree-node {
+  stroke: var(--languageEntryHoverColor);
+}
