@@ -76,7 +76,7 @@ code {
   @apply mr-3 text-lg sm:text-2xl;
 }
 
-.quickLink {
+.quick-link {
   @apply my-2 mr-4 flex items-center rounded border px-4 py-2 text-base sm:text-lg;
 
   color: var(--quickLinkButtonColor);
@@ -84,19 +84,19 @@ code {
   background-color: var(--quickLinkButtonBackgroundColor);
 }
 
-.quickLink:hover {
+.quick-link:hover {
   color: var(--quickLinkButtonHoverColor);
   border-color: var(--quickLinkButtonBorderHoverColor);
   background-color: var(--quickLinkButtonBackgroundHoverColor);
 }
 
-.quickLink:active {
+.quick-link:active {
   color: var(--quickLinkButtonHoverColor);
   border-color: var(--quickLinkButtonBorderHoverColor);
   background-color: var(--quickLinkButtonBackgroundHoverColor);
 }
 
-.cvLink {
+.cv-link {
   @apply pr-5;
 
   color: var(--quickLinkButtonHoverColor);

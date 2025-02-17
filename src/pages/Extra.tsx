@@ -9,7 +9,7 @@ import Languages from '@components/languages/Languages';
 import SEO from '@components/SEO';
 import { Ei18nToken } from '@/i18n/types';
 
-const Extra: Component = () => {
+const ExtraPage: Component = () => {
   const [isLoading, setLoading] = createSignal(true);
   const { t, language } = useI18n();
 
@@ -32,10 +32,6 @@ const Extra: Component = () => {
 
   return (
     <Layout>
-      <script
-        data-website-id="88cd3360-86f7-4497-a654-46d79f251501"
-        src="https://analytics.arcbjorn.com/umami.js"
-      />
       <SEO description={EDocumentDescription.EXTRA} slug={`/${language()}/extra`} />
 
       {isLoading() ? (
@@ -63,4 +59,4 @@ const Extra: Component = () => {
   );
 };
 
-export default Extra;
+export default ExtraPage;
