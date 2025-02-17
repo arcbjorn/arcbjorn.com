@@ -1,5 +1,6 @@
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 import { Ei18nToken } from '@i18n/types';
+import { MaterialIcon } from '@material-design-icons/font';
 
 export enum EDocumentDescription {
   INDEX_PAGE = '',
@@ -34,7 +35,7 @@ export enum EIconLibrary {
 
 export type TLink<TLinkPartial = Record<string, string>> = TLinkPartial & {
   href: ELinkUrl;
-  iconName: IconName | string;
+  iconName: IconName | MaterialIcon; // its either font awesome or material icon
   iconPrefix: EIconLibrary;
   iconTitle: string;
 };
