@@ -2,10 +2,7 @@
 import { render } from 'solid-js/web';
 import { Router } from '@solidjs/router';
 import { lazy } from 'solid-js';
-import '@fontsource/ibm-plex-mono/400.css';
-import '@fontsource/ibm-plex-mono/500.css';
-import '@fontsource/ibm-plex-mono/600.css';
-import '@fontsource/ibm-plex-mono/700.css';
+
 import '@material-design-icons/font';
 import './index.css';
 
