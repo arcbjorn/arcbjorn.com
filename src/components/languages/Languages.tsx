@@ -8,8 +8,8 @@ const Languages: Component = () => {
   const { t } = useI18n();
 
   return (
-    <fieldset class="extraInnerSection">
-      <legend class="extraSectionTitle">{t(Ei18nToken.LANGUAGES_TITLE)}</legend>
+    <fieldset class="extra-inner-section">
+      <legend class="extra-section-title">{t(Ei18nToken.LANGUAGES_TITLE)}</legend>
       <div class="languages">
         <For each={languages}>
           {({ name, level }, i) => (

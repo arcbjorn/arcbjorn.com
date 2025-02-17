@@ -40,8 +40,8 @@ export const Books: Component = () => {
   const { t } = useI18n();
 
   return (
-    <fieldset class="extraInnerSection">
-      <legend class="extraSectionTitle">{t(Ei18nToken.BOOKS_TITLE)}</legend>
+    <fieldset class="extra-inner-section">
+      <legend class="extra-section-title">{t(Ei18nToken.BOOKS_TITLE)}</legend>
       <div class="books flex flex-col pt-5">
         <For each={categoriesList}>
           {option => (
