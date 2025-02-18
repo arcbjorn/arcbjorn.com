@@ -25,7 +25,7 @@ const QuickLink: Component<QuickLinkProps> = props => {
   if (title === Ei18nToken.CV) {
     processedHref = href;
     cvLinkCss = styles.cvLink;
-    translatedTitle = t(Ei18nToken.CV);
+    translatedTitle = t(Ei18nToken.CV) ?? '';
 
     if (copyToClipboard) {
       processedHref = ELinkUrl.CV_LINK;

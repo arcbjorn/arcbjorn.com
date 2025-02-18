@@ -17,7 +17,8 @@ interface LinkIconProps {
   class?: string;
 }
 
-const iconMap: Record<IconName | string, IconDefinition> = {
+// only for font awesome icons
+const faIconMap: Record<IconName | string, IconDefinition> = {
   linkedin: faLinkedin,
   github: faGithub,
   twitter: faTwitter,
@@ -52,13 +53,15 @@ const LinkIcon: Component<LinkIconProps> = props => {
   const isMaterialIcon = () => props.link.iconPrefix === EIconLibrary.MATERIAL;
 
   return (
-    <div class={`${props.class || ''}`} title={props.link.iconTitle}>
+    <div class={props.class} title={props.link.iconTitle}>
       <Show when={isFontAwesome()}>
-        <FontAwesomeIcon icon={iconMap[props.link.iconName]} title={props.link.iconTitle} />
+        <FontAwesomeIcon icon={faIconMap[props.link.iconName]} title={props.link.iconTitle} />
       </Show>
 
       <Show when={isMaterialIcon()}>
-        <span class="material-icons">{props.link.iconName}</span>
+        <span class="material-icons" aria-label={props.link.iconTitle}>
+          {props.link.iconName}
+        </span>
       </Show>
     </div>
   );
