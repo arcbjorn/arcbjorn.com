@@ -14,12 +14,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@src/*": ["./src/*"],
       "@routes/*": ["./src/routes/*"],
       "@components/*": ["./src/components/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@state/*": ["./src/state/*"],
-      "@i18n/*": ["./src/i18n/*"]
+      "@i18n/*": ["./src/i18n/*"],
+      "@data/*": ["./src/data/*"]
     }
   }
 }

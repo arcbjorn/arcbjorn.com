@@ -25,6 +25,7 @@ export default defineConfig({
       '@layouts': path.resolve(__dirname, './src/layouts'),
       '@state': path.resolve(__dirname, './src/state'),
       '@i18n': path.resolve(__dirname, './src/i18n'),
+      '@data': path.resolve(__dirname, './src/data'),
     },
   },
 });
