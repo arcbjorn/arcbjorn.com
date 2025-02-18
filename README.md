@@ -1,36 +1,37 @@
-## Usage
+<p align="center">
+  <a href="https://arcbjorn.com" target="_blank" rel="noopener noreferrer">
+    <img alt="Arcbjorn" src="https://i.ibb.co/tKfXR6F/bear-icon.jpg" width="60" />
+  </a>
+</p>
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+<h1 align="center">
+  Personal website
+</h1>
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+<h2 align="center">
+  <a href="https://arcbjorn.com" rel="noopener noreferrer">
+    Demo
+  </a>
+</h2>
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+1.  **Development**
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+    Navigate into your new site’s directory and start it up.
 
-## Available Scripts
+    ```shell
+    cd <project-folder>
+    pnpm install
+    pnpm dev
+    ```
 
-In the project directory, you can run:
+    Site is now running at http://localhost:3000!
 
-### `npm run dev` or `npm start`
+2.  **Technologies**
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    - [Solid](https://solidjs.com/)
 
-The page will reload if you make edits.<br>
+    - [Tailwindcss](https://tailwindcss.com/)
 
-### `npm run build`
+    - [Vite](https://vitejs.dev/)
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
-
-## This project was created with the [Solid CLI](https://solid-cli.netlify.app)
+    - [Typewriter](https://github.com/tameemsafi/typewriterjs#readme)
