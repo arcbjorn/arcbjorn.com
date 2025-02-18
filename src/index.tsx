@@ -8,6 +8,14 @@ import './index.css';
 
 const routes = [
   {
+    path: '/',
+    component: lazy(() => import('./pages/Index')),
+  },
+  {
+    path: '/:lang',
+    component: lazy(() => import('./pages/Index')),
+  },
+  {
     path: '/extra',
     component: lazy(() => import('./pages/Extra')),
   },
