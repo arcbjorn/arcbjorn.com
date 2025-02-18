@@ -10,6 +10,20 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <script>
+      const theme = localStorage.getItem('theme');
+      const root = document.documentElement;
+      if (theme === 'dark') {
+        document.body.classList.add('dark');
+        root.style.setProperty('--bg', '#1b1d1e');
+        root.style.setProperty('--color', '#dddddd');
+      } else {
+        document.body.classList.remove('dark');
+        root.style.setProperty('--bg', '#f9f5ef');
+        root.style.setProperty('--color', '#1b1d1e');
+      }
+    </script>
     <div id="root"></div>
 
     <script src="/src/index.tsx" type="module"></script>

@@ -1,11 +1,19 @@
 import { createSignal, createEffect, Component } from 'solid-js';
 
-export const ThemeToggle: Component = () => {
-  const [isDark, setIsDark] = createSignal(false);
+const getInitialTheme = () => {
+  if (typeof window === 'undefined') return false;
+  return localStorage.getItem('theme') === 'dark';
+};
 
-  createEffect(() => {
-    document.body.classList.toggle('dark', isDark());
-  });
+export const ThemeToggle: Component = () => {
+  const [isDark, setIsDark] = createSignal(getInitialTheme());
+
+  if (typeof window !== 'undefined') {
+    createEffect(() => {
+      document.body.classList.toggle('dark', isDark());
+      localStorage.setItem('theme', isDark() ? 'dark' : 'light');
+    });
+  }
 
   const toggleTheme = () => {
     setIsDark(!isDark());
