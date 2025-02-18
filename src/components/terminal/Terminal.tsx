@@ -1,6 +1,7 @@
 import { Component, createSignal } from 'solid-js';
 import TypeWriter from '@/components/terminal/TypeWriter';
-import { QuickLinks } from '@components/quickLinks/QuickLinks';
+import { quickLinks } from '@/data/links';
+import QuickLink from '@components/quickLink/QuickLink';
 import styles from './terminal.module.css';
 
 export const Terminal: Component = () => {
@@ -23,7 +24,13 @@ export const Terminal: Component = () => {
           toggleTypeWriter={toggleTypeWriter}
           startTypeWriter={startTypeWriter()}
         />
-        {quickLinksVisibility() && <QuickLinks />}
+        {quickLinksVisibility() && (
+          <div class={styles.quickLinks}>
+            {quickLinks.map(link => (
+              <QuickLink link={link} copyToClipboard={false} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
