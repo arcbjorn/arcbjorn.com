@@ -84,3 +84,28 @@ export enum ELinkUrl {
   SPOTIFY = 'https://open.spotify.com/user/hrpn170u8d82ch90nw6y1floe',
   GOOD_READS = 'https://www.goodreads.com/arcbjorn',
 }
+
+export type TypewriterOptions = {
+  strings: string | string[];
+  delay?: number | 'natural';
+  deleteSpeed?: number | 'natural';
+  loop?: boolean;
+  cursor?: string;
+  pauseFor?: number;
+  devMode?: boolean;
+  autoStart?: boolean;
+  onComplete?: () => void;
+};
+
+export type EventName =
+  | 'TYPE_CHARACTER'
+  | 'REMOVE_CHARACTER'
+  | 'REMOVE_ALL'
+  | 'PAUSE_FOR'
+  | 'CHANGE_DELETE_SPEED'
+  | 'CHANGE_DELAY';
+
+export type EventQueueItem = {
+  eventName: EventName;
+  eventArgs?: any;
+};

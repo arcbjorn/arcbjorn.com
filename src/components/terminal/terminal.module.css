@@ -23,3 +23,8 @@ infolocation {
 .window {
   @apply flex h-9/10 flex-col px-6;
 }
+
+.typewriter-cursor {
+  margin-left: 2px;
+  transition: opacity 0.2s;
+}
