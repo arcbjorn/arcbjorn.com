@@ -1,6 +1,7 @@
 import { createSignal, createResource, createRoot } from 'solid-js';
 import * as i18n from '@solid-primitives/i18n';
-import { enDict, esDict, deDict, ruDict, seDict, ptDict, jaDict } from '@i18n/translations';
+import { en, es, de, ru, se, pt, ja } from '@i18n/translations';
+import { Dictionary } from '@i18n/types';
 
 export enum Language {
   EN = 'en',
@@ -12,7 +13,7 @@ export enum Language {
   JA = 'ja',
 }
 
-export const languages = [
+export const languages: Language[] = [
   Language.EN,
   Language.ES,
   Language.DE,
@@ -22,14 +23,14 @@ export const languages = [
   Language.JA,
 ];
 
-const dictionaries = {
-  [Language.EN]: enDict,
-  [Language.ES]: esDict,
-  [Language.DE]: deDict,
-  [Language.RU]: ruDict,
-  [Language.SE]: seDict,
-  [Language.PT]: ptDict,
-  [Language.JA]: jaDict,
+const dictionaries: Record<Language, Dictionary> = {
+  [Language.EN]: en,
+  [Language.ES]: es,
+  [Language.DE]: de,
+  [Language.RU]: ru,
+  [Language.SE]: se,
+  [Language.PT]: pt,
+  [Language.JA]: ja,
 } as const;
 
 const getInitialLanguage = (): Language => {

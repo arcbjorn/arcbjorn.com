@@ -1,6 +1,6 @@
 import type { Dictionary } from '@i18n/types';
 
-export const deDict: Dictionary = {
+export const de: Dictionary = {
   name: 'arcbjorn',
 
   notFound: {
@@ -58,7 +58,7 @@ export const deDict: Dictionary = {
   },
 };
 
-export const seDict: Dictionary = {
+export const se: Dictionary = {
   name: 'arkbjörn',
 
   notFound: {
@@ -116,7 +116,7 @@ export const seDict: Dictionary = {
   },
 };
 
-export const ruDict: Dictionary = {
+export const ru: Dictionary = {
   name: 'arcbjorn',
 
   notFound: {
@@ -174,7 +174,7 @@ export const ruDict: Dictionary = {
   },
 };
 
-export const ptDict: Dictionary = {
+export const pt: Dictionary = {
   name: 'arcbjorn',
 
   notFound: {
@@ -232,7 +232,7 @@ export const ptDict: Dictionary = {
   },
 };
 
-export const jaDict: Dictionary = {
+export const ja: Dictionary = {
   name: 'アークビョーン',
 
   notFound: {
@@ -290,7 +290,7 @@ export const jaDict: Dictionary = {
   },
 };
 
-export const esDict: Dictionary = {
+export const es: Dictionary = {
   name: 'arcbjorn',
 
   notFound: {
@@ -348,7 +348,7 @@ export const esDict: Dictionary = {
   },
 };
 
-export const enDict: Dictionary = {
+export const en: Dictionary = {
   name: 'arcbjorn',
 
   notFound: {
