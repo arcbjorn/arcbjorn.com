@@ -1,10 +1,9 @@
-import { Component } from 'solid-js';
-import { useNavigate, useLocation } from '@solidjs/router';
+import { Component, onMount } from 'solid-js';
+import { useLocation } from '@solidjs/router';
 import { useI18n, Language, languages } from '@i18n/useI18n';
 
 export const LanguageSwitch: Component = () => {
   const { language, setLanguage } = useI18n();
-  const navigate = useNavigate();
   const location = useLocation();
 
   const handleChange = (event: Event) => {
@@ -18,7 +17,7 @@ export const LanguageSwitch: Component = () => {
         ? `/${newLang}${currentPath}`
         : currentPath.replace(/^\/[a-z]{2}/, `/${newLang}`);
 
-    navigate(newPath);
+    window.history.replaceState(null, '', newPath);
   };
 
   return (
@@ -26,7 +25,7 @@ export const LanguageSwitch: Component = () => {
       <select value={language()} class="mx-4 cursor-pointer bg-transparent" onChange={handleChange}>
         {languages.map(lang => (
           <option value={lang} class="bg-[var(--bg)]">
-            {lang.toUpperCase()}
+            {lang}
           </option>
         ))}
       </select>

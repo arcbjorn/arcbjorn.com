@@ -1,12 +1,6 @@
-import { createSignal, createMemo } from 'solid-js';
+import { createSignal, createResource, createRoot } from 'solid-js';
 import * as i18n from '@solid-primitives/i18n';
-import { dict as enDict } from './en';
-import { dict as esDict } from './es';
-import { dict as deDict } from './de';
-import { dict as ruDict } from './ru';
-import { dict as seDict } from './se';
-import { dict as ptDict } from './pt';
-import { dict as jaDict } from './ja';
+import { enDict, esDict, deDict, ruDict, seDict, ptDict, jaDict } from '@i18n/translations';
 
 export enum Language {
   EN = 'en',
@@ -29,24 +23,44 @@ export const languages = [
 ];
 
 const dictionaries = {
-  en: enDict,
-  es: esDict,
-  de: deDict,
-  ru: ruDict,
-  se: seDict,
-  pt: ptDict,
-  ja: jaDict,
+  [Language.EN]: enDict,
+  [Language.ES]: esDict,
+  [Language.DE]: deDict,
+  [Language.RU]: ruDict,
+  [Language.SE]: seDict,
+  [Language.PT]: ptDict,
+  [Language.JA]: jaDict,
+} as const;
+
+const getInitialLanguage = (): Language => {
+  const urlLang = window.location.pathname.split('/')[1];
+
+  if (urlLang && Object.values(Language).includes(urlLang as Language)) {
+    return urlLang as Language;
+  }
+
+  const storedLang = localStorage.getItem('language');
+  if (storedLang && Object.values(Language).includes(storedLang as Language)) {
+    return storedLang as Language;
+  }
+
+  return Language.EN;
 };
 
-export function useI18n() {
-  const [language, setLanguage] = createSignal<Language>(Language.EN);
+const createI18n = () => {
+  const [language, setLanguage] = createSignal<Language>(getInitialLanguage());
 
-  const dict = createMemo(() => i18n.flatten(dictionaries[language()]));
+  const [dict] = createResource(language, lang =>
+    i18n.flatten(dictionaries[lang] ?? dictionaries[Language.EN])
+  );
+
   const t = i18n.translator(dict, i18n.resolveTemplate);
 
-  return {
-    language,
-    setLanguage,
-    t,
-  };
+  return { language, setLanguage, t };
+};
+
+const i18nContext = createRoot(createI18n);
+
+export function useI18n() {
+  return i18nContext;
 }
