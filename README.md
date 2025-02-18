@@ -33,5 +33,3 @@
     - [Tailwindcss](https://tailwindcss.com/)
 
     - [Vite](https://vitejs.dev/)
-
-    - [Typewriter](https://github.com/tameemsafi/typewriterjs#readme)
