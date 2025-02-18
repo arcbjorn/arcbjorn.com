@@ -1,0 +1,25 @@
+@reference "../index.css";
+
+.typeWriter {
+  @apply text-lg sm:text-3xl;
+}
+
+company {
+  color: var(--companyColor);
+}
+
+userandhost {
+  color: var(--userandhostColor);
+}
+
+infolocation {
+  color: var(--infolocationColor);
+}
+
+.terminal {
+  @apply flex h-full flex-col-reverse items-center pt-10 sm:pt-16;
+}
+
+.window {
+  @apply flex h-9/10 flex-col px-6;
+}
