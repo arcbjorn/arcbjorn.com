@@ -1,7 +1,11 @@
 /* @refresh reload */
 import { render } from 'solid-js/web';
 import { Router } from '@solidjs/router';
-import { lazy } from 'solid-js';
+
+import IndexPage from '@/pages/Index';
+import ExtraPage from '@/pages/Extra';
+import AccessLinksPage from '@/pages/AccessLinks';
+import NotFoundPage from '@/pages/404';
 
 import '@material-design-icons/font';
 import './index.css';
@@ -9,35 +13,31 @@ import './index.css';
 const routes = [
   {
     path: '/',
-    component: lazy(() => import('./pages/Index')),
+    component: IndexPage,
   },
   {
     path: '/:lang',
-    component: lazy(() => import('./pages/Index')),
+    component: IndexPage,
   },
   {
     path: '/extra',
-    component: lazy(() => import('./pages/Extra')),
+    component: ExtraPage,
   },
   {
     path: '/:lang/extra',
-    component: lazy(() => import('./pages/Extra')),
+    component: ExtraPage,
   },
   {
     path: '/links',
-    component: lazy(() => import('./pages/AccessLinks')),
+    component: AccessLinksPage,
   },
   {
     path: '/:lang/links',
-    component: lazy(() => import('./pages/AccessLinks')),
+    component: AccessLinksPage,
   },
   {
     path: '*',
-    component: lazy(() => import('./pages/404')),
-  },
-  {
-    path: '/:lang/*',
-    component: lazy(() => import('./pages/404')),
+    component: NotFoundPage,
   },
 ];
 
