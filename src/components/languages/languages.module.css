@@ -1,3 +1,5 @@
+@reference "../../index.css";
+
 .languages {
   @apply flex flex-col pt-2;
   height: 300px;
@@ -12,25 +14,25 @@
   display: none;
 }
 
-.language-entry {
+.languageEntry {
   @apply flex;
 }
 
-.language-entry:hover {
+.languageEntry:hover {
   color: var(--languageEntryHoverColor);
   background-color: var(--languageEntryBackgroundHoverColor);
 }
 
-.language-entry:active {
+.languageEntry:active {
   color: var(--languageEntryHoverColor);
   background-color: var(--languageEntryBackgroundHoverColor);
 }
 
-.language-entry .tree-node {
+.languageEntry .treeNode {
   @apply hidden md:block;
   stroke: var(--color);
 }
 
-.language-entry:hover .tree-node {
+.languageEntry:hover .treeNode {
   stroke: var(--languageEntryHoverColor);
 }

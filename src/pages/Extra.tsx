@@ -8,6 +8,7 @@ import ExtraLinks from '@components/extraLinks/ExtraLinks';
 import Languages from '@components/languages/Languages';
 import SEO from '@components/SEO';
 import { Ei18nToken } from '@/i18n/types';
+import styles from '@/pages/extra.module.css';
 
 const ExtraPage: Component = () => {
   const [isLoading, setLoading] = createSignal(true);
@@ -37,8 +38,8 @@ const ExtraPage: Component = () => {
       {isLoading() ? (
         <Loader />
       ) : (
-        <div class="extra-info">
-          <div class="extra-section w-full sm:w-5/12">
+        <div class={styles.extraInfo}>
+          <div class={styles.extraSection}>
             <ExtraLinks />
             <a
               href="https://arcbjorn.bio.link"
@@ -50,7 +51,7 @@ const ExtraPage: Component = () => {
             </a>
             <Languages />
           </div>
-          <div class="extra-section w-full sm:w-7/12">
+          <div class={styles.extraSection}>
             <Books />
           </div>
         </div>

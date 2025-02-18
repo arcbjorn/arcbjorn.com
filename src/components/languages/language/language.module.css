@@ -1,35 +1,32 @@
+@reference "../../../index.css";
+
 .language {
   @apply font-ibm flex flex-1 justify-between py-3 pr-5 pl-5 md:pl-0;
 }
 
-.name-level {
+.nameLevel {
   @apply font-ibm flex flex-1 items-center;
 }
 
-.level-bar {
+.levelBar {
   @apply relative ml-4 h-8 flex-1;
 }
 
-.level-background {
+.levelBackground {
   @apply absolute h-full w-full;
 }
 
-.level-fill {
+.levelFill {
   @apply h-full;
   transition:
     width 0.3s ease-out,
     background-color 0.3s ease-out;
 }
 
-.matrix-effect {
+.matrixEffect {
   @apply flex h-full items-center justify-between overflow-hidden px-2;
 }
 
-.matrix-char {
-  @apply font-ibm;
-  transition: all 0.15s ease-out;
-}
-
-.level-text {
+.levelText {
   @apply font-ibm absolute top-1/2 right-0 -translate-y-1/2 pr-2 text-sm;
 }

@@ -12,19 +12,23 @@
   --height-9/10: 90%;
 }
 
-@keyframes blink {
-  0%,
+@keyframes blinker {
+  0% {
+    opacity: 0;
+  }
   49% {
     opacity: 0;
   }
-  50%,
+  50% {
+    opacity: 1;
+  }
   100% {
     opacity: 1;
   }
 }
 
 @utility animate-blink {
-  animation: blink 2s linear infinite;
+  animation: blinker 2s linear infinite;
 }
 
 html,
@@ -103,7 +107,7 @@ code {
   @apply mr-3 text-lg sm:text-2xl;
 }
 
-.quick-link {
+.quickLink {
   @apply my-2 mr-4 flex items-center rounded border px-4 py-2 text-base sm:text-lg;
 
   color: var(--quickLinkButtonColor);
@@ -111,19 +115,19 @@ code {
   background-color: var(--quickLinkButtonBackgroundColor);
 }
 
-.quick-link:hover {
+.quickLink:hover {
   color: var(--quickLinkButtonHoverColor);
   border-color: var(--quickLinkButtonBorderHoverColor);
   background-color: var(--quickLinkButtonBackgroundHoverColor);
 }
 
-.quick-link:active {
+.quickLink:active {
   color: var(--quickLinkButtonHoverColor);
   border-color: var(--quickLinkButtonBorderHoverColor);
   background-color: var(--quickLinkButtonBackgroundHoverColor);
 }
 
-.cv-link {
+.cvLink {
   @apply pr-5;
 
   color: var(--quickLinkButtonHoverColor);

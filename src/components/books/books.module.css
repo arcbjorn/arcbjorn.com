@@ -1,29 +1,43 @@
-.category-title {
+@reference "../../index.css";
+
+.book {
+  @apply flex flex-1 justify-between py-3 pr-5 pl-5 md:pl-0;
+}
+
+.books {
+  @apply flex flex-col pt-5;
+}
+
+.bookList {
+  @apply py-5;
+}
+
+.categoryTitle {
   @apply px-5;
 
   color: var(--titleColor);
 }
 
-.book-entry {
+.bookEntry {
   @apply flex;
 }
 
-.book-entry:hover {
+.bookEntry:hover {
   color: var(--bookEntryHoverColor);
   background-color: var(--bookEntryBackgroundHoverColor);
 }
 
-.book-entry:active {
+.bookEntry:active {
   color: var(--bookEntryHoverColor);
   background-color: var(--bookEntryBackgroundHoverColor);
 }
 
-.book-entry .tree-node {
+.bookEntry .treeNode {
   @apply hidden md:block;
 
   stroke: var(--color);
 }
 
-.book-entry:hover .tree-node {
+.bookEntry:hover .treeNode {
   stroke: var(--bookEntryHoverColor);
 }

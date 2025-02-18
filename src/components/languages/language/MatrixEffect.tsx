@@ -1,4 +1,5 @@
 import { Component, createSignal, createEffect, createMemo, For, Show } from 'solid-js';
+import styles from './language.module.css';
 
 type MatrixColumn = {
   chars: string[];
@@ -97,7 +98,7 @@ const MatrixEffect: Component<MatrixEffectProps> = props => {
   return (
     <Show when={props.isHovered}>
       <div
-        class="matrixEffect"
+        class={styles.matrixEffect}
         style={{
           width: '100%',
           height: '120%',

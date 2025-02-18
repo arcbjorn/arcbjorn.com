@@ -1,50 +1,50 @@
-.platform-links {
+@reference "../../index.css";
+
+.platformLinks {
   @apply flex flex-col pt-2;
 }
 
-.social-links {
+.socialLinks {
   @apply flex flex-wrap justify-around py-4;
 
   border-top: 1px solid var(--extraPageBorderColor);
 }
 
-.platform-link {
+.platformLink {
   @apply flex flex-col px-5 py-4;
 }
 
-.platform-link-title {
+.platformLinkTitle {
   color: var(--extraLinkColor);
   @apply flex items-center gap-4 text-base md:text-lg;
   /* @apply flex items-center sm:pb-2 text-base md:text-lg; */
 }
 
-.platform-link:hover {
+.platformLink:hover {
   color: var(--extraLinkHoverColor);
   background-color: var(--extraLinkBackgroundHoverColor);
 }
 
-.platform-link:hover > .platform-link-title {
+.platformLink:hover > .platformLinkTitle {
   color: var(--extraLinkHoverColor);
   background-color: var(--extraLinkBackgroundHoverColor);
 }
 
-.platform-link-icon {
+.platformLinkIcon {
   @apply mr-2 text-2xl;
 }
 
-.platform-link-custom-icon {
-  @apply platform-link-icon;
-
-  color: var(--extraLinkColor);
+.platformLinkDescription {
+  @apply hidden lg:block;
 }
 
-.social-link-icon {
+.socialLinkIcon {
   @apply p-4 text-3xl;
 
   color: var(--extraLinkColor);
 }
 
-.social-link-icon:hover {
+.socialLinkIcon:hover {
   position: relative;
 
   color: var(--extraLinkBackgroundHoverColor);

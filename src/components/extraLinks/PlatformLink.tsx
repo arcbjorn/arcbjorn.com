@@ -3,6 +3,7 @@ import { IPlatformLinkPartial, TLink } from '@/types';
 import { useI18n } from '@i18n/useI18n';
 import LinkIcon from '@components/LinkIcon';
 import { Ei18nToken } from '@/i18n/types';
+import styles from './extraLinks.module.css';
 
 type TPlatformLinkProps = {
   link: TLink<IPlatformLinkPartial>;
@@ -17,9 +18,9 @@ const PlatformLink: Component<TPlatformLinkProps> = props => {
   };
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" class="platform-link">
-      <div class="platform-link-title">
-        <LinkIcon link={props.link} class="platform-link-icon" />
+    <a href={href} target="_blank" rel="noopener noreferrer" class={styles.platformLink}>
+      <div class={styles.platformLinkTitle}>
+        <LinkIcon link={props.link} class={styles.platformLinkIcon} />
         {isEi18nToken(title) ? t(title) : title}
       </div>
     </a>

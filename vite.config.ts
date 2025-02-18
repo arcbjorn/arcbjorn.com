@@ -5,6 +5,12 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [solidPlugin(), tailwindcss()],
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+      generateScopedName: '[name]__[local]__[hash:base64:5]',
+    },
+  },
   server: {
     port: 3000,
   },

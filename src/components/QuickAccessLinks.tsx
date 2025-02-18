@@ -24,7 +24,7 @@ const QuickAccesLink: Component<QuickAccesLinkProps> = props => {
 
   if (title === Ei18nToken.CV) {
     processedHref = href;
-    cvLinkCss = 'cv-link';
+    cvLinkCss = 'cvLink';
     translatedTitle = t(Ei18nToken.CV);
 
     if (copyToClipboard) {
@@ -47,7 +47,7 @@ const QuickAccesLink: Component<QuickAccesLinkProps> = props => {
 
   return (
     <a
-      class={`quick-link ${cvLinkCss}`}
+      class={`quickLink ${cvLinkCss}`}
       href={processedHref}
       target={copyToClipboard ? '_self' : '_blank'}
       onClick={handleClick}

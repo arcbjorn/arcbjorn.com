@@ -5,6 +5,7 @@ import ThemeToggle from '@components/ThemeToggle';
 import LanguageSwitch from '@components/LanguageSwitch';
 import TimeZone from '@components/TimeZone';
 import { Ei18nToken } from '@i18n/types';
+import styles from './header.module.css';
 
 export const Header: Component = () => {
   const { t } = useI18n();
@@ -16,17 +17,17 @@ export const Header: Component = () => {
   };
 
   return (
-    <div class="header">
-      <A class="logo" href={getPath('/')}>
+    <div class={styles.header}>
+      <A class={styles.logo} href={getPath('/')}>
         {t(Ei18nToken.NAME)}
       </A>
       <TimeZone />
-      <div class="nav">
-        <div class="links">
-          <A class="link" activeClass="activeRoute" href={getPath('/')}>
+      <div class={styles.nav}>
+        <div class={styles.links}>
+          <A class={styles.link} activeClass="activeRoute" href={getPath('/')}>
             {t(Ei18nToken.ABOUT)}
           </A>
-          <A class="link" activeClass="activeRoute" href={getPath('/extra')}>
+          <A class={styles.link} activeClass="activeRoute" href={getPath('/extra')}>
             {t(Ei18nToken.EXTRA)}
           </A>
         </div>

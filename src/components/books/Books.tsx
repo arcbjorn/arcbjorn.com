@@ -3,6 +3,8 @@ import { EBookCategory } from '@/types';
 import { Ei18nToken } from '@i18n/types';
 import books from '@/data/booksData';
 import { useI18n } from '@i18n/useI18n';
+import extraStyles from '@/pages/extra.module.css';
+import styles from '@/components/books/books.module.css';
 
 type BookProps = {
   title: string;
@@ -40,18 +42,18 @@ export const Books: Component = () => {
   const { t } = useI18n();
 
   return (
-    <fieldset class="extra-inner-section">
-      <legend class="extra-section-title">{t(Ei18nToken.BOOKS_TITLE)}</legend>
-      <div class="books flex flex-col pt-5">
+    <fieldset class={extraStyles.extraInnerSection}>
+      <legend class={extraStyles.extraSectionTitle}>{t(Ei18nToken.BOOKS_TITLE)}</legend>
+      <div class={styles.books}>
         <For each={categoriesList}>
           {option => (
             <>
-              <span class="category-title">{t(categoryToI18nTokenMap[option])}</span>
-              <div class="py-5">
+              <span class={styles.categoryTitle}>{t(categoryToI18nTokenMap[option])}</span>
+              <div class={styles.bookList}>
                 <For each={books.filter(({ category }) => category === option)}>
                   {({ title, author, href }) => (
-                    <div class="book-entry">
-                      <svg width="70" height="50" class="tree-node hidden md:block">
+                    <div class={styles.bookEntry}>
+                      <svg width="70" height="50" class={styles.treeNode}>
                         <line x1="30" y1="25" x2="60" y2="25" stroke="current" stroke-width="3" />
                         <line x1="30" y1="0" x2="30" y2="50" stroke="current" stroke-width="3" />
                       </svg>
