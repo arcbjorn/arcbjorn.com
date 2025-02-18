@@ -1,5 +1,5 @@
 import { Component, createSignal, createEffect, createMemo, For, Show } from 'solid-js';
-import styles from './language.module.css';
+import styles from './language/language.module.css';
 
 type MatrixColumn = {
   chars: string[];

@@ -2,8 +2,8 @@ import { Component, createSignal } from 'solid-js';
 import { useI18n } from '@i18n/useI18n';
 import { TLanguage } from '@/types';
 import { Ei18nToken } from '@i18n/types';
-import MatrixEffect from '@/components/languages/language/MatrixEffect';
-import styles from './language.module.css';
+import MatrixEffect from '@/components/languages/MatrixEffect';
+import styles from './language/language.module.css';
 
 type TLanguageProps = Omit<TLanguage, 'category'>;
 

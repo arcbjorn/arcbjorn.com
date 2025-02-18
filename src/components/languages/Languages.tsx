@@ -2,7 +2,7 @@ import { Component, For } from 'solid-js';
 import { useI18n } from '@i18n/useI18n';
 import { Ei18nToken } from '@i18n/types';
 import languages from '@/data/languagesData';
-import Language from '@/components/languages/language/Language';
+import Language from '@/components/languages/Language';
 import styles from './languages.module.css';
 import extraStyles from '@/pages/extra.module.css';
 
