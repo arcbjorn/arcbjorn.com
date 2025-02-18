@@ -1,4 +1,4 @@
-@reference "../index.css";
+@reference "../../index.css";
 
 .typeWriter {
   @apply text-lg sm:text-3xl;
