@@ -1,3 +1,63 @@
+export type Dictionary = {
+  name: string;
+
+  header: {
+    about: string;
+    extra: string;
+    location: string;
+  };
+
+  notFound: {
+    title: string;
+    backButtonTitle: string;
+  };
+
+  home: {
+    file: string;
+    greeting: string;
+    position: string;
+    formerly: string;
+    interests: string;
+    cv: string;
+  };
+
+  extra: {
+    platforms: {
+      title: string;
+      allSocials: string;
+      names: {
+        myTravelMap: string;
+        blog: string;
+      };
+    };
+
+    books: {
+      title: string;
+      categories: {
+        software: string;
+        psychology: string;
+        fantasy: string;
+      };
+    };
+
+    languages: {
+      title: string;
+      english: string;
+      russian: string;
+      swedish: string;
+      portuguese: string;
+      japanese: string;
+      german: string;
+      spanish: string;
+      levels: {
+        native: string;
+        fluent: string;
+        basic: string;
+      };
+    };
+  };
+};
+
 export enum Ei18nToken {
   NAME = 'name',
   LOCATION = 'header.location',
