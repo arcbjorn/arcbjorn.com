@@ -1,11 +1,14 @@
 import { Component, createSignal } from 'solid-js';
+import { useI18n } from '@i18n/useI18n';
 import { TLanguage } from '@/types';
-import { Ei18nToken } from '@/i18n/types';
+import { Ei18nToken } from '@i18n/types';
 import MatrixEffect from '@/components/languages/language/MatrixEffect';
+import styles from './language.module.css';
 
 type TLanguageProps = Omit<TLanguage, 'category'>;
 
 const Language: Component<TLanguageProps> = props => {
+  const { t } = useI18n();
   const [isHovered, setIsHovered] = createSignal(false);
 
   const getLevelToken = (numLevel: number): Ei18nToken => {
@@ -23,16 +26,16 @@ const Language: Component<TLanguageProps> = props => {
 
   return (
     <div
-      class="language"
+      class={styles.language}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div class="name-level">
-        {props.name}
-        <div class="level-bar">
-          <div class="level-background">
+      <div class={styles.nameLevel}>
+        {t(props.name)}
+        <div class={styles.levelBar}>
+          <div class={styles.levelBackground}>
             <div
-              class="level-fill"
+              class={styles.levelFill}
               style={{
                 width: isHovered() ? `${props.level}%` : '0%',
               }}
@@ -46,14 +49,14 @@ const Language: Component<TLanguageProps> = props => {
           </div>
           {isHovered() && (
             <span
-              class="level-text"
+              class={styles.levelText}
               style={{
                 color: 'var(--bg)',
                 right: '15px',
                 'z-index': 2,
               }}
             >
-              {getLevelToken(props.level)}
+              {t(getLevelToken(props.level))}
             </span>
           )}
         </div>

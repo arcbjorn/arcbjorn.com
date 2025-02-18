@@ -10,7 +10,7 @@ export enum EDocumentDescription {
 }
 
 export type TLanguage = {
-  name: string;
+  name: Ei18nToken;
   level: number;
 };
 
