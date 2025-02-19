@@ -1,0 +1,66 @@
+@reference "../index.css";
+
+.terminal {
+  @apply flex h-full flex-col-reverse items-center pt-10 sm:pt-16;
+}
+
+.terminalContent {
+  @apply flex h-[90%] flex-col px-6;
+}
+
+.terminalText {
+  @apply flex flex-col text-lg sm:text-3xl;
+}
+
+.commandLine {
+  @apply mb-4 flex items-center;
+}
+
+/* Terminal text styling */
+.typeWriter {
+  @apply text-lg sm:text-3xl;
+}
+
+.userAndHost {
+  color: var(--userandhostColor);
+}
+
+.infoLocation {
+  color: var(--infolocationColor);
+}
+
+.company {
+  color: var(--companyColor);
+}
+
+.profileCommand {
+  @apply inline;
+}
+
+/* Intro section */
+.introText {
+  @apply flex flex-col;
+}
+
+.introText p {
+  @apply mb-4;
+}
+
+/* Quick links section */
+.quickLinks {
+  @apply flex flex-wrap items-center justify-start py-14;
+}
+
+.typewriterCursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

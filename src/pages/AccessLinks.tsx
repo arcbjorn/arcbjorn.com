@@ -4,8 +4,9 @@ import { EDocumentDescription } from '@/types';
 import Layout from '@layouts/Layout';
 import SEO from '@components/SEO';
 import { quickAccessLinks } from '@/data/links';
-import QuickLink from '@components/quickLink/QuickLink';
-import styles from '@/components/terminal/terminal.module.css';
+import QuickLink from '@/components/QuickLink';
+import styles from '@styles/terminal.module.css';
+
 const AccessLinksPage: Component = () => {
   const { language } = useI18n();
 

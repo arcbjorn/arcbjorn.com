@@ -3,8 +3,8 @@ import { EBookCategory } from '@/types';
 import { Ei18nToken } from '@i18n/types';
 import books from '@/data/booksData';
 import { useI18n } from '@i18n/useI18n';
-import extraStyles from '@/pages/extra.module.css';
-import styles from '@/components/books/books.module.css';
+import extraStyles from '@styles/extra.module.css';
+import styles from '@styles/books.module.css';
 
 type BookProps = {
   title: string;

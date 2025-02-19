@@ -1,0 +1,29 @@
+@reference "../index.css";
+
+.header {
+  @apply flex flex-wrap items-center justify-between py-7;
+}
+
+.activeRoute::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color);
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.logo {
+  @apply cursor-pointer px-7 text-xl font-bold;
+}
+
+.nav {
+  @apply flex flex-wrap items-center justify-around pl-2 text-base sm:text-lg;
+}
+
+.links {
+  @apply hidden sm:flex;
+}

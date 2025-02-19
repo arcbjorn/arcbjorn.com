@@ -5,8 +5,9 @@ import { Ei18nToken } from '@i18n/types';
 import PlatformLink from '@/components/extraLinks/PlatformLink';
 import SocialLink from '@/components/extraLinks/SocialLink';
 import { platformLinks, socialLinks } from '@/data/links';
-import extraStyles from '@/pages/extra.module.css';
-import styles from '@/components/extraLinks/extraLinks.module.css';
+
+import extraStyles from '@styles/extra.module.css';
+import styles from '@styles/extraLinks.module.css';
 
 const ExtraLinks: Component = () => {
   const { t } = useI18n();

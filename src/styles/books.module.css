@@ -1,4 +1,4 @@
-@reference "../../index.css";
+@reference "../index.css";
 
 .book {
   @apply flex flex-1 justify-between py-3 pr-5 pl-5 md:pl-0;

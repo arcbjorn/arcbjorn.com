@@ -1,0 +1,37 @@
+@reference "../index.css";
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.noScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.noScrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.extraInfo {
+  @apply flex flex-row flex-wrap overflow-y-hidden sm:h-full;
+}
+
+.extraSectionTitle {
+  @apply ml-5 w-max px-2;
+
+  color: var(--focusColor);
+  background-color: var(--bg);
+}
+
+.extraSection {
+  @apply flex h-full flex-col sm:h-auto;
+}
+
+.extraInnerSection {
+  @apply mx-7 mb-3 flex max-h-[80vh] flex-col overflow-y-auto border;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.extraInnerSection::-webkit-scrollbar {
+  display: none;
+}

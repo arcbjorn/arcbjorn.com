@@ -1,0 +1,82 @@
+@reference "../index.css";
+
+.languageSwitcher {
+  @apply relative inline-block;
+}
+
+.switcherButton {
+  @apply flex items-center gap-2 rounded-md px-3 py-2 transition-colors;
+  color: var(--color);
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.switcherButton:hover {
+  border-color: var(--color);
+}
+
+.globeIcon {
+  @apply h-5 w-5;
+}
+
+.currentLanguage {
+  @apply text-sm font-medium;
+}
+
+.dropdown {
+  @apply absolute right-0 mt-1 rounded-md py-1;
+  width: max-content;
+  min-width: 70px;
+  background-color: var(--bg);
+  border: 1px solid var(--color);
+  animation: slideDown 0.2s ease-out;
+}
+
+.languageOption {
+  @apply flex w-full items-center justify-center px-3 py-2 text-left text-sm transition-colors;
+  color: var(--color);
+}
+
+.languageOption:hover {
+  color: var(--bg);
+  background-color: var(--color);
+}
+
+.active {
+  color: var(--focusColor);
+}
+
+.active:hover {
+  color: var(--bg);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 640px) {
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: max-content;
+    min-width: 70px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .languageOption {
+    @apply justify-center py-2;
+  }
+}

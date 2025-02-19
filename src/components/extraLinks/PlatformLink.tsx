@@ -3,7 +3,7 @@ import { IPlatformLinkPartial, TLink } from '@/types';
 import { useI18n } from '@i18n/useI18n';
 import LinkIcon from '@components/LinkIcon';
 import { Ei18nToken } from '@/i18n/types';
-import styles from './extraLinks.module.css';
+import styles from '@styles/extraLinks.module.css';
 
 type TPlatformLinkProps = {
   link: TLink<IPlatformLinkPartial>;

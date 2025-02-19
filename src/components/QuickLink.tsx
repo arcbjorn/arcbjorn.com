@@ -3,7 +3,7 @@ import { useI18n } from '@i18n/useI18n';
 import { TLink, ELinkUrl } from '@/types';
 import LinkIcon from '@components/LinkIcon';
 import { Ei18nToken } from '@i18n/types';
-import styles from '@components/quickLink/quickLink.module.css';
+import styles from '@styles/quickLink.module.css';
 
 type QuickLinkProps = {
   link: TLink & {

@@ -3,7 +3,7 @@ import { useI18n } from '@i18n/useI18n';
 import { TLanguage } from '@/types';
 import { Ei18nToken } from '@i18n/types';
 import MatrixEffect from '@/components/languages/MatrixEffect';
-import styles from '@/components/languages/languages.module.css';
+import styles from '@styles/languages.module.css';
 
 type TLanguageProps = Omit<TLanguage, 'category'>;
 

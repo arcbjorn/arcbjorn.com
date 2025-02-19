@@ -1,4 +1,4 @@
-@reference "../../index.css";
+@reference "../index.css";
 
 .icon {
   @apply mr-3 text-lg sm:text-2xl;
