@@ -1,0 +1,16 @@
+@import '../index.css';
+
+.mapContainer {
+  @apply h-[80vh] w-full rounded-lg border border-solid;
+  border-color: var(--color);
+  z-index: 1;
+}
+
+.mapPage {
+  @apply relative flex h-full flex-col p-4;
+}
+
+.mapTitle {
+  @apply mb-4 text-center text-2xl;
+  color: var(--titleColor);
+}

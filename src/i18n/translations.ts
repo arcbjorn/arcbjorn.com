@@ -13,6 +13,7 @@ export const de: Dictionary = {
     about: 'über mich',
     extra: 'extra',
     location: 'Buenos Aires',
+    map: 'karte',
   },
 
   home: {
@@ -72,6 +73,7 @@ export const se: Dictionary = {
     about: 'om mig',
     extra: 'extra',
     location: 'Buenos Aires',
+    map: 'karta',
   },
 
   home: {
@@ -131,6 +133,7 @@ export const ru: Dictionary = {
     about: 'обо мне',
     extra: 'интересы',
     location: 'Буэнос-Айрес',
+    map: 'карта',
   },
 
   home: {
@@ -190,6 +193,7 @@ export const pt: Dictionary = {
     about: 'sobre',
     extra: 'extra',
     location: 'Buenos Aires',
+    map: 'mapa',
   },
 
   home: {
@@ -249,6 +253,7 @@ export const ja: Dictionary = {
     about: '私について',
     extra: 'その他',
     location: 'ブエノスアイレス',
+    map: '地図',
   },
 
   home: {
@@ -308,6 +313,7 @@ export const es: Dictionary = {
     about: 'sobre',
     extra: 'extra',
     location: 'Buenos Aires',
+    map: 'mapa',
   },
 
   home: {
@@ -366,6 +372,7 @@ export const en: Dictionary = {
     about: 'about',
     extra: 'extra',
     location: 'Buenos Aires',
+    map: 'map',
   },
 
   home: {

@@ -37,6 +37,9 @@ export const Header: Component = () => {
           >
             <TranslationMatrixEffect token={Ei18nToken.EXTRA} />
           </A>
+          <A class={common.link} activeClass={common.activeRoute} href={getNavPath('/map', params)}>
+            <TranslationMatrixEffect token={Ei18nToken.MAP} />
+          </A>
         </div>
         <LanguageSwitch />
         <ThemeToggle />

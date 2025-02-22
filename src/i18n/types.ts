@@ -1,10 +1,12 @@
 export type Dictionary = {
   name: string;
   shortName: string;
+
   header: {
     about: string;
     extra: string;
     location: string;
+    map: string;
   };
 
   notFound: {
@@ -69,6 +71,7 @@ export enum Ei18nToken {
 
   ABOUT = 'header.about',
   EXTRA = 'header.extra',
+  MAP = 'header.map',
 
   FILE = 'home.file',
   GREETING = 'home.greeting',

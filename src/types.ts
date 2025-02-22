@@ -6,6 +6,7 @@ export enum EDocumentDescription {
   INDEX_PAGE = '',
   EXTRA = 'extra',
   ACCESS_LINKS = 'access_links',
+  MAP = 'map',
   NOT_FOUND_PAGE = 'Not Found',
 }
 

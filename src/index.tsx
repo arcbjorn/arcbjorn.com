@@ -6,6 +6,7 @@ import IndexPage from '@/pages/Index';
 import ExtraPage from '@/pages/Extra';
 import AccessLinksPage from '@/pages/AccessLinks';
 import NotFoundPage from '@/pages/404';
+import MapPage from '@/pages/Map';
 
 import '@material-design-icons/font';
 import './index.css';
@@ -34,6 +35,14 @@ const routes = [
   {
     path: '/:lang/links',
     component: AccessLinksPage,
+  },
+  {
+    path: '/map',
+    component: MapPage,
+  },
+  {
+    path: '/:lang/map',
+    component: MapPage,
   },
   {
     path: '*',
