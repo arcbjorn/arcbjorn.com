@@ -1,5 +1,5 @@
 import { Component, createSignal, createEffect, createMemo } from 'solid-js';
-import Typewriter from '@components/terminal/Typewriter';
+import Typewriter from '@/components/terminal/TypeWriter';
 import TextMatrixEffect from '@components/TextMatrixEffect';
 import QuickLink from '@components/QuickLink';
 import { useI18n } from '@i18n/useI18n';
