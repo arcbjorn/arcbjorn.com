@@ -2,6 +2,7 @@ import type { Dictionary } from '@i18n/types';
 
 export const de: Dictionary = {
   name: 'arcbjorn',
+  shortName: 'arc',
 
   notFound: {
     title: 'Seite nicht gefunden',
@@ -60,6 +61,7 @@ export const de: Dictionary = {
 
 export const se: Dictionary = {
   name: 'arkbjörn',
+  shortName: 'ark',
 
   notFound: {
     title: 'Sidan hittas int',
@@ -118,6 +120,7 @@ export const se: Dictionary = {
 
 export const ru: Dictionary = {
   name: 'arcbjorn',
+  shortName: 'arc',
 
   notFound: {
     title: 'Страница не найдена',
@@ -176,6 +179,7 @@ export const ru: Dictionary = {
 
 export const pt: Dictionary = {
   name: 'arcbjorn',
+  shortName: 'arc',
 
   notFound: {
     title: 'Página não encontrada',
@@ -233,7 +237,8 @@ export const pt: Dictionary = {
 };
 
 export const ja: Dictionary = {
-  name: 'アークビョーン',
+  name: 'アルクビョルン',
+  shortName: 'アルク',
 
   notFound: {
     title: 'ページが見つかりません',
@@ -247,8 +252,8 @@ export const ja: Dictionary = {
   },
 
   home: {
-    file: '私について',
-    greeting: 'こんにちは、Olegです',
+    file: '私',
+    greeting: 'こんにちは、オレグ です',
     position: 'ソフトウェアエンジニア',
     formerly: '以前',
     interests: 'Web • システム • 人工知能 • ブロックチェーン',
@@ -292,6 +297,7 @@ export const ja: Dictionary = {
 
 export const es: Dictionary = {
   name: 'arcbjorn',
+  shortName: 'arc',
 
   notFound: {
     title: 'Página no encontrada',
@@ -350,7 +356,7 @@ export const es: Dictionary = {
 
 export const en: Dictionary = {
   name: 'arcbjorn',
-
+  shortName: 'arc',
   notFound: {
     title: 'Page not found',
     backButtonTitle: 'Go back',

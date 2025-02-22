@@ -4,7 +4,7 @@ import { Ei18nToken } from '@i18n/types';
 
 import PlatformLink from '@/components/extraLinks/PlatformLink';
 import SocialLink from '@/components/extraLinks/SocialLink';
-import { platformLinks, socialLinks } from '@/data/links';
+import { platformLinks, socialLinks } from '@data/linksData';
 
 import extraStyles from '@styles/extra.module.css';
 import styles from '@styles/extraLinks.module.css';

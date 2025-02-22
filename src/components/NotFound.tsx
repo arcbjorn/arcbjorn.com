@@ -1,19 +1,43 @@
-import { Component } from 'solid-js';
+import { Component, createEffect, createSignal } from 'solid-js';
 import { A } from '@solidjs/router';
 import { useI18n } from '@i18n/useI18n';
-
-import { Ei18nToken } from '@i18n/types';
+import TextMatrixEffect from '@/components/TextMatrixEffect';
 import styles from '@styles/common.module.css';
-import animations from '@styles/animations.module.css';
+import { Ei18nToken } from '@/i18n/types';
+
 const NotFoundInfo: Component = () => {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
+  const [showMatrixEffect, setShowMatrixEffect] = createSignal(true);
+
+  createEffect(() => {
+    language();
+    setShowMatrixEffect(true);
+  });
+
+  const handleMatrixComplete = () => {
+    setShowMatrixEffect(false);
+  };
 
   return (
-    <div class={`${animations.fadeIn} flex h-full w-full items-center justify-center`}>
+    <div class="flex h-[90vh] w-full items-center justify-center">
       <div class="text-center text-base sm:text-2xl">
-        <h1>{t(Ei18nToken.PAGE_NOT_FOUND)}</h1>
+        <h1 class="mb-4">
+          <TextMatrixEffect
+            text={t(Ei18nToken.PAGE_NOT_FOUND)}
+            language={language()}
+            showEffect={showMatrixEffect()}
+            onComplete={handleMatrixComplete}
+          />
+        </h1>
         <A href="/">
-          <span class={styles.link}>{t(Ei18nToken.GO_BACK)}</span>
+          <span class={styles.link}>
+            <TextMatrixEffect
+              text={t(Ei18nToken.GO_BACK)}
+              language={language()}
+              showEffect={showMatrixEffect()}
+              onComplete={handleMatrixComplete}
+            />
+          </span>
         </A>
       </div>
     </div>

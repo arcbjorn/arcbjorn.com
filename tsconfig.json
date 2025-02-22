@@ -20,7 +20,8 @@
       "@state/*": ["./src/state/*"],
       "@i18n/*": ["./src/i18n/*"],
       "@data/*": ["./src/data/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   }
 }

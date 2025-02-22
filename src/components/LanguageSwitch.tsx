@@ -1,4 +1,4 @@
-import { Component, createSignal } from 'solid-js';
+import { Component, createSignal, onMount, onCleanup } from 'solid-js';
 import { useLocation } from '@solidjs/router';
 import { useI18n, Language, languages } from '@i18n/useI18n';
 import styles from '@styles/languageSwitch.module.css';
@@ -7,6 +7,21 @@ export const LanguageSwitch: Component = () => {
   const { language, setLanguage } = useI18n();
   const location = useLocation();
   const [isOpen, setIsOpen] = createSignal(false);
+  let switcherRef: HTMLDivElement | undefined;
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (switcherRef && !switcherRef.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
+  };
+
+  onMount(() => {
+    document.addEventListener('click', handleClickOutside);
+  });
+
+  onCleanup(() => {
+    document.removeEventListener('click', handleClickOutside);
+  });
 
   const handleLanguageSelect = (newLang: Language) => {
     setLanguage(newLang);
@@ -22,10 +37,13 @@ export const LanguageSwitch: Component = () => {
   };
 
   return (
-    <div class={styles.languageSwitcher}>
+    <div class={styles.languageSwitcher} ref={switcherRef}>
       <button
         class={styles.switcherButton}
-        onClick={() => setIsOpen(!isOpen())}
+        onClick={e => {
+          e.stopPropagation();
+          setIsOpen(!isOpen());
+        }}
         aria-label="Select language"
       >
         <svg

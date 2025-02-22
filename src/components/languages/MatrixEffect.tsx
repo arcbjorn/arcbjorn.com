@@ -1,5 +1,6 @@
 import { Component, createSignal, createEffect, createMemo, For, Show } from 'solid-js';
 import styles from '@styles/languages.module.css';
+import { getLanguageChars } from '@utils/languageChars';
 
 type MatrixColumn = {
   chars: string[];
@@ -17,27 +18,6 @@ interface MatrixEffectProps {
 
 const MatrixEffect: Component<MatrixEffectProps> = props => {
   const [matrixColumns, setMatrixColumns] = createSignal<MatrixColumn[]>([]);
-
-  const getLanguageChars = (langToken: string): string => {
-    switch (langToken) {
-      case 'extra.languages.russian':
-        return 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
-      case 'extra.languages.english':
-        return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      case 'extra.languages.german':
-        return 'ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜß';
-      case 'extra.languages.spanish':
-        return 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúü¡¿';
-      case 'extra.languages.portuguese':
-        return 'ABCDEFGHIJKLMNOPQRSTUVWXYZÃÕÇáàâãçéêíóôõú';
-      case 'extra.languages.japanese':
-        return 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん';
-      case 'extra.languages.swedish':
-        return 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖåäö';
-      default:
-        return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    }
-  };
 
   const getRandomChar = createMemo(() => (langToken: string) => {
     const chars = getLanguageChars(langToken);

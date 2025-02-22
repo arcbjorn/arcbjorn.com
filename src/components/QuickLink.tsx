@@ -10,22 +10,33 @@ type QuickLinkProps = {
     children?: any;
   };
   copyToClipboard?: boolean;
+  titleOverride?: string;
 };
 
 const QuickLink: Component<QuickLinkProps> = props => {
-  const { title, href } = props.link;
+  const { titleOverride } = props;
+  const { href, title } = props.link;
   const { copyToClipboard = false } = props;
   const { t } = useI18n();
   const [isCopied, setIsCopied] = createSignal(false);
 
   let processedHref = href;
   let cvLinkCss = '';
-  let translatedTitle = title;
+
+  const translatedTitle = () => {
+    if (titleOverride) {
+      return titleOverride;
+    }
+
+    if (title === Ei18nToken.CV) {
+      return t(title) ?? title;
+    }
+    return title;
+  };
 
   if (title === Ei18nToken.CV) {
     processedHref = href;
     cvLinkCss = styles.cvLink;
-    translatedTitle = t(Ei18nToken.CV) ?? '';
 
     if (copyToClipboard) {
       processedHref = ELinkUrl.CV_LINK;
@@ -54,7 +65,7 @@ const QuickLink: Component<QuickLinkProps> = props => {
       rel="noopener noreferrer"
     >
       <LinkIcon link={props.link} class={styles.icon} />
-      {isCopied() ? 'Copied!' : translatedTitle}
+      {isCopied() ? 'Copied!' : translatedTitle()}
     </a>
   );
 };

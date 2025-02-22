@@ -1,6 +1,6 @@
 export type Dictionary = {
   name: string;
-
+  shortName: string;
   header: {
     about: string;
     extra: string;
@@ -60,6 +60,8 @@ export type Dictionary = {
 
 export enum Ei18nToken {
   NAME = 'name',
+  SHORT_NAME = 'shortName',
+
   LOCATION = 'header.location',
 
   PAGE_NOT_FOUND = 'notFound.title',

@@ -1,11 +1,16 @@
 @reference "../index.css";
 
 .terminal {
-  @apply flex h-full flex-col-reverse items-center pt-10 sm:pt-16;
+  @apply flex min-h-screen items-center justify-center px-6;
+  margin-top: -2rem; /* Smaller offset for mobile */
+
+  @media (min-width: 640px) {
+    margin-top: -5rem; /* Larger offset for desktop */
+  }
 }
 
 .terminalContent {
-  @apply flex h-[90%] flex-col px-6;
+  @apply w-full max-w-[900px];
 }
 
 .terminalText {
@@ -48,19 +53,5 @@
 
 /* Quick links section */
 .quickLinks {
-  @apply flex flex-wrap items-center justify-start py-14;
-}
-
-.typewriterCursor {
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  @apply flex flex-wrap items-center justify-start py-10;
 }
