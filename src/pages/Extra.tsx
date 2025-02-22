@@ -19,15 +19,6 @@ const ExtraPage: Component = () => {
   const { t, language } = useI18n();
 
   createEffect(() => {
-    if (
-      typeof navigator !== 'undefined' &&
-      /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-    ) {
-      window.location.href = '/';
-    }
-  });
-
-  createEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 600);
