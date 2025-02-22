@@ -68,7 +68,7 @@ export enum ELinkUrl {
   LINKEDIN = 'https://www.linkedin.com/in/oleg-luganskiy/',
   GITHUB = 'https://www.github.com/arcbjorn',
   MAIL = 'mailto:oleg.luganskiy@gmail.com?subject=Employment%20Offer&body=Hi%20Oleg',
-  CV = 'OL.CV.pdf',
+  CV = '/OL.CV.pdf',
   CV_LINK = 'https://arcbjorn.com/OL.CV.pdf',
 
   PORTFOLIO = 'https://arcbjorn.com',
