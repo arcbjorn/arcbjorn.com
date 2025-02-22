@@ -22,7 +22,7 @@ export const ThemeToggle: Component = () => {
   return (
     <button
       onClick={toggleTheme}
-      class="h-9 rounded-lg border border-transparent px-3 leading-none transition-colors hover:border-neutral-600"
+      class="mx-4 h-9 rounded-lg border border-transparent px-2 leading-none transition-colors hover:border-neutral-600"
       aria-label="Toggle theme"
     >
       {isDark() ? (

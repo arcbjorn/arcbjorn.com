@@ -4,6 +4,7 @@ import Books from '@/components/Books';
 import Loader from '@components/Loader';
 import ExtraLinks from '@components/extraLinks/ExtraLinks';
 import Languages from '@components/languages/Languages';
+import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
 import SEO from '@components/SEO';
 
 import { useI18n } from '@i18n/useI18n';
@@ -42,6 +43,7 @@ const ExtraPage: Component = () => {
         <Loader />
       ) : (
         <div class={`${styles.extraInfo} ${animations.fadeIn}`}>
+          {/* Left Column */}
           <div class={styles.extraSection}>
             <ExtraLinks />
             <a
@@ -50,10 +52,12 @@ const ExtraPage: Component = () => {
               rel="noopener noreferrer"
               class="self-center p-4 text-center underline"
             >
-              {t(Ei18nToken.ALL_SOCIALS)}
+              <TranslationMatrixEffect token={Ei18nToken.ALL_SOCIALS} />
             </a>
             <Languages />
           </div>
+
+          {/* Right Column */}
           <div class={styles.extraSection}>
             <Books />
           </div>

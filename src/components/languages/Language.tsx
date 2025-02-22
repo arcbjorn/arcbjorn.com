@@ -4,6 +4,7 @@ import { TLanguage } from '@/types';
 import { Ei18nToken } from '@i18n/types';
 import MatrixEffect from '@/components/languages/MatrixEffect';
 import styles from '@styles/languages.module.css';
+import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
 
 type TLanguageProps = Omit<TLanguage, 'category'>;
 
@@ -31,7 +32,7 @@ const Language: Component<TLanguageProps> = props => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div class={styles.nameLevel}>
-        {t(props.name)}
+        <TranslationMatrixEffect token={props.token} />
         <div class={styles.levelBar}>
           <div class={styles.levelBackground}>
             <div
@@ -43,7 +44,7 @@ const Language: Component<TLanguageProps> = props => {
               <MatrixEffect
                 isHovered={isHovered()}
                 level={props.level}
-                languageToken={props.name}
+                languageToken={props.token}
               />
             </div>
           </div>

@@ -1,3 +1,6 @@
+import { Language } from '@/i18n/useI18n';
+import { Params } from '@solidjs/router';
+
 export const getLanguageChars = (language: string): string => {
   switch (language) {
     case 'ru':
@@ -21,4 +24,13 @@ export const getLanguageChars = (language: string): string => {
     default:
       return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   }
+};
+
+export const getRandomInteger = (min: number, max: number): number => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+export const getNavPath = (path: string, params: Params) => {
+  const currentLang = params.lang || Language.EN;
+  return currentLang === Language.EN ? path : `/${currentLang}${path}`;
 };

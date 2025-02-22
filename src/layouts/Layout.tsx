@@ -21,7 +21,7 @@ export const Layout: Component<LayoutProps> = props => {
   }
 
   return (
-    <main class="container mx-auto h-full">
+    <main class="container mx-auto h-screen overflow-hidden">
       <script
         data-website-id="88cd3360-86f7-4497-a654-46d79f251501"
         src="https://analytics.arcbjorn.com/umami.js"
@@ -29,7 +29,7 @@ export const Layout: Component<LayoutProps> = props => {
       <header class="h-[10%]">
         <Header />
       </header>
-      <section class="h-10/12">{props.children}</section>
+      <section class="h-[90%]">{props.children}</section>
     </main>
   );
 };

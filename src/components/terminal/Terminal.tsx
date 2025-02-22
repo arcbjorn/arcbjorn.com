@@ -12,7 +12,6 @@ import styles from '@styles/terminal.module.css';
 export const Terminal: Component = () => {
   const { t, language } = useI18n();
   let typewriterRef: { reset: () => void } | null = null;
-  let matrixCompleteCount = 0;
   let lastTranslations: Record<string, string> | null = null;
   let isInitialLoad = true;
 
@@ -21,7 +20,18 @@ export const Terminal: Component = () => {
   const [quickLinksDisplay, setQuickLinksDisplay] = createSignal(false);
   const [startTypeWriter, setStartTypeWriter] = createSignal(true);
   const [showIntroText, setShowIntroText] = createSignal(false);
-  const [showMatrixEffect, setShowMatrixEffect] = createSignal(false);
+
+  // Replace single showMatrixEffect with per-field effects
+  const [matrixEffects, setMatrixEffects] = createSignal<Record<string, boolean>>({
+    name: false,
+    shortName: false,
+    greeting: false,
+    position: false,
+    formerly: false,
+    interests: false,
+  });
+
+  const [_, setMatrixCompleteCount] = createSignal(0);
   const [currentTranslations, setCurrentTranslations] = createSignal({
     name: t(Ei18nToken.NAME),
     shortName: t(Ei18nToken.SHORT_NAME),
@@ -35,7 +45,6 @@ export const Terminal: Component = () => {
   // Memoized command text that updates with language changes
   const commandText = createMemo(() => `cat ${t(Ei18nToken.FILE)}.txt`);
 
-  // Handler for when typing animation completes
   const handleComplete = () => {
     setStartTypeWriter(false);
     setShowIntroText(true);
@@ -50,11 +59,17 @@ export const Terminal: Component = () => {
       interests: t(Ei18nToken.INTERESTS)!,
     };
 
-    const shouldShowMatrix =
-      !isInitialLoad && lastTranslations?.greeting !== newTranslations.greeting;
-
-    if (shouldShowMatrix) {
-      setShowMatrixEffect(true);
+    if (!isInitialLoad) {
+      // Check each field individually and update effects accordingly
+      const newEffects = {
+        name: lastTranslations?.name !== newTranslations.name,
+        shortName: lastTranslations?.shortName !== newTranslations.shortName,
+        greeting: lastTranslations?.greeting !== newTranslations.greeting,
+        position: lastTranslations?.position !== newTranslations.position,
+        formerly: lastTranslations?.formerly !== newTranslations.formerly,
+        interests: lastTranslations?.interests !== newTranslations.interests,
+      };
+      setMatrixEffects(newEffects);
     }
 
     setCurrentTranslations(newTranslations);
@@ -67,11 +82,23 @@ export const Terminal: Component = () => {
   };
 
   const handleMatrixComplete = () => {
-    matrixCompleteCount++;
-    if (matrixCompleteCount >= 3) {
-      setShowMatrixEffect(false);
-      matrixCompleteCount = 0;
-    }
+    setMatrixCompleteCount(prev => {
+      const newCount = prev + 1;
+      // Reset effects after all active effects complete
+      const activeEffects = Object.values(matrixEffects()).filter(Boolean).length;
+      if (newCount >= activeEffects) {
+        setMatrixEffects({
+          name: false,
+          shortName: false,
+          greeting: false,
+          position: false,
+          formerly: false,
+          interests: false,
+        });
+        return 0;
+      }
+      return newCount;
+    });
   };
 
   const handleQuickLinksVisibility = (visible: boolean) => {
@@ -97,30 +124,40 @@ export const Terminal: Component = () => {
     <div class={styles.terminal}>
       <div class={styles.terminalContent}>
         <div class={styles.terminalText}>
-          <div class={styles.commandLine}>
-            <div class="flex flex-wrap items-center">
-              <span class={styles.userAndHost}>
-                <span class="hidden sm:inline">{currentTranslations().name}@archlinux:</span>
-                <span class="sm:hidden">{currentTranslations().shortName}@arch:</span>
-              </span>
-              <span class="hidden sm:inline">&nbsp;</span>
-              <span class={styles.infoLocation}>~/</span>$&nbsp;
-              <span class={styles.profileCommand}>
-                <Typewriter
-                  strings={commandText()}
-                  delay={startTypeWriter() ? 60 : 60}
-                  autoStart={true}
-                  onComplete={handleComplete}
-                  cursor="|"
-                  ref={ref => (typewriterRef = ref)}
-                />
-              </span>
-            </div>
-          </div>
-
+          <span class={styles.userAndHost}>
+            <span class="hidden sm:inline">
+              <TextMatrixEffect
+                text={currentTranslations().name}
+                language={language()}
+                showEffect={matrixEffects().name}
+                onComplete={handleMatrixComplete}
+              />
+              @archlinux:
+            </span>
+            <span class="sm:hidden">
+              <TextMatrixEffect
+                text={currentTranslations().shortName}
+                language={language()}
+                showEffect={matrixEffects().shortName}
+                onComplete={handleMatrixComplete}
+              />
+              @arch:
+            </span>
+          </span>
+          <span class="hidden sm:inline">&nbsp;</span>
+          <span class={styles.infoLocation}>~/</span>$&nbsp;
+          <Typewriter
+            class="inline text-lg sm:text-3xl"
+            strings={commandText()}
+            delay={startTypeWriter() ? 60 : 60}
+            autoStart={true}
+            onComplete={handleComplete}
+            cursor="|"
+            ref={ref => (typewriterRef = ref)}
+          />
           {/* Pre-render with opacity 0 */}
           <div
-            class={`${styles.introText}`}
+            class="flex flex-col pt-4"
             style={{
               opacity: showIntroText() ? 1 : 0,
               transition: 'opacity 0.7s ease-in-out',
@@ -131,15 +168,15 @@ export const Terminal: Component = () => {
               <TextMatrixEffect
                 text={currentTranslations().greeting}
                 language={language()}
-                showEffect={showMatrixEffect()}
+                showEffect={matrixEffects().greeting}
                 onComplete={handleMatrixComplete}
               />
             </p>
-            <p>
+            <p class="pb-4">
               <TextMatrixEffect
                 text={currentTranslations().position}
                 language={language()}
-                showEffect={showMatrixEffect()}
+                showEffect={matrixEffects().position}
                 onComplete={handleMatrixComplete}
               />
               &nbsp;@
@@ -147,48 +184,48 @@ export const Terminal: Component = () => {
                 {currentCompany.name}
               </a>
             </p>
-            <p>
+            <p class="pb-4">
               <TextMatrixEffect
                 text={currentTranslations().formerly}
                 language={language()}
-                showEffect={showMatrixEffect()}
+                showEffect={matrixEffects().formerly}
                 onComplete={handleMatrixComplete}
               />
               &nbsp;
               {previousCompanies.map((company, index) => (
                 <>
                   @
-                  <a href={company.link} target="_blank" class={`${styles.company}`}>
+                  <a href={company.link} target="_blank" class={styles.company}>
                     {company.name}
                   </a>
                   {previousCompanies.length > 1 && index % 2 === 0 && ', '}
                 </>
               ))}
             </p>
-            <p class="pt-4 sm:pt-8">
+            <p class="py-4 sm:pt-8">
               <TextMatrixEffect
                 text={currentTranslations().interests}
                 language={language()}
-                showEffect={showMatrixEffect()}
+                showEffect={matrixEffects().interests}
                 onComplete={handleMatrixComplete}
               />
             </p>
           </div>
+        </div>
 
-          {/* Pre-render quick links with opacity 0 */}
-          <div
-            class={`${styles.quickLinks}`}
-            style={{
-              opacity: quickLinksVisibility() ? 1 : 0,
-              transition: 'opacity 0.7s ease-in-out',
-              display: 'flex',
-              visibility: quickLinksDisplay() ? 'visible' : 'hidden',
-            }}
-          >
-            {quickLinks.map(link => (
-              <QuickLink link={link} copyToClipboard={false} />
-            ))}
-          </div>
+        {/* Pre-render quick links with opacity 0 */}
+        <div
+          class="flex flex-wrap items-center justify-start py-10"
+          style={{
+            opacity: quickLinksVisibility() ? 1 : 0,
+            transition: 'opacity 0.7s ease-in-out',
+            display: 'flex',
+            visibility: quickLinksDisplay() ? 'visible' : 'hidden',
+          }}
+        >
+          {quickLinks.map(link => (
+            <QuickLink link={link} copyToClipboard={false} />
+          ))}
         </div>
       </div>
     </div>

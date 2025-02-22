@@ -1,6 +1,5 @@
 import { Component, createSignal, createEffect, onCleanup } from 'solid-js';
-import { getRandomInteger } from '@/utils/typewriter';
-import styles from '@/styles/terminal.module.css';
+import { getRandomInteger } from '@/utils/helpers';
 import animations from '@/styles/animations.module.css';
 
 export type TypewriterOptions = {
@@ -14,6 +13,7 @@ export type TypewriterOptions = {
   autoStart?: boolean;
   onComplete?: () => void;
   ref?: (instance: { reset: () => void }) => void;
+  class?: string;
 };
 
 const Typewriter: Component<TypewriterOptions> = props => {
@@ -101,7 +101,7 @@ const Typewriter: Component<TypewriterOptions> = props => {
   });
 
   return (
-    <span class={styles.typewriter} style={{ 'white-space': 'pre-wrap' }}>
+    <span class={props.class} style={{ 'white-space': 'pre-wrap' }}>
       <span>{displayText()}</span>
       <span class={`opacity-100 ${animations.cursorBlink}`}>{props.cursor}</span>
     </span>

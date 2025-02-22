@@ -1,8 +1,10 @@
 import { Component, For } from 'solid-js';
+import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
 import { EBookCategory } from '@/types';
 import { Ei18nToken } from '@i18n/types';
+
 import books from '@/data/booksData';
-import { useI18n } from '@i18n/useI18n';
+
 import extraStyles from '@styles/extra.module.css';
 import styles from '@styles/books.module.css';
 
@@ -20,7 +22,7 @@ const Book: Component<BookProps> = props => {
       rel="noopener noreferrer"
       class="flex flex-1 justify-between py-3 pr-5 pl-5 md:pl-0"
     >
-      <span>{`"${props.title}"`}</span>
+      <span>{`«${props.title}»`}</span>
       <span>{props.author}</span>
     </a>
   );
@@ -39,16 +41,18 @@ const categoriesList: EBookCategory[] = [
 ];
 
 export const Books: Component = () => {
-  const { t } = useI18n();
-
   return (
     <fieldset class={extraStyles.extraInnerSection}>
-      <legend class={extraStyles.extraSectionTitle}>{t(Ei18nToken.BOOKS_TITLE)}</legend>
+      <legend class={extraStyles.extraSectionTitle}>
+        <TranslationMatrixEffect token={Ei18nToken.BOOKS_TITLE} />
+      </legend>
       <div class={styles.books}>
         <For each={categoriesList}>
           {option => (
             <>
-              <span class={styles.categoryTitle}>{t(categoryToI18nTokenMap[option])}</span>
+              <span class={styles.categoryTitle}>
+                <TranslationMatrixEffect token={categoryToI18nTokenMap[option]} />
+              </span>
               <div class={styles.bookList}>
                 <For each={books.filter(({ category }) => category === option)}>
                   {({ title, author, href }) => (

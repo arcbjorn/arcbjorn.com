@@ -25,5 +25,5 @@
 }
 
 .links {
-  @apply hidden sm:flex;
+  @apply mx-2 hidden sm:flex;
 }

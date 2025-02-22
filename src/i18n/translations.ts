@@ -129,7 +129,7 @@ export const ru: Dictionary = {
 
   header: {
     about: 'обо мне',
-    extra: 'дополнительно',
+    extra: 'интересы',
     location: 'Буэнос-Айрес',
   },
 

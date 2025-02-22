@@ -12,26 +12,33 @@
 }
 
 .extraInfo {
-  @apply flex flex-row flex-wrap overflow-y-hidden sm:h-full;
-}
-
-.extraSectionTitle {
-  @apply ml-5 w-max px-2;
-
-  color: var(--focusColor);
-  background-color: var(--bg);
+  @apply flex h-full flex-col gap-4 overflow-y-auto p-4 sm:flex-row;
 }
 
 .extraSection {
-  @apply flex h-full flex-col sm:h-auto;
+  @apply flex flex-col;
+  min-width: 300px;
+}
+
+/* Add specific classes for left and right sections */
+.extraSection:first-child {
+  @apply sm:w-[40%];
+}
+
+.extraSection:last-child {
+  @apply sm:w-[60%];
 }
 
 .extraInnerSection {
-  @apply mx-7 mb-3 flex max-h-[80vh] flex-col overflow-y-auto border;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  @apply mx-4 mb-3 flex flex-col overflow-y-auto rounded-lg border;
+  height: fit-content;
+  max-height: calc(100vh - 200px);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.extraInnerSection::-webkit-scrollbar {
-  display: none;
+.extraSectionTitle {
+  @apply mx-6 -mt-3 w-max px-4 py-1;
+  background-color: var(--bg);
+  color: var(--focusColor);
 }

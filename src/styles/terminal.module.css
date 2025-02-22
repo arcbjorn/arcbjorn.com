@@ -1,29 +1,37 @@
 @reference "../index.css";
 
 .terminal {
-  @apply flex min-h-screen items-center justify-center px-6;
-  margin-top: -2rem; /* Smaller offset for mobile */
+  @apply flex h-screen items-center justify-center px-6;
+  margin-top: -5vh; /* Smaller offset for mobile */
 
   @media (min-width: 640px) {
-    margin-top: -5rem; /* Larger offset for desktop */
+    margin-top: -12vh; /* Larger offset for desktop */
   }
 }
 
 .terminalContent {
-  @apply w-full max-w-[900px];
+  @apply flex w-full flex-col overflow-visible text-lg sm:text-3xl;
+  height: 400px; /* Fixed height for mobile */
+  width: 350px; /* Fixed width for mobile */
+  margin: 0 auto; /* Center the content */
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    width: 580px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 900px;
+  }
 }
 
 .terminalText {
-  @apply flex flex-col text-lg sm:text-3xl;
-}
+  @apply mb-4 flex flex-wrap;
+  height: 400px;
+  overflow: visible;
 
-.commandLine {
-  @apply mb-4 flex items-center;
-}
-
-/* Terminal text styling */
-.typeWriter {
-  @apply text-lg sm:text-3xl;
+  @media (min-width: 640px) {
+    height: 600px; /* Fixed height for desktop */
+  }
 }
 
 .userAndHost {
@@ -36,22 +44,4 @@
 
 .company {
   color: var(--companyColor);
-}
-
-.profileCommand {
-  @apply inline;
-}
-
-/* Intro section */
-.introText {
-  @apply flex flex-col;
-}
-
-.introText p {
-  @apply mb-4;
-}
-
-/* Quick links section */
-.quickLinks {
-  @apply flex flex-wrap items-center justify-start py-10;
 }
