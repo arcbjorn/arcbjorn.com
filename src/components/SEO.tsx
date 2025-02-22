@@ -18,7 +18,7 @@ const SEO: Component<SEOProps> = props => {
   });
 
   const siteUrl = () => {
-    const baseUrl = import.meta.env.DEV ? 'http://localhost:8000/' : 'https://arcbjorn.com/';
+    const baseUrl = import.meta.env.DEV ? 'http://localhost:3000/' : 'https://arcbjorn.com/';
     return props.slug ? `${baseUrl}${props.slug}` : baseUrl;
   };
 
