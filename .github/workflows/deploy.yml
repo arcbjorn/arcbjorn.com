@@ -11,6 +11,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Debug file structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "\nListing src/components/terminal:"
+          ls -la src/components/terminal/
+          echo "\nContent of Terminal.tsx:"
+          cat src/components/terminal/Terminal.tsx
+          echo "\nContent of Typewriter.tsx:"
+          cat src/components/terminal/Typewriter.tsx
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -23,12 +34,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: Debug file structure
-        run: |
-          pwd
-          ls -la src/components/terminal/
-          cat src/components/terminal/Terminal.tsx
 
       - name: Build project
         run: pnpm build
