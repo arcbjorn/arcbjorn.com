@@ -1,19 +1,28 @@
-import { createSignal, createEffect, Component } from 'solid-js';
-
-const getInitialTheme = () => {
-  if (typeof window === 'undefined') return false;
-  return localStorage.getItem('theme') === 'dark';
-};
+import { createSignal, createEffect, Component, onMount } from 'solid-js';
+import { getInitialTheme, applyTheme, Theme } from '@utils/helpers';
 
 export const ThemeToggle: Component = () => {
-  const [isDark, setIsDark] = createSignal(getInitialTheme());
+  const [isDark, setIsDark] = createSignal(getInitialTheme() === 'dark');
 
-  if (typeof window !== 'undefined') {
-    createEffect(() => {
-      document.body.classList.toggle('dark', isDark());
-      localStorage.setItem('theme', isDark() ? 'dark' : 'light');
-    });
-  }
+  onMount(() => {
+    // Listen for system theme changes
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+      const handleChange = (e: MediaQueryListEvent) => {
+        const newTheme: Theme = e.matches ? Theme.DARK : Theme.LIGHT;
+        setIsDark(newTheme === Theme.DARK);
+        applyTheme(newTheme);
+      };
+
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    }
+  });
+
+  createEffect(() => {
+    applyTheme(isDark() ? Theme.DARK : Theme.LIGHT);
+  });
 
   const toggleTheme = () => {
     setIsDark(!isDark());

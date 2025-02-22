@@ -34,17 +34,37 @@ const dictionaries: Record<Language, Dictionary> = {
 } as const;
 
 const getInitialLanguage = (): Language => {
+  // 1. Check URL path language parameter first
   const urlLang = window.location.pathname.split('/')[1];
-
   if (urlLang && Object.values(Language).includes(urlLang as Language)) {
     return urlLang as Language;
   }
 
+  // 2. Check localStorage preference
   const storedLang = localStorage.getItem('language');
   if (storedLang && Object.values(Language).includes(storedLang as Language)) {
     return storedLang as Language;
   }
 
+  // 3. Check navigator.languages array (more specific)
+  if (typeof navigator !== 'undefined' && navigator.languages) {
+    for (const lang of navigator.languages) {
+      const shortLang = lang.split('-')[0].toLowerCase();
+      if (Object.values(Language).includes(shortLang as Language)) {
+        return shortLang as Language;
+      }
+    }
+  }
+
+  // 4. Check navigator.language (less specific)
+  if (typeof navigator !== 'undefined' && navigator.language) {
+    const browserLang = navigator.language.split('-')[0].toLowerCase();
+    if (Object.values(Language).includes(browserLang as Language)) {
+      return browserLang as Language;
+    }
+  }
+
+  // 6. Fallback to default language
   return Language.EN;
 };
 
