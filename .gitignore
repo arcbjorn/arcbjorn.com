@@ -27,3 +27,7 @@ gitignore
 # System Files
 .DS_Store
 Thumbs.db
+
+# GeoJSON files generation
+venv/
+ne_10m_admin_1_states_provinces.geojson

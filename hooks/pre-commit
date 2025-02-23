@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Check for changes in geoData.json
+if git diff --cached --name-only | grep -q "src/data/geoData.json"; then
+    echo "Changes detected in geoData.json."
+
+    # Path to the virtual environment
+    VENV_PATH="./venv"
+
+    # Check if the virtual environment exists, if not, create it
+    if [ ! -d "$VENV_PATH" ]; then
+        echo "Virtual environment not found. Creating a new one..."
+        python3 -m venv "$VENV_PATH"
+        echo "Virtual environment created at $VENV_PATH."
+    fi
+
+    # Activate the virtual environment
+    source "$VENV_PATH/bin/activate"
+
+    # Function to check if a Python package is installed
+    check_package() {
+        python -c "import $1" 2>/dev/null
+    }
+
+    # Check for the requests library
+    if ! check_package requests; then
+        echo "Requests library is not installed. Installing..."
+        pip install requests
+    else
+        echo "Requests library is already installed."
+    fi
+
+    echo "Running generateMapOverlayGeoDataJson..."
+    # Call the function or script to generate the map overlay
+    python3 generateMapOverlayGeoDataJson.py
+else
+    echo "No changes in geoData.json. Skipping the generation."
+fi

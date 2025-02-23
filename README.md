@@ -26,6 +26,33 @@
 
     Site is now running at http://localhost:3000!
 
+    **Setting Up Pre-commit Hook**
+
+    To enable the pre-commit hook for checking changes in `geoData.json`, follow these steps:
+
+    1. Copy the pre-commit hook to your Git hooks directory:
+
+    ```bash
+    cp hooks/pre-commit .git/hooks/
+    ```
+
+    2. Make the hook executable:
+
+    ```bash
+    chmod +x .git/hooks/pre-commit
+    ```
+
+    Now, the pre-commit hook will run automatically when you make a commit.
+
+    Install the requests library to run the pre-commit hook or generate the map overlay manually:
+
+    ```bash
+    python3 -m venv ./venv
+    source ./venv/bin/activate
+    python3 -m pip install requests
+    python3 generateMapOverlayGeoDataJson.py
+    ```
+
 2.  **Technologies**
 
     - [Solid](https://solidjs.com/)
