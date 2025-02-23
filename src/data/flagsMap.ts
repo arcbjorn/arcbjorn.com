@@ -1,0 +1,27 @@
+const countryToCode: Record<string, string> = {
+  Brazil: 'br',
+  Canada: 'ca',
+  Russia: 'ru',
+  Argentina: 'ar',
+  Uruguay: 'uy',
+  Germany: 'de',
+  'Czech Republic': 'cz',
+  Slovakia: 'sk',
+  Poland: 'pl',
+  Austria: 'at',
+  Italy: 'it',
+  Netherlands: 'nl',
+  France: 'fr',
+  Bulgaria: 'bg',
+  'United States of America': 'us',
+  Turkey: 'tr',
+  Montenegro: 'me',
+  Vatican: 'va',
+  Georgia: 'ge',
+  Ukraine: 'ua',
+  Mexico: 'mx',
+  Belarus: 'by',
+  'United Kingdom': 'gb',
+};
+
+export default countryToCode;

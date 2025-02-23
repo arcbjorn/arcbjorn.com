@@ -3,6 +3,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import visitedPlaces from '@data/visited_places.json';
 import filteredGeoDataRaw from '@data/filtered_visited_provinces.geojson?url';
+import countryToCode from '@data/flagsMap';
 
 import styles from '@styles/map.module.css';
 
@@ -54,7 +55,7 @@ const Map: Component = () => {
       // );
       // const allDataJson = await allData.json();
 
-      // Add state/province boundaries layer with highlighting
+      // Modified geoJSON layer with popup
       L.geoJSON(provincesData, {
         style: feature => {
           const country = feature?.properties?.admin;
@@ -78,6 +79,32 @@ const Map: Component = () => {
             fillOpacity: isVisited ? 0.15 : 0,
             opacity: isVisited ? 0.8 : 0.2,
           };
+        },
+        onEachFeature: (feature, layer) => {
+          const country = feature?.properties?.admin;
+          const province = feature?.properties?.name;
+          const region = feature?.properties?.region;
+
+          const isVisitedProvince = visitedPlacesData.visitedProvinces[country as string]?.includes(
+            province as string
+          );
+          const isVisitedRegion = visitedPlacesData.visitedRegions[country as string]?.includes(
+            region as string
+          );
+
+          if (isVisitedProvince || isVisitedRegion) {
+            const countryCode = countryToCode[country as string] || '';
+            const flag = countryCode
+              ? `<span class="flag-icon flag-icon-${countryCode}"></span>`
+              : '';
+
+            layer.bindPopup(`
+              <div>
+                <h3>${flag} ${province || region}</h3>
+                <p>${country}</p>
+              </div>
+            `);
+          }
         },
       }).addTo(map);
 

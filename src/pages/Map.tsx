@@ -1,6 +1,6 @@
 import { Component } from 'solid-js';
 import Layout from '@layouts/Layout';
-import Map from '@/components/map/Map';
+import Map from '@components/Map';
 import SEO from '@components/SEO';
 import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
 
@@ -9,7 +9,7 @@ import { Ei18nToken } from '@i18n/types';
 import { useI18n } from '@i18n/useI18n';
 
 const MapPage: Component = () => {
-  const { t, language } = useI18n();
+  const { language } = useI18n();
 
   return (
     <Layout>
