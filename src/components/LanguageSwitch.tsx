@@ -1,11 +1,12 @@
 import { Component, createSignal, onMount, onCleanup } from 'solid-js';
-import { useLocation } from '@solidjs/router';
+import { useLocation, useNavigate } from '@solidjs/router';
 import { useI18n, Language, languages } from '@i18n/useI18n';
 import styles from '@styles/languageSwitch.module.css';
 
 export const LanguageSwitch: Component = () => {
   const { language, setLanguage } = useI18n();
   const location = useLocation();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = createSignal(false);
   let switcherRef: HTMLDivElement | undefined;
 
@@ -28,15 +29,35 @@ export const LanguageSwitch: Component = () => {
     setIsOpen(false);
 
     const currentPath = location.pathname;
-    const newPath =
-      currentPath === '/' ||
-      currentPath === '/extra' ||
-      currentPath === '/access_links' ||
-      currentPath === '/map'
-        ? `/${newLang}${currentPath}`
-        : currentPath.replace(/^\/[a-z]{2}/, `/${newLang}`);
+    let newPath: string;
 
-    window.history.replaceState(null, '', newPath);
+    // If it's a root path
+    if (currentPath === '/') {
+      newPath = newLang === Language.EN ? '/' : `/${newLang}`;
+    } else {
+      // Check if current path already has a language prefix
+      const hasLangPrefix = /^\/[a-z]{2}\//.test(currentPath);
+
+      if (hasLangPrefix) {
+        // Replace existing language prefix
+        newPath =
+          newLang === Language.EN
+            ? currentPath.replace(/^\/[a-z]{2}/, '')
+            : currentPath.replace(/^\/[a-z]{2}/, `/${newLang}`);
+      } else {
+        // Add language prefix to path without one
+        newPath = newLang === Language.EN ? currentPath : `/${newLang}${currentPath}`;
+      }
+    }
+
+    // Clean up the path
+    newPath = newPath.replace(/\/+/g, '/');
+    if (newPath.length > 1 && newPath.endsWith('/')) {
+      newPath = newPath.slice(0, -1);
+    }
+
+    // Use router navigation instead of history.replaceState
+    navigate(newPath, { replace: true });
   };
 
   return (
