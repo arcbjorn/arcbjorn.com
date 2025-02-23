@@ -75,6 +75,7 @@ const Map: Component = () => {
     if (!mapContainer) return;
 
     const isDesktop = window.innerWidth >= 1024;
+    const initialZoom = isDesktop ? 3 : 2;
 
     mapInstance = L.map(mapContainer, {
       minZoom: isDesktop ? 1.5 : 2,
@@ -86,7 +87,7 @@ const Map: Component = () => {
         [85, 180],
       ],
       maxBoundsViscosity: 1.0,
-    }).setView([20, 0], 2);
+    }).setView([20, 0], initialZoom);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       bounds: [

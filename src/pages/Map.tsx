@@ -12,30 +12,17 @@ import { useI18n } from '@i18n/useI18n';
 import animations from '@styles/animations.module.css';
 
 const MapPage: Component = () => {
-  const [isLoading, setLoading] = createSignal(true);
   const { language } = useI18n();
-
-  createEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 600);
-
-    return () => clearTimeout(timer);
-  });
 
   return (
     <Layout>
       <SEO description={EDocumentDescription.MAP} slug={`/${language()}/map`} />
-      {isLoading() ? (
-        <Loader />
-      ) : (
-        <div class={`relative flex h-full flex-col p-4 ${animations.fadeIn}`}>
-          <h1 class="mb-4 text-center text-2xl">
-            <TranslationMatrixEffect token={Ei18nToken.MY_TRAVEL_MAP_TITLE} lowerCase={true} />
-          </h1>
-          <Map />
-        </div>
-      )}
+      <div class={`relative flex h-full flex-col p-4 ${animations.fadeIn}`}>
+        <h1 class="mb-4 text-center text-2xl">
+          <TranslationMatrixEffect token={Ei18nToken.MY_TRAVEL_MAP_TITLE} lowerCase={true} />
+        </h1>
+        <Map />
+      </div>
     </Layout>
   );
 };
