@@ -33,6 +33,11 @@ if git diff --cached --name-only | grep -q "src/data/visited_places.json"; then
     echo "Running generateMapOverlayGeoDataJson..."
     # Call the function or script to generate the map overlay
     python3 generateMapOverlayGeoDataJson.py
+
+    # Stage the generated filtered_visited_provinces.geojson file for commit
+    git add src/data/filtered_visited_provinces.geojson
+    
+    deactivate
 else
     echo "No changes in visited_places.json. Skipping the generation."
 fi
