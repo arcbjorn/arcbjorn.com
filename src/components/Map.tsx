@@ -62,9 +62,8 @@ const Map: Component = () => {
     return legend;
   };
 
-  // Update legend when language changes
   createEffect(() => {
-    language(); // Track language changes
+    language();
     if (mapInstance && legendInstance) {
       mapInstance.removeControl(legendInstance);
       legendInstance = createLegend();
@@ -75,10 +74,8 @@ const Map: Component = () => {
   onMount(async () => {
     if (!mapContainer) return;
 
-    // Calculate initial zoom based on screen width
     const isDesktop = window.innerWidth >= 1024;
 
-    // Initialize map with adjusted zoom restrictions
     mapInstance = L.map(mapContainer, {
       minZoom: isDesktop ? 1.5 : 2,
       maxZoom: 8,
@@ -91,7 +88,6 @@ const Map: Component = () => {
       maxBoundsViscosity: 1.0,
     }).setView([20, 0], 2);
 
-    // Add OpenStreetMap base layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       bounds: [
         [-85, -180],
@@ -99,12 +95,10 @@ const Map: Component = () => {
       ],
     }).addTo(mapInstance);
 
-    // Add legend
     legendInstance = createLegend();
     legendInstance.addTo(mapInstance);
 
     try {
-      // Fetch and parse the GeoJSON data
       const response = await fetch(filteredGeoDataRaw);
       const provincesData = await response.json();
 
@@ -114,17 +108,11 @@ const Map: Component = () => {
       // );
       // const allDataJson = await allData.json();
 
-      // Modified geoJSON layer with popup
       L.geoJSON(provincesData, {
         style: feature => {
           const country = feature?.properties?.admin;
           const province = feature?.properties?.name;
           const region = feature?.properties?.region;
-
-          if (country === 'Australia') {
-            console.log(country);
-            console.log(province);
-          }
 
           const isVisitedProvince = placesData.provinces[country as string]?.includes(
             province as string
@@ -197,7 +185,6 @@ const Map: Component = () => {
         },
       }).addTo(mapInstance);
 
-      // Handle resize events
       window.addEventListener('resize', () => {
         const newIsDesktop = window.innerWidth >= 1024;
         mapInstance?.setMinZoom(newIsDesktop ? 1.5 : 2);
