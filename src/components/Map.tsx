@@ -41,17 +41,17 @@ const Map: Component = () => {
       div.style.backdropFilter = 'blur(8px)';
       div.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
       div.style.color = '#333';
-      div.style.fontSize = '14px';
+      div.style.fontSize = window.innerWidth >= 640 ? '14px' : '12px';
       div.style.lineHeight = '1.6';
       div.style.fontFamily = 'var(--font-ibm), system-ui, sans-serif';
 
       div.innerHTML = `
         <div style="display: flex; align-items: center; margin-bottom: 10px;">
-          <i style="background: #008080; width: 18px; height: 18px; border-radius: 4px; margin-right: 10px; opacity: 0.9; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
+          <i style="background: #008080; width: ${window.innerWidth >= 640 ? '18px' : '16px'}; height: ${window.innerWidth >= 640 ? '18px' : '16px'}; border-radius: 4px; margin-right: 10px; opacity: 0.9; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
           <span style="font-weight: 500;">${t(Ei18nToken.MAP_VISITED)}</span>
         </div>
         <div style="display: flex; align-items: center;">
-          <i style="background: #f15025; width: 18px; height: 18px; border-radius: 4px; margin-right: 10px; opacity: 0.9; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
+          <i style="background: #f15025; width: ${window.innerWidth >= 640 ? '18px' : '16px'}; height: ${window.innerWidth >= 640 ? '18px' : '16px'}; border-radius: 4px; margin-right: 10px; opacity: 0.9; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
           <span style="font-weight: 500;">${t(Ei18nToken.MAP_PLAN_TO_VISIT)}</span>
         </div>
       `;
@@ -75,10 +75,10 @@ const Map: Component = () => {
     if (!mapContainer) return;
 
     const isDesktop = window.innerWidth >= 1024;
-    const initialZoom = isDesktop ? 3 : 2;
+    const initialZoom = isDesktop ? 3 : 1;
 
     mapInstance = L.map(mapContainer, {
-      minZoom: isDesktop ? 1.5 : 2,
+      minZoom: isDesktop ? 1.5 : 1,
       maxZoom: 8,
       zoomControl: true,
       attributionControl: false,
@@ -190,6 +190,13 @@ const Map: Component = () => {
         const newIsDesktop = window.innerWidth >= 1024;
         mapInstance?.setMinZoom(newIsDesktop ? 1.5 : 2);
         mapInstance?.invalidateSize();
+
+        // Update legend font size
+        if (mapInstance && legendInstance) {
+          mapInstance.removeControl(legendInstance);
+          legendInstance = createLegend();
+          legendInstance.addTo(mapInstance);
+        }
       });
     } catch (error) {
       console.error('Error loading map data:', error);
