@@ -17,7 +17,7 @@ const MapPage: Component = () => {
   return (
     <Layout>
       <SEO description={EDocumentDescription.MAP} slug={`/${language()}/map`} />
-      <div class={`relative flex h-full flex-col p-4 ${animations.fadeIn}`}>
+      <div class={`relative flex h-full flex-col p-4 ${animations.longerFadeIn}`}>
         <h1 class="mb-4 text-center text-2xl">
           <TranslationMatrixEffect token={Ei18nToken.MY_TRAVEL_MAP_TITLE} lowerCase={true} />
         </h1>
