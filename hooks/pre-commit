@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Check for changes in geoData.json
-if git diff --cached --name-only | grep -q "src/data/geoData.json"; then
-    echo "Changes detected in geoData.json."
+# Check for changes in visited_places.json
+if git diff --cached --name-only | grep -q "src/data/visited_places.json"; then
+    echo "Changes detected in visited_places.json."
 
     # Path to the virtual environment
     VENV_PATH="./venv"
@@ -34,5 +34,5 @@ if git diff --cached --name-only | grep -q "src/data/geoData.json"; then
     # Call the function or script to generate the map overlay
     python3 generateMapOverlayGeoDataJson.py
 else
-    echo "No changes in geoData.json. Skipping the generation."
+    echo "No changes in visited_places.json. Skipping the generation."
 fi

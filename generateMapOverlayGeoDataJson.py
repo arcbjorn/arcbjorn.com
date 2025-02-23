@@ -13,8 +13,8 @@ with open("ne_10m_admin_1_states_provinces.geojson", "w", encoding="utf-8") as f
 print("Downloaded GeoJSON file.")
 
 
-# Load the visited provinces and regions from src/data/geoData.json
-data_file = "src/data/geoData.json"
+# Load the visited provinces and regions from src/data/visited_places.json
+data_file = "src/data/visited_places.json"
 with open(data_file, "r", encoding="utf-8") as f:
     visited_data = json.load(f)
 
