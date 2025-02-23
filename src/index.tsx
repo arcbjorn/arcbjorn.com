@@ -8,7 +8,12 @@ import AccessLinksPage from '@/pages/AccessLinks';
 import NotFoundPage from '@/pages/404';
 import MapPage from '@/pages/Map';
 
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource/ibm-plex-mono/600.css';
+import '@fontsource/ibm-plex-mono/700.css';
 import '@material-design-icons/font';
+
 import './index.css';
 
 const routes = [

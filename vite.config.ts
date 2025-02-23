@@ -11,7 +11,7 @@ export default defineConfig({
       generateScopedName: '[name]__[local]__[hash:base64:5]',
     },
   },
-  assetsInclude: ['**/*.geojson', '**/*.woff', '**/*.woff2'],
+  assetsInclude: ['**/*.geojson'],
   server: {
     port: 3000,
   },
@@ -21,7 +21,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           map: ['leaflet'],
-          geojson: ['/src/data/filtered_provinces.geojson'],
         },
       },
     },
