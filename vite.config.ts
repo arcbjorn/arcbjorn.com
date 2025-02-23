@@ -11,22 +11,8 @@ export default defineConfig({
       generateScopedName: '[name]__[local]__[hash:base64:5]',
     },
   },
-  assetsInclude: ['**/*.geojson'],
   server: {
     port: 3000,
-  },
-  build: {
-    target: 'esnext',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          map: ['leaflet'],
-        },
-      },
-    },
-  },
-  optimizeDeps: {
-    exclude: ['src/data/filtered_provinces.geojson'],
   },
   resolve: {
     alias: {
