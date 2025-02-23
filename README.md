@@ -28,7 +28,7 @@
 
     **Setting Up Pre-commit Hook**
 
-    To enable the pre-commit hook for checking changes in `visited_places.json`, follow these steps:
+    To enable the pre-commit hook for checking changes in `places.json`, follow these steps:
 
     1. Copy the pre-commit hook to your Git hooks directory:
 

@@ -21,13 +21,13 @@ export default defineConfig({
       output: {
         manualChunks: {
           map: ['leaflet'],
-          geojson: ['/src/data/filtered_visited_provinces.geojson'],
+          geojson: ['/src/data/filtered_provinces.geojson'],
         },
       },
     },
   },
   optimizeDeps: {
-    exclude: ['src/data/filtered_visited_provinces.geojson'],
+    exclude: ['src/data/filtered_provinces.geojson'],
   },
   resolve: {
     alias: {

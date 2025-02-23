@@ -1,18 +1,18 @@
 import { Component, onMount } from 'solid-js';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import visitedPlaces from '@data/visited_places.json';
-import filteredGeoDataRaw from '@data/filtered_visited_provinces.geojson?url';
+import places from '@data/places.json';
+import filteredGeoDataRaw from '@data/filtered_provinces.geojson?url';
 import countryToCode from '@data/flagsMap';
 
 import styles from '@styles/map.module.css';
 
-interface VisitedPlaces {
-  visitedRegions: Record<string, string[]>;
-  visitedProvinces: Record<string, string[]>;
+interface Places {
+  regions: Record<string, string[]>;
+  provinces: Record<string, string[]>;
 }
 
-const visitedPlacesData = visitedPlaces as unknown as VisitedPlaces;
+const placesData = places as unknown as Places;
 
 const Map: Component = () => {
   let mapContainer: HTMLDivElement | undefined;
@@ -62,13 +62,11 @@ const Map: Component = () => {
           const province = feature?.properties?.name;
           const region = feature?.properties?.region;
 
-          const isVisitedProvince = visitedPlacesData.visitedProvinces[country as string]?.includes(
+          const isVisitedProvince = placesData.provinces[country as string]?.includes(
             province as string
           );
 
-          const isVisitedRegion = visitedPlacesData.visitedRegions[country as string]?.includes(
-            region as string
-          );
+          const isVisitedRegion = placesData.regions[country as string]?.includes(region as string);
 
           const isVisited = isVisitedProvince || isVisitedRegion;
 
@@ -85,12 +83,10 @@ const Map: Component = () => {
           const province = feature?.properties?.name;
           const region = feature?.properties?.region;
 
-          const isVisitedProvince = visitedPlacesData.visitedProvinces[country as string]?.includes(
+          const isVisitedProvince = placesData.provinces[country as string]?.includes(
             province as string
           );
-          const isVisitedRegion = visitedPlacesData.visitedRegions[country as string]?.includes(
-            region as string
-          );
+          const isVisitedRegion = placesData.regions[country as string]?.includes(region as string);
 
           if (isVisitedProvince || isVisitedRegion) {
             const countryCode = countryToCode[country as string] || '';

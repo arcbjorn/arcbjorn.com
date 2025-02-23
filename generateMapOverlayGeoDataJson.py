@@ -54,8 +54,8 @@ with open("ne_10m_admin_1_states_provinces.geojson", "w", encoding="utf-8") as f
 print("Downloaded GeoJSON file.")
 
 
-# Load the visited provinces and regions from src/data/visited_places.json
-data_file = "src/data/visited_places.json"
+# Load the visited provinces and regions from src/data/places.json
+data_file = "src/data/places.json"
 with open(data_file, "r", encoding="utf-8") as f:
     visited_data = json.load(f)
 
@@ -101,7 +101,7 @@ filtered_geojson = {
 simplified_geojson = simplify_geojson(filtered_geojson)
 
 # Save the simplified GeoJSON to a new file in src/data
-output_file = "src/data/filtered_visited_provinces.geojson"
+output_file = "src/data/filtered_provinces.geojson"
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(simplified_geojson, f, indent=2)
 
