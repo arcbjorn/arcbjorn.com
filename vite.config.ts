@@ -11,7 +11,7 @@ export default defineConfig({
       generateScopedName: '[name]__[local]__[hash:base64:5]',
     },
   },
-  assetsInclude: ['**/*.geojson'],
+  assetsInclude: ['**/*.geojson', '**/*.woff', '**/*.woff2'],
   server: {
     port: 3000,
   },
@@ -40,6 +40,7 @@ export default defineConfig({
       '@data': path.resolve(__dirname, './src/data'),
       '@styles': path.resolve(__dirname, './src/styles'),
       '@utils': path.resolve(__dirname, './src/utils'),
+      '@fontsource': path.resolve(__dirname, 'node_modules/@fontsource'),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
