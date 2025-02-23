@@ -1,5 +1,5 @@
 import { Component } from 'solid-js';
-import { EDocumentDescription } from '@/types';
+import { EDocumentDescription } from '@/types/types';
 import Layout from '@layouts/Layout';
 import SEO from '@components/SEO';
 import NotFoundInfo from '@/components/NotFound';

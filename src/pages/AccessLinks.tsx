@@ -1,6 +1,6 @@
 import { Component } from 'solid-js';
 import { useI18n } from '@i18n/useI18n';
-import { EDocumentDescription } from '@/types';
+import { EDocumentDescription } from '@/types/types';
 import Layout from '@layouts/Layout';
 import SEO from '@components/SEO';
 import { quickAccessLinks } from '@data/linksData';

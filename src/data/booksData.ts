@@ -1,4 +1,4 @@
-import { EBookCategory, TBook } from '@/types';
+import { EBookCategory, TBook } from '@/types/types';
 
 const books: TBook[] = [
   {

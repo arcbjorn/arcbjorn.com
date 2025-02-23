@@ -8,7 +8,7 @@ import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
 import SEO from '@components/SEO';
 
 import { useI18n } from '@i18n/useI18n';
-import { EDocumentDescription } from '@/types';
+import { EDocumentDescription } from '@/types/types';
 import { Ei18nToken } from '@/i18n/types';
 
 import styles from '@styles/extra.module.css';

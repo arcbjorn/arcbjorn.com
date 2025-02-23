@@ -1,17 +1,18 @@
 import { Component, createSignal, createEffect } from 'solid-js';
 import { useI18n } from '@i18n/useI18n';
 import { Ei18nToken } from '@i18n/types';
-import TextMatrixEffect from '@/components/TextMatrixEffect';
+import TextMatrixEffect from '@components/TextMatrixEffect';
 
 interface TranslationMatrixEffectProps {
   token: Ei18nToken;
+  lowerCase?: boolean;
 }
 
 const TranslationMatrixEffect: Component<TranslationMatrixEffectProps> = props => {
   const { t, language } = useI18n();
   let isMounted = false;
   const [showMatrixEffect, setShowMatrixEffect] = createSignal(false);
-  let previousText = t(props.token);
+  let previousText = props.lowerCase ? t(props.token)?.toLowerCase() : t(props.token);
 
   createEffect(() => {
     // Track language changes
@@ -24,7 +25,7 @@ const TranslationMatrixEffect: Component<TranslationMatrixEffectProps> = props =
     }
 
     // Check if text changed and trigger effect
-    const currentText = t(props.token);
+    const currentText = props.lowerCase ? t(props.token)?.toLowerCase() : t(props.token);
     if (currentText !== previousText) {
       setShowMatrixEffect(true);
       previousText = currentText;
@@ -36,7 +37,7 @@ const TranslationMatrixEffect: Component<TranslationMatrixEffectProps> = props =
       language={language()}
       showEffect={showMatrixEffect()}
       onComplete={() => setShowMatrixEffect(false)}
-      text={t(props.token)}
+      text={props.lowerCase ? t(props.token)?.toLowerCase() : t(props.token)}
     />
   );
 };

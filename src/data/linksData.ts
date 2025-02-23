@@ -1,5 +1,5 @@
 import { Ei18nToken } from '@i18n/types';
-import { EIconLibrary, TLink, ELinkTitle, ELinkUrl, IPlatformLinkPartial } from '@/types';
+import { EIconLibrary, TLink, ELinkTitle, ELinkUrl, IPlatformLinkPartial } from '@/types/types';
 
 export const quickLinks: TLink[] = [
   {

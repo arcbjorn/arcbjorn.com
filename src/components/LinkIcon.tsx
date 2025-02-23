@@ -9,7 +9,7 @@ import {
   faGoodreads,
 } from '@fortawesome/free-brands-svg-icons';
 import { faTerminal, faEarthAmericas, faBook } from '@fortawesome/free-solid-svg-icons';
-import { EIconLibrary, TLink, IPlatformLinkPartial, IHomePageLinkPartial } from '@/types';
+import { EIconLibrary, TLink, IPlatformLinkPartial, IHomePageLinkPartial } from '@/types/types';
 import { IconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 
 interface LinkIconProps {

@@ -1,5 +1,5 @@
 import { Component } from 'solid-js';
-import { TLink } from '@/types';
+import { TLink } from '@/types/types';
 import LinkIcon from '@components/LinkIcon';
 import styles from '@styles/extraLinks.module.css';
 

@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js';
 import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
-import { EBookCategory } from '@/types';
+import { EBookCategory } from '@/types/types';
 import { Ei18nToken } from '@i18n/types';
 
 import books from '@/data/booksData';

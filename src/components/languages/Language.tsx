@@ -1,6 +1,6 @@
 import { Component, createSignal } from 'solid-js';
 import { useI18n } from '@i18n/useI18n';
-import { TLanguage } from '@/types';
+import { TLanguage } from '@/types/types';
 import { Ei18nToken } from '@i18n/types';
 import MatrixEffect from '@/components/languages/MatrixEffect';
 import styles from '@styles/languages.module.css';

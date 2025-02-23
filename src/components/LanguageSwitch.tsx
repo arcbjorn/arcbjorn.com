@@ -29,7 +29,10 @@ export const LanguageSwitch: Component = () => {
 
     const currentPath = location.pathname;
     const newPath =
-      currentPath === '/' || currentPath === '/extra' || currentPath === '/access_links'
+      currentPath === '/' ||
+      currentPath === '/extra' ||
+      currentPath === '/access_links' ||
+      currentPath === '/map'
         ? `/${newLang}${currentPath}`
         : currentPath.replace(/^\/[a-z]{2}/, `/${newLang}`);
 

@@ -1,4 +1,4 @@
-import { TLanguage } from '@/types';
+import { TLanguage } from '@/types/types';
 import { Ei18nToken } from '@i18n/types';
 
 const languages: TLanguage[] = [

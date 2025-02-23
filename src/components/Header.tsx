@@ -1,5 +1,5 @@
 import { Component } from 'solid-js';
-import { A, useParams } from '@solidjs/router';
+import { A, useParams, useLocation } from '@solidjs/router';
 import ThemeToggle from '@components/ThemeToggle';
 import LanguageSwitch from '@components/LanguageSwitch';
 import TimeZone from '@components/TimeZone';
@@ -13,6 +13,18 @@ import common from '@styles/common.module.css';
 
 export const Header: Component = () => {
   const params = useParams();
+  const location = useLocation();
+
+  const isActive = (path: string) => {
+    const currentPath = location.pathname;
+    const langPrefix = params.lang ? `/${params.lang}` : '';
+
+    if (path === '/') {
+      return currentPath === '/' || currentPath === langPrefix;
+    }
+
+    return currentPath === path || currentPath === `${langPrefix}${path}`;
+  };
 
   return (
     <div class={styles.header}>
@@ -24,20 +36,23 @@ export const Header: Component = () => {
         <div class={styles.links}>
           <A
             class={common.link}
-            activeClass={common.activeRoute}
+            classList={{ [common.activeRoute]: isActive('/') }}
             href={getNavPath('/', params)}
-            end={true}
           >
             <TranslationMatrixEffect token={Ei18nToken.ABOUT} />
           </A>
           <A
             class={common.link}
-            activeClass={common.activeRoute}
+            classList={{ [common.activeRoute]: isActive('/extra') }}
             href={getNavPath('/extra', params)}
           >
             <TranslationMatrixEffect token={Ei18nToken.EXTRA} />
           </A>
-          <A class={common.link} activeClass={common.activeRoute} href={getNavPath('/map', params)}>
+          <A
+            class={common.link}
+            classList={{ [common.activeRoute]: isActive('/map') }}
+            href={getNavPath('/map', params)}
+          >
             <TranslationMatrixEffect token={Ei18nToken.MAP} />
           </A>
         </div>
