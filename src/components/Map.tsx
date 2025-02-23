@@ -10,9 +10,16 @@ import styles from '@styles/map.module.css';
 interface Places {
   regions: Record<string, string[]>;
   provinces: Record<string, string[]>;
+  planned_provinces: Record<string, string[]>;
+  planned_regions: Record<string, string[]>;
 }
 
-const placesData = places as unknown as Places;
+const placesData = {
+  regions: places.regions,
+  provinces: places.provinces,
+  planned_provinces: places.planned_provinces,
+  planned_regions: places.planned_regions,
+} as Places;
 
 const Map: Component = () => {
   let mapContainer: HTMLDivElement | undefined;
@@ -26,14 +33,15 @@ const Map: Component = () => {
 
     // Initialize map with adjusted zoom restrictions
     const map = L.map(mapContainer, {
-      minZoom: isDesktop ? 1.5 : 2, // Lower minimum zoom for desktop
+      minZoom: isDesktop ? 1.5 : 2,
       maxZoom: 8,
       zoomControl: true,
+      attributionControl: false,
       maxBounds: [
-        [-85, -180], // Adjusted to prevent white spaces
+        [-85, -180],
         [85, 180],
       ],
-      maxBoundsViscosity: 1.0, // Ensures strict bounds enforcement
+      maxBoundsViscosity: 1.0,
     }).setView([20, 0], initialZoom);
 
     // Add OpenStreetMap base layer
@@ -43,6 +51,38 @@ const Map: Component = () => {
         [85, 180],
       ],
     }).addTo(map);
+
+    // Add legend
+    const legend = new L.Control({ position: 'bottomright' });
+
+    legend.onAdd = () => {
+      const div = L.DomUtil.create('div', 'info legend');
+      div.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+      div.style.padding = '12px 15px';
+      div.style.border = '1px solid rgba(255, 255, 255, 0.3)';
+      div.style.borderRadius = '12px';
+      div.style.backdropFilter = 'blur(8px)';
+      div.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+      div.style.color = '#333';
+      div.style.fontSize = '14px';
+      div.style.lineHeight = '1.6';
+      div.style.fontFamily = 'var(--font-ibm), system-ui, sans-serif';
+
+      div.innerHTML = `
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+          <i style="background: #008080; width: 18px; height: 18px; border-radius: 4px; margin-right: 10px; opacity: 0.9; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
+          <span style="font-weight: 500;">Visited</span>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <i style="background: #f15025; width: 18px; height: 18px; border-radius: 4px; margin-right: 10px; opacity: 0.9; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
+          <span style="font-weight: 500;">Plan to Visit</span>
+        </div>
+      `;
+
+      return div;
+    };
+
+    legend.addTo(map);
 
     try {
       // Fetch and parse the GeoJSON data
@@ -62,20 +102,47 @@ const Map: Component = () => {
           const province = feature?.properties?.name;
           const region = feature?.properties?.region;
 
+          if (country === 'Australia') {
+            console.log(country);
+            console.log(province);
+          }
+
           const isVisitedProvince = placesData.provinces[country as string]?.includes(
             province as string
           );
-
           const isVisitedRegion = placesData.regions[country as string]?.includes(region as string);
 
-          const isVisited = isVisitedProvince || isVisitedRegion;
+          const isPlannedProvince = placesData.planned_provinces?.[country as string]?.includes(
+            province as string
+          );
+          const isPlannedRegion = placesData.planned_regions?.[country as string]?.includes(
+            region as string
+          );
+
+          if (isVisitedProvince || isVisitedRegion) {
+            return {
+              color: '#008080',
+              weight: 2,
+              fillColor: '#008080',
+              fillOpacity: 0.15,
+              opacity: 0.8,
+            };
+          } else if (isPlannedProvince || isPlannedRegion) {
+            return {
+              color: '#f15025',
+              weight: 2,
+              fillColor: '#f15025',
+              fillOpacity: 0.15,
+              opacity: 0.8,
+            };
+          }
 
           return {
-            color: isVisited ? '#008080' : '#cccccc',
-            weight: isVisited ? 2 : 1,
-            fillColor: isVisited ? '#008080' : 'transparent',
-            fillOpacity: isVisited ? 0.15 : 0,
-            opacity: isVisited ? 0.8 : 0.2,
+            color: '#cccccc',
+            weight: 1,
+            fillColor: 'transparent',
+            fillOpacity: 0,
+            opacity: 0.2,
           };
         },
         onEachFeature: (feature, layer) => {
@@ -88,7 +155,14 @@ const Map: Component = () => {
           );
           const isVisitedRegion = placesData.regions[country as string]?.includes(region as string);
 
-          if (isVisitedProvince || isVisitedRegion) {
+          const isPlannedProvince = placesData.planned_provinces?.[country as string]?.includes(
+            province as string
+          );
+          const isPlannedRegion = placesData.planned_regions?.[country as string]?.includes(
+            region as string
+          );
+
+          if (isVisitedProvince || isVisitedRegion || isPlannedProvince || isPlannedRegion) {
             const countryCode = countryToCode[country as string] || '';
             const flag = countryCode
               ? `<span class="flag-icon flag-icon-${countryCode}"></span>`

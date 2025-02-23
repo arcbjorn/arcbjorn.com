@@ -1,8 +1,8 @@
 {
-  "visitedRegions": {
+  "regions": {
     "United Kingdom": ["Greater London"]
   },
-  "visitedProvinces": {
+  "provinces": {
     "Brazil": ["Paraná", "Santa Catarina", "São Paulo"],
     "Canada": ["Ontario", "Québec"],
     "Russia": [
@@ -85,5 +85,35 @@
     "Georgia": ["Tbilisi", "Mtskheta-Mtianeti", "Kakheti"],
     "Mexico": ["México", "Yucatán", "Quintana Roo", "Campeche"],
     "Belarus": ["Minsk", "City of Minsk"]
-  }
+  },
+  "planned_provinces": {
+    "New Zealand": [
+      "Auckland",
+      "Canterbury",
+      "Wellington",
+      "Otago",
+      "Waikato",
+      "Bay of Plenty",
+      "Southland",
+      "Northland"
+    ],
+    "French Polynesia": [
+      "Marquesas Islands",
+      "Austral Islands",
+      "Windward Islands",
+      "Leeward Islands",
+      "Tuamotu-Gambier"
+    ],
+    "Japan": ["Tokyo", "Kyoto", "Hokkaidō", "Ōsaka", "Nara", "Nagano", "Okinawa"],
+    "Australia": [
+      "New South Wales",
+      "Victoria",
+      "Queensland",
+      "South Australia",
+      "Western Australia",
+      "Northern Territory",
+      "Tasmania"
+    ]
+  },
+  "planned_regions": {}
 }

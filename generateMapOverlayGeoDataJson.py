@@ -17,29 +17,29 @@ def round_coordinates(coords, precision=4):
 def simplify_geojson(data, tolerance=0.01):
     simplified_features = []
     essential_properties = ['name', 'admin', 'region']
-    
+
     for feature in data['features']:
         # Simplify geometry
         geom = shape(feature['geometry'])
         simplified_geom = geom.simplify(tolerance)
-        
+
         # Filter properties
         filtered_props = {k: v for k, v in feature['properties'].items() if k in essential_properties}  # noqa: E501
-        
+
         # Create new feature with simplified geometry and reduced properties
         new_feature = {
             'type': 'Feature',
             'properties': filtered_props,
             'geometry': mapping(simplified_geom)
         }
-        
+
         # Round coordinates
         new_feature['geometry']['coordinates'] = round_coordinates(
             new_feature['geometry']['coordinates']
         )
-        
+
         simplified_features.append(new_feature)
-    
+
     return {
         'type': 'FeatureCollection',
         'features': simplified_features
@@ -57,11 +57,13 @@ print("Downloaded GeoJSON file.")
 # Load the visited provinces and regions from src/data/places.json
 data_file = "src/data/places.json"
 with open(data_file, "r", encoding="utf-8") as f:
-    visited_data = json.load(f)
+    data = json.load(f)
 
-# Extract visitedRegions and visitedProvinces from the loaded JSON
-visited_regions = visited_data["visitedRegions"]
-visited_provinces = visited_data["visitedProvinces"]
+# Extract regions and provinces from the loaded JSON
+regions = data["regions"]
+provinces = data["provinces"]
+planned_provinces = data["planned_provinces"]
+planned_regions = data["planned_regions"]
 
 # Load the original GeoJSON file
 input_file = "ne_10m_admin_1_states_provinces.geojson"
@@ -75,20 +77,32 @@ for feature in data["features"]:
     province = feature["properties"].get("name")
     region = feature["properties"].get("region")
 
-    # Check if the province is in visited_provinces for the country
+    # Check if the province is in provinces for the country
     is_visited_province = (
-        country in visited_provinces and
-        province in visited_provinces[country]
+        country in provinces and
+        province in provinces[country]
     )
 
-    # Check if the region is in visited_regions for the country
+    # Check if the region is in regions for the country
     is_visited_region = (
-        country in visited_regions and
-        region in visited_regions[country]
+        country in regions and
+        region in regions[country]
+    )
+
+    # Check if the province is in planned_provinces for the country
+    is_planned_province = (
+        country in planned_provinces and
+        province in planned_provinces[country]
+    )
+
+    # Check if the region is in planned_regions for the country
+    is_planned_region = (
+        country in planned_regions and
+        region in planned_regions[country]
     )
 
     # Include the feature if it matches either condition
-    if is_visited_province or is_visited_region:
+    if is_visited_province or is_visited_region or is_planned_province or is_planned_region:  # noqa: E501
         filtered_features.append(feature)
 
 # Create a new GeoJSON structure
