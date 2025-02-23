@@ -1,9 +1,11 @@
-import { Component, onMount } from 'solid-js';
+import { Component, createEffect, onMount } from 'solid-js';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import places from '@data/places.json';
 import filteredGeoDataRaw from '@data/filtered_provinces.geojson?url';
 import countryToCode from '@data/flagsMap';
+import { useI18n } from '@i18n/useI18n';
+import { Ei18nToken } from '@i18n/types';
 
 import styles from '@styles/map.module.css';
 
@@ -22,37 +24,12 @@ const placesData = {
 } as Places;
 
 const Map: Component = () => {
+  const { t, language } = useI18n();
   let mapContainer: HTMLDivElement | undefined;
+  let mapInstance: L.Map | undefined;
+  let legendInstance: L.Control | undefined;
 
-  onMount(async () => {
-    if (!mapContainer) return;
-
-    // Calculate initial zoom based on screen width
-    const isDesktop = window.innerWidth >= 1024;
-    const initialZoom = isDesktop ? 1.5 : 2;
-
-    // Initialize map with adjusted zoom restrictions
-    const map = L.map(mapContainer, {
-      minZoom: isDesktop ? 1.5 : 2,
-      maxZoom: 8,
-      zoomControl: true,
-      attributionControl: false,
-      maxBounds: [
-        [-85, -180],
-        [85, 180],
-      ],
-      maxBoundsViscosity: 1.0,
-    }).setView([20, 0], initialZoom);
-
-    // Add OpenStreetMap base layer
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      bounds: [
-        [-85, -180],
-        [85, 180],
-      ],
-    }).addTo(map);
-
-    // Add legend
+  const createLegend = () => {
     const legend = new L.Control({ position: 'bottomright' });
 
     legend.onAdd = () => {
@@ -71,18 +48,60 @@ const Map: Component = () => {
       div.innerHTML = `
         <div style="display: flex; align-items: center; margin-bottom: 10px;">
           <i style="background: #008080; width: 18px; height: 18px; border-radius: 4px; margin-right: 10px; opacity: 0.9; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
-          <span style="font-weight: 500;">Visited</span>
+          <span style="font-weight: 500;">${t(Ei18nToken.MAP_VISITED)}</span>
         </div>
         <div style="display: flex; align-items: center;">
           <i style="background: #f15025; width: 18px; height: 18px; border-radius: 4px; margin-right: 10px; opacity: 0.9; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
-          <span style="font-weight: 500;">Plan to Visit</span>
+          <span style="font-weight: 500;">${t(Ei18nToken.MAP_PLAN_TO_VISIT)}</span>
         </div>
       `;
 
       return div;
     };
 
-    legend.addTo(map);
+    return legend;
+  };
+
+  // Update legend when language changes
+  createEffect(() => {
+    language(); // Track language changes
+    if (mapInstance && legendInstance) {
+      mapInstance.removeControl(legendInstance);
+      legendInstance = createLegend();
+      legendInstance.addTo(mapInstance);
+    }
+  });
+
+  onMount(async () => {
+    if (!mapContainer) return;
+
+    // Calculate initial zoom based on screen width
+    const isDesktop = window.innerWidth >= 1024;
+
+    // Initialize map with adjusted zoom restrictions
+    mapInstance = L.map(mapContainer, {
+      minZoom: isDesktop ? 1.5 : 2,
+      maxZoom: 8,
+      zoomControl: true,
+      attributionControl: false,
+      maxBounds: [
+        [-85, -180],
+        [85, 180],
+      ],
+      maxBoundsViscosity: 1.0,
+    }).setView([20, 0], 2);
+
+    // Add OpenStreetMap base layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      bounds: [
+        [-85, -180],
+        [85, 180],
+      ],
+    }).addTo(mapInstance);
+
+    // Add legend
+    legendInstance = createLegend();
+    legendInstance.addTo(mapInstance);
 
     try {
       // Fetch and parse the GeoJSON data
@@ -176,13 +195,13 @@ const Map: Component = () => {
             `);
           }
         },
-      }).addTo(map);
+      }).addTo(mapInstance);
 
       // Handle resize events
       window.addEventListener('resize', () => {
         const newIsDesktop = window.innerWidth >= 1024;
-        map.setMinZoom(newIsDesktop ? 1.5 : 2);
-        map.invalidateSize();
+        mapInstance?.setMinZoom(newIsDesktop ? 1.5 : 2);
+        mapInstance?.invalidateSize();
       });
     } catch (error) {
       console.error('Error loading map data:', error);

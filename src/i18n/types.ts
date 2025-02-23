@@ -58,6 +58,11 @@ export type Dictionary = {
       };
     };
   };
+
+  map: {
+    visited: string;
+    planToVisit: string;
+  };
 };
 
 export enum Ei18nToken {
@@ -106,4 +111,7 @@ export enum Ei18nToken {
   LANG_LEVEL_NATIVE = 'extra.languages.levels.native',
   LANG_LEVEL_FLUENT = 'extra.languages.levels.fluent',
   LANG_LEVEL_BASIC = 'extra.languages.levels.basic',
+
+  MAP_VISITED = 'map.visited',
+  MAP_PLAN_TO_VISIT = 'map.planToVisit',
 }

@@ -58,6 +58,11 @@ export const de: Dictionary = {
       },
     },
   },
+
+  map: {
+    visited: 'Besucht',
+    planToVisit: 'Plane zu besuchen',
+  },
 };
 
 export const se: Dictionary = {
@@ -117,6 +122,11 @@ export const se: Dictionary = {
         basic: 'Grundläggande',
       },
     },
+  },
+
+  map: {
+    visited: 'Besökt',
+    planToVisit: 'Planerar att besöka',
   },
 };
 
@@ -178,6 +188,11 @@ export const ru: Dictionary = {
       },
     },
   },
+
+  map: {
+    visited: 'Посетил',
+    planToVisit: 'Планирую посетить',
+  },
 };
 
 export const pt: Dictionary = {
@@ -237,6 +252,11 @@ export const pt: Dictionary = {
         basic: 'Básico',
       },
     },
+  },
+
+  map: {
+    visited: 'Visitado',
+    planToVisit: 'Planejo visitar',
   },
 };
 
@@ -298,6 +318,11 @@ export const ja: Dictionary = {
       },
     },
   },
+
+  map: {
+    visited: '訪問済み',
+    planToVisit: '訪問予定',
+  },
 };
 
 export const es: Dictionary = {
@@ -358,6 +383,11 @@ export const es: Dictionary = {
       },
     },
   },
+
+  map: {
+    visited: 'Visitado',
+    planToVisit: 'Planeo visitar',
+  },
 };
 
 export const en: Dictionary = {
@@ -416,5 +446,10 @@ export const en: Dictionary = {
         basic: 'Basic',
       },
     },
+  },
+
+  map: {
+    visited: 'Visited',
+    planToVisit: 'Plan to visit',
   },
 } as const;
