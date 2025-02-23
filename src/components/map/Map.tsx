@@ -46,10 +46,16 @@ const Map: Component = () => {
     try {
       // Fetch and parse the GeoJSON data
       const response = await fetch(filteredGeoDataRaw);
-      const statesData = await response.json();
+      const provincesData = await response.json();
+
+      // Fetch and parse the all data to get correct country/province/region names
+      // const allData = await fetch(
+      //   'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson'
+      // );
+      // const allDataJson = await allData.json();
 
       // Add state/province boundaries layer with highlighting
-      L.geoJSON(statesData, {
+      L.geoJSON(provincesData, {
         style: feature => {
           const country = feature?.properties?.admin;
           const province = feature?.properties?.name;
