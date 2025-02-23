@@ -5,6 +5,47 @@
 import requests
 import json
 
+from shapely.geometry import shape, mapping
+
+
+def round_coordinates(coords, precision=4):
+    if isinstance(coords, (list, tuple)):
+        return [round_coordinates(c, precision) for c in coords]
+    return round(coords, precision)
+
+
+def simplify_geojson(data, tolerance=0.01):
+    simplified_features = []
+    essential_properties = ['name', 'admin', 'region']
+    
+    for feature in data['features']:
+        # Simplify geometry
+        geom = shape(feature['geometry'])
+        simplified_geom = geom.simplify(tolerance)
+        
+        # Filter properties
+        filtered_props = {k: v for k, v in feature['properties'].items() if k in essential_properties}  # noqa: E501
+        
+        # Create new feature with simplified geometry and reduced properties
+        new_feature = {
+            'type': 'Feature',
+            'properties': filtered_props,
+            'geometry': mapping(simplified_geom)
+        }
+        
+        # Round coordinates
+        new_feature['geometry']['coordinates'] = round_coordinates(
+            new_feature['geometry']['coordinates']
+        )
+        
+        simplified_features.append(new_feature)
+    
+    return {
+        'type': 'FeatureCollection',
+        'features': simplified_features
+    }
+
+
 url = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson"  # noqa: E501
 response = requests.get(url)
 
@@ -56,9 +97,12 @@ filtered_geojson = {
     "features": filtered_features
 }
 
-# Save the filtered GeoJSON to a new file in src/data
+# Simplify the filtered data
+simplified_geojson = simplify_geojson(filtered_geojson)
+
+# Save the simplified GeoJSON to a new file in src/data
 output_file = "src/data/filtered_visited_provinces.geojson"
 with open(output_file, "w", encoding="utf-8") as f:
-    json.dump(filtered_geojson, f, indent=2)
+    json.dump(simplified_geojson, f, indent=2)
 
 print(f"Filtered GeoJSON saved to '{output_file}' with {len(filtered_features)} features.")  # noqa: E501

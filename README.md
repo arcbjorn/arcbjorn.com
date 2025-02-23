@@ -16,7 +16,7 @@
 
 1.  **Development**
 
-    Navigate into your new site’s directory and start it up.
+    Navigate into your new site's directory and start it up.
 
     ```shell
     cd <project-folder>
@@ -44,12 +44,12 @@
 
     Now, the pre-commit hook will run automatically when you make a commit.
 
-    Install the requests library to run the pre-commit hook or generate the map overlay manually:
+    Install the required libraries to run the pre-commit hook or generate the map overlay manually:
 
     ```bash
     python3 -m venv ./venv
     source ./venv/bin/activate
-    python3 -m pip install requests
+    python3 -m pip install requests shapely
     python3 generateMapOverlayGeoDataJson.py
     ```
 

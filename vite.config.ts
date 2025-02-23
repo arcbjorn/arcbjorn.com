@@ -17,6 +17,17 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          map: ['leaflet'],
+          geojson: ['/src/data/filtered_visited_provinces.geojson'],
+        },
+      },
+    },
+  },
+  optimizeDeps: {
+    exclude: ['src/data/filtered_visited_provinces.geojson'],
   },
   resolve: {
     alias: {
