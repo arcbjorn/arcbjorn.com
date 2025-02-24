@@ -1,6 +1,6 @@
 import { Component, createSignal, createEffect, createMemo, For, Show } from 'solid-js';
 import styles from '@styles/languages.module.css';
-import { getLanguageChars } from '@utils/helpers';
+import { getLanguageChars } from '@utils/typing';
 
 type MatrixColumn = {
   chars: string[];

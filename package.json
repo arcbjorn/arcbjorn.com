@@ -11,20 +11,26 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,md}\"",
     "lint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\""
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.20.0",
+    "@solidjs/testing-library": "^0.8.10",
+    "@testing-library/jest-dom": "^6.6.3",
     "@types/node": "^22.13.4",
     "eslint": "^9.20.1",
     "eslint-plugin-solid": "^0.14.5",
     "globals": "^15.15.0",
+    "jsdom": "^26.0.0",
     "prettier": "3.5.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "typescript": "^5.7.2",
     "vite": "^6.0.0",
-    "vite-plugin-solid": "^2.11.1"
+    "vite-plugin-solid": "^2.11.1",
+    "vitest": "^3.0.6"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.1.1",

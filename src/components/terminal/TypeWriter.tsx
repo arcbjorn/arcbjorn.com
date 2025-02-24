@@ -1,6 +1,6 @@
 import { Component, createSignal, createEffect, onCleanup } from 'solid-js';
-import { getRandomInteger } from '@/utils/helpers';
-import animations from '@/styles/animations.module.css';
+import { getRandomInteger } from '@utils/typing';
+import animations from '@styles/animations.module.css';
 
 export type TypewriterOptions = {
   strings: string | string[];

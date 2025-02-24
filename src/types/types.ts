@@ -2,6 +2,11 @@ import { IconName } from '@fortawesome/fontawesome-svg-core';
 import { Ei18nToken } from '@i18n/types';
 import { MaterialIcon } from '@material-design-icons/font';
 
+export enum Theme {
+  LIGHT = 'light',
+  DARK = 'dark',
+}
+
 export enum EDocumentDescription {
   INDEX_PAGE = '',
   EXTRA = 'extra',

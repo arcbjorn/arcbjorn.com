@@ -1,8 +1,13 @@
 import { createSignal, createEffect, Component, onMount } from 'solid-js';
-import { getInitialTheme, applyTheme, Theme } from '@utils/helpers';
+import { useI18n } from '@i18n/useI18n';
+import { getInitialTheme, applyTheme } from '@utils/theme';
+
+import { Theme } from '@/types/types';
+import { Ei18nToken } from '@i18n/types';
 
 export const ThemeToggle: Component = () => {
-  const [isDark, setIsDark] = createSignal(getInitialTheme() === 'dark');
+  const { t } = useI18n();
+  const [isDark, setIsDark] = createSignal(getInitialTheme() === Theme.DARK);
 
   onMount(() => {
     // Listen for system theme changes
@@ -32,7 +37,7 @@ export const ThemeToggle: Component = () => {
     <button
       onClick={toggleTheme}
       class="mx-4 h-9 rounded-lg border border-transparent px-2 leading-none transition-colors hover:border-neutral-600"
-      aria-label="Toggle theme"
+      aria-label={t(Ei18nToken.ARIA_LABEL_TOGGLE_THEME)}
     >
       {isDark() ? (
         <svg

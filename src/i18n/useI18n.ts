@@ -77,7 +77,14 @@ const createI18n = () => {
 
   const t = i18n.translator(dict, i18n.resolveTemplate);
 
-  return { language, setLanguage, t };
+  return {
+    t,
+    language,
+    setLanguage: (newLang: Language) => {
+      setLanguage(newLang);
+      localStorage.setItem('language', newLang);
+    },
+  };
 };
 
 const i18nContext = createRoot(createI18n);

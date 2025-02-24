@@ -53,10 +53,12 @@
     python3 generateMapOverlayGeoDataJson.py
     ```
 
-2.  **Technologies**
+2.  **Tools**
 
     - [Solid](https://solidjs.com/)
 
     - [Tailwindcss](https://tailwindcss.com/)
 
     - [Vite](https://vitejs.dev/)
+
+    - [Leaflet](https://leafletjs.com/)

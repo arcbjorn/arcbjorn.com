@@ -1,8 +1,9 @@
-import { Component, JSX } from 'solid-js';
+import { Component, JSX, createEffect } from 'solid-js';
 import { useNavigate, useLocation } from '@solidjs/router';
-import { Language } from '@i18n/useI18n';
-import Header from '@/components/Header';
+import Header from '@components/Header';
 
+import { useI18n } from '@i18n/useI18n';
+import { getInitialNavPathBasedOnLanguage } from '@utils/navigation';
 interface LayoutProps {
   children: JSX.Element;
 }
@@ -10,15 +11,14 @@ interface LayoutProps {
 export const Layout: Component<LayoutProps> = props => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { language } = useI18n();
 
-  const path = location.pathname;
-  const langMatch = path.match(/^\/([a-z]{2})(\/|$)/);
-  const urlLang = langMatch?.[1];
-
-  if (urlLang && !Object.values(Language).includes(urlLang as Language)) {
-    const newPath = path.replace(/^\/[a-z]{2}/, '');
-    navigate(newPath, { replace: true });
-  }
+  createEffect(() => {
+    const initialPath = getInitialNavPathBasedOnLanguage(location.pathname, language());
+    if (initialPath) {
+      navigate(initialPath, { replace: true });
+    }
+  });
 
   return (
     <main class="container mx-auto h-screen overflow-hidden">

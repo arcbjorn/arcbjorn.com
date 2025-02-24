@@ -3,8 +3,8 @@ import { A, useParams } from '@solidjs/router';
 
 import { useI18n } from '@i18n/useI18n';
 import { Ei18nToken } from '@i18n/types';
-import TextMatrixEffect from '@/components/TextMatrixEffect';
-import { getNavPath } from '@utils/helpers';
+import TextMatrixEffect from '@components/TextMatrixEffect';
+import { getNavMenuLinkPath } from '@utils/navigation';
 
 import styles from '@styles/common.module.css';
 
@@ -33,7 +33,7 @@ const NotFoundInfo: Component = () => {
             onComplete={handleMatrixComplete}
           />
         </h1>
-        <A href={getNavPath('/', params)}>
+        <A href={getNavMenuLinkPath('/', params)}>
           <span class={styles.link}>
             <TextMatrixEffect
               text={t(Ei18nToken.GO_BACK)}

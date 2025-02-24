@@ -1,6 +1,6 @@
 export type Dictionary = {
   name: string;
-  shortName: string;
+  short_name: string;
 
   header: {
     about: string;
@@ -9,9 +9,9 @@ export type Dictionary = {
     map: string;
   };
 
-  notFound: {
+  not_found: {
     title: string;
-    backButtonTitle: string;
+    back_button_title: string;
   };
 
   home: {
@@ -26,9 +26,9 @@ export type Dictionary = {
   extra: {
     platforms: {
       title: string;
-      allSocials: string;
+      all_socials: string;
       names: {
-        myTravelMap: string;
+        my_travel_map: string;
         blog: string;
       };
     };
@@ -61,18 +61,23 @@ export type Dictionary = {
 
   map: {
     visited: string;
-    planToVisit: string;
+    plan_to_visit: string;
+  };
+
+  aria_label: {
+    select_language: string;
+    toggle_theme: string;
   };
 };
 
 export enum Ei18nToken {
   NAME = 'name',
-  SHORT_NAME = 'shortName',
+  SHORT_NAME = 'short_name',
 
   LOCATION = 'header.location',
 
-  PAGE_NOT_FOUND = 'notFound.title',
-  GO_BACK = 'notFound.backButtonTitle',
+  PAGE_NOT_FOUND = 'not_found.title',
+  GO_BACK = 'not_found.back_button_title',
 
   ABOUT = 'header.about',
   EXTRA = 'header.extra',
@@ -88,7 +93,7 @@ export enum Ei18nToken {
   PLATFORMS_TITLE = 'extra.platforms.title',
 
   BLOG_TITLE = 'extra.platforms.names.blog',
-  MY_TRAVEL_MAP_TITLE = 'extra.platforms.names.myTravelMap',
+  MY_TRAVEL_MAP_TITLE = 'extra.platforms.names.my_travel_map',
 
   BOOKS_TITLE = 'extra.books.title',
 
@@ -106,12 +111,15 @@ export enum Ei18nToken {
   LANG_JAPANESE_NAME = 'extra.languages.japanese',
   LANG_SWEDISH_NAME = 'extra.languages.swedish',
 
-  ALL_SOCIALS = 'extra.platforms.allSocials',
+  ALL_SOCIALS = 'extra.platforms.all_socials',
 
   LANG_LEVEL_NATIVE = 'extra.languages.levels.native',
   LANG_LEVEL_FLUENT = 'extra.languages.levels.fluent',
   LANG_LEVEL_BASIC = 'extra.languages.levels.basic',
 
   MAP_VISITED = 'map.visited',
-  MAP_PLAN_TO_VISIT = 'map.planToVisit',
+  MAP_PLAN_TO_VISIT = 'map.plan_to_visit',
+
+  ARIA_LABEL_SELECT_LANGUAGE = 'aria_label.select_language',
+  ARIA_LABEL_TOGGLE_THEME = 'aria_label.toggle_theme',
 }

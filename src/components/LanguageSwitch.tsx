@@ -1,10 +1,13 @@
 import { Component, createSignal, onMount, onCleanup } from 'solid-js';
 import { useLocation, useNavigate } from '@solidjs/router';
 import { useI18n, Language, languages } from '@i18n/useI18n';
+import { getNavPathOnLanguageChange } from '@utils/navigation';
+import { Ei18nToken } from '@i18n/types';
+
 import styles from '@styles/languageSwitch.module.css';
 
 export const LanguageSwitch: Component = () => {
-  const { language, setLanguage } = useI18n();
+  const { t, language, setLanguage } = useI18n();
   const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = createSignal(false);
@@ -25,39 +28,11 @@ export const LanguageSwitch: Component = () => {
   });
 
   const handleLanguageSelect = (newLang: Language) => {
-    setLanguage(newLang);
+    if (newLang === language()) return;
+
     setIsOpen(false);
-
-    const currentPath = location.pathname;
-    let newPath: string;
-
-    // If it's a root path
-    if (currentPath === '/') {
-      newPath = newLang === Language.EN ? '/' : `/${newLang}`;
-    } else {
-      // Check if current path already has a language prefix
-      const hasLangPrefix = /^\/[a-z]{2}\//.test(currentPath);
-
-      if (hasLangPrefix) {
-        // Replace existing language prefix
-        newPath =
-          newLang === Language.EN
-            ? currentPath.replace(/^\/[a-z]{2}/, '')
-            : currentPath.replace(/^\/[a-z]{2}/, `/${newLang}`);
-      } else {
-        // Add language prefix to path without one
-        newPath = newLang === Language.EN ? currentPath : `/${newLang}${currentPath}`;
-      }
-    }
-
-    // Clean up the path
-    newPath = newPath.replace(/\/+/g, '/');
-    if (newPath.length > 1 && newPath.endsWith('/')) {
-      newPath = newPath.slice(0, -1);
-    }
-
-    // Use router navigation instead of history.replaceState
-    navigate(newPath, { replace: true });
+    setLanguage(newLang);
+    navigate(getNavPathOnLanguageChange(location.pathname, newLang), { replace: true });
   };
 
   return (
@@ -68,7 +43,7 @@ export const LanguageSwitch: Component = () => {
           e.stopPropagation();
           setIsOpen(!isOpen());
         }}
-        aria-label="Select language"
+        aria-label={t(Ei18nToken.ARIA_LABEL_SELECT_LANGUAGE)}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

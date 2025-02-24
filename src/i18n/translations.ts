@@ -2,11 +2,11 @@ import type { Dictionary } from '@i18n/types';
 
 export const de: Dictionary = {
   name: 'arcbjorn',
-  shortName: 'arc',
+  short_name: 'arc',
 
-  notFound: {
+  not_found: {
     title: 'Seite nicht gefunden',
-    backButtonTitle: 'zurück gehen',
+    back_button_title: 'zurück gehen',
   },
 
   header: {
@@ -28,9 +28,9 @@ export const de: Dictionary = {
   extra: {
     platforms: {
       title: 'Ich auf anderen Plattformen',
-      allSocials: 'Alle sozialen Medien',
+      all_socials: 'Alle sozialen Medien',
       names: {
-        myTravelMap: 'Meine Reisekarte',
+        my_travel_map: 'Meine Reisekarte',
         blog: 'Blog',
       },
     },
@@ -61,17 +61,22 @@ export const de: Dictionary = {
 
   map: {
     visited: 'Besucht',
-    planToVisit: 'Plane zu besuchen',
+    plan_to_visit: 'Plane zu besuchen',
+  },
+
+  aria_label: {
+    select_language: 'Sprache wechseln',
+    toggle_theme: 'Tema wechseln',
   },
 };
 
 export const se: Dictionary = {
   name: 'arkbjörn',
-  shortName: 'ark',
+  short_name: 'ark',
 
-  notFound: {
+  not_found: {
     title: 'Sidan hittas int',
-    backButtonTitle: 'gå tillbaka',
+    back_button_title: 'gå tillbaka',
   },
 
   header: {
@@ -94,10 +99,10 @@ export const se: Dictionary = {
     platforms: {
       title: 'Mig på andra plattformar',
       names: {
-        myTravelMap: 'Min resvägskarta',
+        my_travel_map: 'Min resvägskarta',
         blog: 'Blogg',
       },
-      allSocials: 'Alla sociala medier',
+      all_socials: 'Alla sociala medier',
     },
     books: {
       title: 'Böcker som jag gillar',
@@ -126,17 +131,22 @@ export const se: Dictionary = {
 
   map: {
     visited: 'Besökt',
-    planToVisit: 'Planerar att besöka',
+    plan_to_visit: 'Planerar att besöka',
+  },
+
+  aria_label: {
+    select_language: 'välj språk',
+    toggle_theme: 'växla tema',
   },
 };
 
 export const ru: Dictionary = {
   name: 'arcbjorn',
-  shortName: 'arc',
+  short_name: 'arc',
 
-  notFound: {
+  not_found: {
     title: 'Страница не найдена',
-    backButtonTitle: 'Назад',
+    back_button_title: 'Назад',
   },
 
   header: {
@@ -159,10 +169,10 @@ export const ru: Dictionary = {
     platforms: {
       title: 'Я на других платформах',
       names: {
-        myTravelMap: 'Карта моих путешествий',
+        my_travel_map: 'Карта моих путешествий',
         blog: 'Блог',
       },
-      allSocials: 'Все социальные сети',
+      all_socials: 'Все социальные сети',
     },
     books: {
       title: 'Книги, которым отдаю предпочтение',
@@ -191,17 +201,22 @@ export const ru: Dictionary = {
 
   map: {
     visited: 'Посетил',
-    planToVisit: 'Планирую посетить',
+    plan_to_visit: 'Планирую посетить',
+  },
+
+  aria_label: {
+    select_language: 'выбрать язык',
+    toggle_theme: 'переключить тему',
   },
 };
 
 export const pt: Dictionary = {
   name: 'arcbjorn',
-  shortName: 'arc',
+  short_name: 'arc',
 
-  notFound: {
+  not_found: {
     title: 'Página não encontrada',
-    backButtonTitle: 'Voltar',
+    back_button_title: 'Voltar',
   },
 
   header: {
@@ -223,9 +238,9 @@ export const pt: Dictionary = {
   extra: {
     platforms: {
       title: 'Eu em outras plataformas',
-      allSocials: 'Todas as redes sociais',
+      all_socials: 'Todas as redes sociais',
       names: {
-        myTravelMap: 'Meu mapa de viagens',
+        my_travel_map: 'Meu mapa de viagens',
         blog: 'Blog',
       },
     },
@@ -256,17 +271,22 @@ export const pt: Dictionary = {
 
   map: {
     visited: 'Visitado',
-    planToVisit: 'Planejo visitar',
+    plan_to_visit: 'Planejo visitar',
+  },
+
+  aria_label: {
+    select_language: 'selecionar idioma',
+    toggle_theme: 'alternar tema',
   },
 };
 
 export const ja: Dictionary = {
   name: 'アルクビョルン',
-  shortName: 'アルク',
+  short_name: 'アルク',
 
-  notFound: {
+  not_found: {
     title: 'ページが見つかりません',
-    backButtonTitle: '戻る',
+    back_button_title: '戻る',
   },
 
   header: {
@@ -289,10 +309,10 @@ export const ja: Dictionary = {
     platforms: {
       title: '他のプラットフォームでの私',
       names: {
-        myTravelMap: '私の旅行マップ',
+        my_travel_map: '私の旅行マップ',
         blog: 'ブログ',
       },
-      allSocials: 'すべてのソーシャルメディア',
+      all_socials: 'すべてのソーシャルメディア',
     },
     books: {
       title: '好きな本',
@@ -321,17 +341,22 @@ export const ja: Dictionary = {
 
   map: {
     visited: '訪問済み',
-    planToVisit: '訪問予定',
+    plan_to_visit: '訪問予定',
+  },
+
+  aria_label: {
+    select_language: '言語を選択',
+    toggle_theme: 'テーマを切り替え',
   },
 };
 
 export const es: Dictionary = {
   name: 'arcbjorn',
-  shortName: 'arc',
+  short_name: 'arc',
 
-  notFound: {
+  not_found: {
     title: 'Página no encontrada',
-    backButtonTitle: 'Volver',
+    back_button_title: 'Volver',
   },
 
   header: {
@@ -353,9 +378,9 @@ export const es: Dictionary = {
   extra: {
     platforms: {
       title: 'Yo en otras plataformas',
-      allSocials: 'Todas las redes sociales',
+      all_socials: 'Todas las redes sociales',
       names: {
-        myTravelMap: 'Mi mapa de viajes',
+        my_travel_map: 'Mi mapa de viajes',
         blog: 'Blog',
       },
     },
@@ -386,16 +411,21 @@ export const es: Dictionary = {
 
   map: {
     visited: 'Visitado',
-    planToVisit: 'Planeo visitar',
+    plan_to_visit: 'Planeo visitar',
+  },
+
+  aria_label: {
+    select_language: 'seleccionar idioma',
+    toggle_theme: 'cambiar tema',
   },
 };
 
 export const en: Dictionary = {
   name: 'arcbjorn',
-  shortName: 'arc',
-  notFound: {
+  short_name: 'arc',
+  not_found: {
     title: 'Page not found',
-    backButtonTitle: 'Go back',
+    back_button_title: 'Go back',
   },
 
   header: {
@@ -417,9 +447,9 @@ export const en: Dictionary = {
   extra: {
     platforms: {
       title: 'Me on other platforms',
-      allSocials: 'All socials',
+      all_socials: 'All socials',
       names: {
-        myTravelMap: 'My travel map',
+        my_travel_map: 'My travel map',
         blog: 'Blog',
       },
     },
@@ -450,6 +480,70 @@ export const en: Dictionary = {
 
   map: {
     visited: 'Visited',
-    planToVisit: 'Plan to visit',
+    plan_to_visit: 'Plan to visit',
+  },
+
+  aria_label: {
+    select_language: 'select language',
+    toggle_theme: 'toggle theme',
+  },
+} as const;
+
+export const continentTranslations = {
+  en: {
+    EUROPE: 'EUROPE',
+    NORTH_AMERICA: 'NORTH\nAMERICA',
+    SOUTH_AMERICA: 'SOUTH\nAMERICA',
+    AFRICA: 'AFRICA',
+    ASIA: 'ASIA',
+    OCEANIA: 'OCEANIA',
+  },
+  es: {
+    EUROPE: 'EUROPA',
+    NORTH_AMERICA: 'AMÉRICA\nDEL NORTE',
+    SOUTH_AMERICA: 'AMÉRICA\nDEL SUR',
+    AFRICA: 'ÁFRICA',
+    ASIA: 'ASIA',
+    OCEANIA: 'OCEANÍA',
+  },
+  de: {
+    EUROPE: 'EUROPA',
+    NORTH_AMERICA: 'NORD\nAMERIKA',
+    SOUTH_AMERICA: 'SÜD\nAMERIKA',
+    AFRICA: 'AFRIKA',
+    ASIA: 'ASIEN',
+    OCEANIA: 'OZEANIEN',
+  },
+  ru: {
+    EUROPE: 'ЕВРОПА',
+    NORTH_AMERICA: 'СЕВЕРНАЯ\nАМЕРИКА',
+    SOUTH_AMERICA: 'ЮЖНАЯ\nАМЕРИКА',
+    AFRICA: 'АФРИКА',
+    ASIA: 'АЗИЯ',
+    OCEANIA: 'ОКЕАНИЯ',
+  },
+  se: {
+    EUROPE: 'EUROPA',
+    NORTH_AMERICA: 'NORD\nAMERIKA',
+    SOUTH_AMERICA: 'SYD\nAMERIKA',
+    AFRICA: 'AFRIKA',
+    ASIA: 'ASIEN',
+    OCEANIA: 'OCEANIEN',
+  },
+  pt: {
+    EUROPE: 'EUROPA',
+    NORTH_AMERICA: 'AMÉRICA\nDO NORTE',
+    SOUTH_AMERICA: 'AMÉRICA\nDO SUL',
+    AFRICA: 'ÁFRICA',
+    ASIA: 'ÁSIA',
+    OCEANIA: 'OCEANIA',
+  },
+  ja: {
+    EUROPE: 'ヨーロッパ',
+    NORTH_AMERICA: '北アメリカ',
+    SOUTH_AMERICA: '南アメリカ',
+    AFRICA: 'アフリカ',
+    ASIA: 'アジア',
+    OCEANIA: 'オセアニア',
   },
 } as const;

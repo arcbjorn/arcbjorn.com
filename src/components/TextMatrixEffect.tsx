@@ -1,5 +1,5 @@
 import { Component, createSignal, createEffect } from 'solid-js';
-import { getLanguageChars } from '@/utils/helpers';
+import { getLanguageChars } from '@utils/typing';
 
 interface TextMatrixEffectProps {
   text: string | undefined;

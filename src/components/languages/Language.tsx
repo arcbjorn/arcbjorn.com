@@ -1,29 +1,18 @@
 import { Component, createSignal } from 'solid-js';
 import { useI18n } from '@i18n/useI18n';
-import { TLanguage } from '@/types/types';
-import { Ei18nToken } from '@i18n/types';
 import MatrixEffect from '@/components/languages/MatrixEffect';
-import styles from '@styles/languages.module.css';
 import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
+
+import { getLevelToken } from '@utils/languages';
+import { TLanguage } from '@/types/types';
+
+import styles from '@styles/languages.module.css';
 
 type TLanguageProps = Omit<TLanguage, 'category'>;
 
 const Language: Component<TLanguageProps> = props => {
   const { t } = useI18n();
   const [isHovered, setIsHovered] = createSignal(false);
-
-  const getLevelToken = (numLevel: number): Ei18nToken => {
-    switch (numLevel) {
-      case 100:
-        return Ei18nToken.LANG_LEVEL_NATIVE;
-      case 90:
-        return Ei18nToken.LANG_LEVEL_FLUENT;
-      case 70:
-        return Ei18nToken.LANG_LEVEL_BASIC;
-      default:
-        return Ei18nToken.LANG_LEVEL_BASIC;
-    }
-  };
 
   return (
     <div

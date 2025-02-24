@@ -3,7 +3,7 @@ import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
 import { EBookCategory } from '@/types/types';
 import { Ei18nToken } from '@i18n/types';
 
-import books from '@/data/booksData';
+import books from '@data/booksData';
 
 import extraStyles from '@styles/extra.module.css';
 import styles from '@styles/books.module.css';

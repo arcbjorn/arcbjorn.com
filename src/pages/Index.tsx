@@ -1,9 +1,11 @@
 import { Component } from 'solid-js';
-import { useI18n } from '@i18n/useI18n';
-import { EDocumentDescription } from '@/types/types';
+import FloatingMapButton from '@components/FloatingMapButton';
 import Layout from '@layouts/Layout';
 import Terminal from '@components/terminal/Terminal';
 import SEO from '@components/SEO';
+
+import { EDocumentDescription } from '@/types/types';
+import { useI18n } from '@i18n/useI18n';
 
 const IndexPage: Component = () => {
   const { language } = useI18n();
@@ -16,6 +18,7 @@ const IndexPage: Component = () => {
         src="https://analytics.arcbjorn.com/umami.js"
       />
       <Terminal />
+      <FloatingMapButton />
     </Layout>
   );
 };

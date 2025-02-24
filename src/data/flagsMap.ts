@@ -22,6 +22,10 @@ const countryToCode: Record<string, string> = {
   Mexico: 'mx',
   Belarus: 'by',
   'United Kingdom': 'gb',
+  'New Zealand': 'nz',
+  Australia: 'au',
+  'French Polynesia': 'pf',
+  Japan: 'jp',
 };
 
 export default countryToCode;
