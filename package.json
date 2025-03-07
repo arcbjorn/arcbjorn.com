@@ -33,11 +33,9 @@
     "vitest": "^3.0.6"
   },
   "dependencies": {
-    "@fontsource/ibm-plex-mono": "^5.1.1",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@material-design-icons/font": "^0.14.15",
     "@solid-primitives/i18n": "^2.2.0",
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.15.3",
