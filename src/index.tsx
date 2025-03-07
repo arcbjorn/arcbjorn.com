@@ -8,8 +8,6 @@ import AccessLinksPage from '@/pages/AccessLinks';
 import NotFoundPage from '@/pages/404';
 import MapPage from '@/pages/Map';
 
-import '@material-design-icons/font';
-
 import './index.css';
 
 const routes = [
