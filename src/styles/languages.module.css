@@ -1,11 +1,11 @@
 @reference "../index.css";
 
 .language {
-  @apply font-ibm flex flex-1 justify-between py-3 pr-5 pl-5 md:pl-0;
+  @apply flex flex-1 justify-between py-3 pr-5 pl-5 md:pl-0;
 }
 
 .nameLevel {
-  @apply font-ibm flex flex-1 items-center;
+  @apply flex flex-1 items-center;
 }
 
 .levelBar {
@@ -28,7 +28,7 @@
 }
 
 .levelText {
-  @apply font-ibm absolute top-1/2 right-0 -translate-y-1/2 pr-2 text-sm;
+  @apply absolute top-1/2 right-0 -translate-y-1/2 pr-2 text-sm;
 }
 
 .languages {
