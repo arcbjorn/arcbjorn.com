@@ -18,6 +18,7 @@ export const ThemeToggle: Component = () => {
         const newTheme: Theme = e.matches ? Theme.DARK : Theme.LIGHT;
         setIsDark(newTheme === Theme.DARK);
         applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
       };
 
       mediaQuery.addEventListener('change', handleChange);
@@ -31,6 +32,7 @@ export const ThemeToggle: Component = () => {
 
   const toggleTheme = () => {
     setIsDark(!isDark());
+    localStorage.setItem('theme', !isDark() ? Theme.LIGHT : Theme.DARK);
   };
 
   return (

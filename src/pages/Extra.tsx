@@ -41,7 +41,7 @@ const ExtraPage: Component = () => {
               href="https://arcbjorn.bio.link"
               target="_blank"
               rel="noopener noreferrer"
-              class="self-center p-4 text-center underline"
+              class="mb-4 self-center p-4 text-center underline"
             >
               <TranslationMatrixEffect token={Ei18nToken.ALL_SOCIALS} />
             </a>
