@@ -179,10 +179,10 @@ export const Terminal: Component = () => {
                 showEffect={matrixEffects().position}
                 onComplete={handleMatrixComplete}
               />
-              &nbsp;@
+              {/* &nbsp;@
               <a href={currentCompany.link} target="_blank" class={styles.company}>
                 {currentCompany.name}
-              </a>
+              </a> */}
             </p>
             <p class="pb-4">
               <TextMatrixEffect

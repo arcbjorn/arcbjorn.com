@@ -4,8 +4,8 @@ interface ICompany {
 }
 
 export const previousCompanies: ICompany[] = [
+  { name: 'Sardine', link: 'https://www.sardine.ai/' },
   { name: 'FundraiseUp', link: 'https://www.fundraiseup.com/' },
-  { name: 'Muffins', link: 'https://muffins.io/' },
 ];
 
 export const currentCompany: ICompany = {
