@@ -22,11 +22,6 @@ export const Layout: Component<LayoutProps> = props => {
 
   return (
     <main class="container mx-auto h-screen overflow-hidden">
-      <script
-        defer
-        src="https://analytics.arcbjorn.com/script.js"
-        data-website-id="8f336108-6224-410f-8d56-8025fae879f7"
-      />
       <header class="h-[10%]">
         <Header />
       </header>
