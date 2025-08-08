@@ -95,7 +95,9 @@ const Map: Component = () => {
 
       window.addEventListener('resize', handleResize);
     } catch (error) {
-      console.error('Error loading map data:', error);
+      if (import.meta.env.DEV) {
+        console.error('Error loading map data:', error);
+      }
     }
   };
 

@@ -14,6 +14,24 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  build: {
+    target: 'esnext',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'leaflet': ['leaflet'],
+          'solid-vendor': ['solid-js', '@solidjs/router', '@solidjs/meta'],
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

@@ -49,6 +49,7 @@ export const ThemeToggle: Component = () => {
           stroke-width="1.5"
           stroke="currentColor"
           class="h-6 w-6"
+          aria-hidden="true"
         >
           <path
             stroke-linecap="round"
@@ -64,6 +65,7 @@ export const ThemeToggle: Component = () => {
           stroke-width="1.5"
           stroke="currentColor"
           class="h-6 w-6"
+          aria-hidden="true"
         >
           <path
             stroke-linecap="round"

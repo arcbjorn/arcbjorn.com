@@ -51,7 +51,9 @@ const QuickLink: Component<QuickLinkProps> = props => {
         setIsCopied(true);
         setTimeout(() => setIsCopied(false), 2000);
       } catch (err) {
-        console.error('Failed to copy link: ', err);
+        if (import.meta.env.DEV) {
+          console.error('Failed to copy link: ', err);
+        }
       }
     }
   };
