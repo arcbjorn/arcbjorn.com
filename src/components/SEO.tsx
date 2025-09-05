@@ -21,18 +21,6 @@ const SEO: Component<SEOProps> = props => {
     return props.slug ? `${baseUrl}${props.slug}` : baseUrl;
   };
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": SITE_TITLE,
-    "url": siteUrl(),
-    "sameAs": [
-      "https://github.com/arcbjorn",
-      "https://x.com/arcbjorn",
-      "https://www.linkedin.com/in/oleg-luganskiy/"
-    ]
-  };
-
   return (
     <>
       <Meta name="language" content={language()} />
@@ -52,10 +40,7 @@ const SEO: Component<SEOProps> = props => {
       <Meta name="twitter:site" content="@arcbjorn" />
       <Meta name="twitter:image" content={() => `${siteUrl()}icon.png`} />
       <Link rel="canonical" href={() => siteUrl()} />
-      <script type="application/ld+json">{() => JSON.stringify({
-        ...structuredData,
-        url: siteUrl()
-      })}</script>
+      <script type="application/ld+json" src="/structured-data.json"></script>
     </>
   );
 };

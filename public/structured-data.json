@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Oleg Luganskiy",
+  "url": "https://arcbjorn.com/",
+  "sameAs": [
+    "https://github.com/arcbjorn",
+    "https://x.com/arcbjorn",
+    "https://www.linkedin.com/in/oleg-luganskiy/"
+  ]
+}
