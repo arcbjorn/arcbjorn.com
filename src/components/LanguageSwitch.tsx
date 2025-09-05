@@ -43,6 +43,8 @@ export const LanguageSwitch: Component = () => {
           e.stopPropagation();
           setIsOpen(!isOpen());
         }}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen()}
         aria-label={t(Ei18nToken.ARIA_LABEL_SELECT_LANGUAGE)}
       >
         <svg
