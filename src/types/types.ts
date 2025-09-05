@@ -1,6 +1,5 @@
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 import { Ei18nToken } from '@i18n/types';
-import { MaterialIcon } from '@material-design-icons/font';
 
 export enum Theme {
   LIGHT = 'light',
@@ -39,12 +38,30 @@ export enum EIconLibrary {
   CUSTOM = 'custom',
 }
 
-export type TLink<TLinkPartial = Record<string, string>> = TLinkPartial & {
+type LinkBase<TLinkPartial = Record<string, unknown>> = TLinkPartial & {
   href: ELinkUrl;
-  iconName: IconName | MaterialIcon; // its either font awesome or material icon
-  iconPrefix: EIconLibrary;
   iconTitle: string;
 };
+
+type FontAwesomeLink = LinkBase & {
+  iconPrefix: EIconLibrary.FONT_AWESOME;
+  iconName: IconName;
+};
+
+type MaterialLink = LinkBase & {
+  iconPrefix: EIconLibrary.MATERIAL;
+  iconName: string;
+};
+
+type CustomLink = LinkBase & {
+  iconPrefix: EIconLibrary.CUSTOM;
+  iconName: string;
+};
+
+export type TLink<TLinkPartial = Record<string, unknown>> =
+  | (FontAwesomeLink & TLinkPartial)
+  | (MaterialLink & TLinkPartial)
+  | (CustomLink & TLinkPartial);
 
 export type IHomePageLinkPartial = {
   title: ELinkTitle | Ei18nToken;
