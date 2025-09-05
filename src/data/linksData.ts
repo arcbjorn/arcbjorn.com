@@ -17,11 +17,11 @@ export const quickLinks: TLink[] = [
     iconTitle: 'Github account',
   },
   {
-    title: ELinkTitle.EMAIL,
-    href: ELinkUrl.MAIL,
-    iconPrefix: EIconLibrary.MATERIAL,
-    iconName: 'mail',
-    iconTitle: 'Email address',
+    title: Ei18nToken.BLOG_TITLE,
+    href: ELinkUrl.BLOG,
+    iconPrefix: EIconLibrary.FONT_AWESOME,
+    iconName: 'book',
+    iconTitle: 'Blog',
   },
   {
     title: Ei18nToken.CV,
@@ -34,13 +34,6 @@ export const quickLinks: TLink[] = [
 
 export const platformLinks: TLink<IPlatformLinkPartial>[] = [
   {
-    title: Ei18nToken.MY_TRAVEL_MAP_TITLE,
-    href: ELinkUrl.MY_TRAVEL_MAP,
-    iconPrefix: EIconLibrary.FONT_AWESOME,
-    iconName: 'earth-americas',
-    iconTitle: 'My travel map',
-  },
-  {
     title: ELinkTitle.LEETCODE,
     href: ELinkUrl.LEETCODE,
     iconPrefix: EIconLibrary.FONT_AWESOME,
@@ -48,11 +41,11 @@ export const platformLinks: TLink<IPlatformLinkPartial>[] = [
     iconTitle: 'LeetCode',
   },
   {
-    title: Ei18nToken.BLOG_TITLE,
-    href: ELinkUrl.BLOG,
+    title: Ei18nToken.DASHBOARD_TITLE,
+    href: ELinkUrl.DASHBOARD,
     iconPrefix: EIconLibrary.FONT_AWESOME,
-    iconName: 'book',
-    iconTitle: 'Blog',
+    iconName: 'earth-americas',
+    iconTitle: 'Dashboard',
   },
 ];
 

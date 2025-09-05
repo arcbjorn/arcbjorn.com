@@ -21,6 +21,7 @@ export type Dictionary = {
     formerly: string;
     interests: string;
     cv: string;
+    blog: string;
   };
 
   extra: {
@@ -28,8 +29,7 @@ export type Dictionary = {
       title: string;
       all_socials: string;
       names: {
-        my_travel_map: string;
-        blog: string;
+        dashboard: string;
       };
     };
 
@@ -89,11 +89,12 @@ export enum Ei18nToken {
   FORMERLY = 'home.formerly',
   INTERESTS = 'home.interests',
   CV = 'home.cv',
+  BLOG_TITLE = 'home.blog',
 
   PLATFORMS_TITLE = 'extra.platforms.title',
 
-  BLOG_TITLE = 'extra.platforms.names.blog',
-  MY_TRAVEL_MAP_TITLE = 'extra.platforms.names.my_travel_map',
+  DASHBOARD_TITLE = 'extra.platforms.names.dashboard',
+  // MY_TRAVEL_MAP_TITLE = 'extra.platforms.names.my_travel_map',
 
   BOOKS_TITLE = 'extra.books.title',
 

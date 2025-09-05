@@ -61,7 +61,7 @@ export enum ELinkTitle {
 
   BLOG = 'Blog',
   LEETCODE = 'LeetCode',
-  MY_TRAVEL_MAP = 'My travel map',
+  DASHBOARD = 'Dashboard',
 
   TWITTER = 'Twitter',
   REDDIT = 'Reddit',
@@ -76,13 +76,14 @@ export enum ELinkUrl {
   MAIL = 'mailto:oleg.luganskiy@gmail.com?subject=Employment%20Offer&body=Hi%20Oleg',
   CV = '/OL.CV.pdf',
   CV_LINK = 'https://arcbjorn.com/OL.CV.pdf',
+  BLOG = 'https://blog.arcbjorn.com',
 
   PORTFOLIO = 'https://arcbjorn.com',
   COPY_MAIL = 'oleg.luganskiy@gmail.com',
 
-  BLOG = 'https://blog.arcbjorn.com/',
   LEETCODE = 'https://leetcode.com/arcbjorn',
-  MY_TRAVEL_MAP = 'https://www.mytravelmap.xyz/u/gg104931485347737929283',
+  DASHBOARD = 'https://dashboard.arcbjorn.com/',
+  // MY_TRAVEL_MAP = 'https://www.mytravelmap.xyz/u/gg104931485347737929283',
 
   TWITTER = 'https://twitter.com/arcbjorn',
   REDDIT = 'https://www.reddit.com/u/Arcbjorn',

@@ -28,7 +28,7 @@ const QuickLink: Component<QuickLinkProps> = props => {
       return titleOverride;
     }
 
-    if (title === Ei18nToken.CV) {
+    if (title === Ei18nToken.CV || title === Ei18nToken.BLOG_TITLE) {
       return t(title) ?? title;
     }
     return title;

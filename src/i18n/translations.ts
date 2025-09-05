@@ -23,6 +23,7 @@ export const de: Dictionary = {
     formerly: 'zuvor',
     interests: 'Web • Systeme • AI • Blockchain',
     cv: 'CV',
+    blog: 'Blog',
   },
 
   extra: {
@@ -30,8 +31,7 @@ export const de: Dictionary = {
       title: 'Ich auf anderen Plattformen',
       all_socials: 'Alle sozialen Medien',
       names: {
-        my_travel_map: 'Meine Reisekarte',
-        blog: 'Blog',
+        dashboard: 'Armaturenbrett',
       },
     },
     books: {
@@ -93,14 +93,14 @@ export const se: Dictionary = {
     formerly: 'tidigare',
     interests: 'Webb • System • AI • Blockchain',
     cv: 'CV',
+    blog: 'Blogg',
   },
 
   extra: {
     platforms: {
       title: 'Mig på andra plattformar',
       names: {
-        my_travel_map: 'Min resvägskarta',
-        blog: 'Blogg',
+        dashboard: 'Instrumentpanelen',
       },
       all_socials: 'Alla sociala medier',
     },
@@ -162,15 +162,15 @@ export const ru: Dictionary = {
     position: 'Инженер ПО',
     formerly: 'ранее',
     interests: 'Web • Системы • ИИ • Блокчейн',
-    cv: 'Resume',
+    cv: 'Резюме',
+    blog: 'Блог',
   },
 
   extra: {
     platforms: {
       title: 'Я на других платформах',
       names: {
-        my_travel_map: 'Карта моих путешествий',
-        blog: 'Блог',
+        dashboard: 'Панель сервисов',
       },
       all_socials: 'Все социальные сети',
     },
@@ -233,6 +233,7 @@ export const pt: Dictionary = {
     formerly: 'anteriormente',
     interests: 'Web • Sistemas • IA • Blockchain',
     cv: 'CV',
+    blog: 'Blog',
   },
 
   extra: {
@@ -240,8 +241,7 @@ export const pt: Dictionary = {
       title: 'Eu em outras plataformas',
       all_socials: 'Todas as redes sociais',
       names: {
-        my_travel_map: 'Meu mapa de viagens',
-        blog: 'Blog',
+        dashboard: 'Painel',
       },
     },
     books: {
@@ -303,14 +303,14 @@ export const ja: Dictionary = {
     formerly: '以前',
     interests: 'Web • システム • 人工知能 • ブロックチェーン',
     cv: '履歴書',
+    blog: 'ブログ',
   },
 
   extra: {
     platforms: {
       title: '他のプラットフォームでの私',
       names: {
-        my_travel_map: '私の旅行マップ',
-        blog: 'ブログ',
+        dashboard: '前板',
       },
       all_socials: 'すべてのソーシャルメディア',
     },
@@ -373,6 +373,7 @@ export const es: Dictionary = {
     formerly: 'anteriormente',
     interests: 'Web • Sistemas • IA • Blockchain',
     cv: 'CV',
+    blog: 'Blog',
   },
 
   extra: {
@@ -380,8 +381,7 @@ export const es: Dictionary = {
       title: 'Yo en otras plataformas',
       all_socials: 'Todas las redes sociales',
       names: {
-        my_travel_map: 'Mi mapa de viajes',
-        blog: 'Blog',
+        dashboard: 'Panel',
       },
     },
     books: {
@@ -442,6 +442,7 @@ export const en: Dictionary = {
     formerly: 'formerly',
     interests: 'Web • Systems • AI • Blockchain',
     cv: 'CV',
+    blog: 'Blog',
   },
 
   extra: {
@@ -449,8 +450,7 @@ export const en: Dictionary = {
       title: 'Me on other platforms',
       all_socials: 'All socials',
       names: {
-        my_travel_map: 'My travel map',
-        blog: 'Blog',
+        dashboard: 'Dashboard',
       },
     },
     books: {
