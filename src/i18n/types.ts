@@ -27,7 +27,6 @@ export type Dictionary = {
   extra: {
     platforms: {
       title: string;
-      all_socials: string;
       names: {
         dashboard: string;
       };
@@ -112,7 +111,6 @@ export enum Ei18nToken {
   LANG_JAPANESE_NAME = 'extra.languages.japanese',
   LANG_SWEDISH_NAME = 'extra.languages.swedish',
 
-  ALL_SOCIALS = 'extra.platforms.all_socials',
 
   LANG_LEVEL_NATIVE = 'extra.languages.levels.native',
   LANG_LEVEL_FLUENT = 'extra.languages.levels.fluent',

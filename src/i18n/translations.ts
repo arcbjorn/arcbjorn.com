@@ -29,7 +29,6 @@ export const de: Dictionary = {
   extra: {
     platforms: {
       title: 'Ich auf anderen Plattformen',
-      all_socials: 'Alle sozialen Medien',
       names: {
         dashboard: 'Armaturenbrett',
       },
@@ -102,7 +101,6 @@ export const se: Dictionary = {
       names: {
         dashboard: 'Instrumentpanelen',
       },
-      all_socials: 'Alla sociala medier',
     },
     books: {
       title: 'Böcker som jag gillar',
@@ -172,7 +170,6 @@ export const ru: Dictionary = {
       names: {
         dashboard: 'Панель сервисов',
       },
-      all_socials: 'Все социальные сети',
     },
     books: {
       title: 'Книги, которым отдаю предпочтение',
@@ -239,7 +236,6 @@ export const pt: Dictionary = {
   extra: {
     platforms: {
       title: 'Eu em outras plataformas',
-      all_socials: 'Todas as redes sociais',
       names: {
         dashboard: 'Painel',
       },
@@ -312,7 +308,6 @@ export const ja: Dictionary = {
       names: {
         dashboard: '前板',
       },
-      all_socials: 'すべてのソーシャルメディア',
     },
     books: {
       title: '好きな本',
@@ -379,7 +374,6 @@ export const es: Dictionary = {
   extra: {
     platforms: {
       title: 'Yo en otras plataformas',
-      all_socials: 'Todas las redes sociales',
       names: {
         dashboard: 'Panel',
       },
@@ -448,7 +442,6 @@ export const en: Dictionary = {
   extra: {
     platforms: {
       title: 'Me on other platforms',
-      all_socials: 'All socials',
       names: {
         dashboard: 'Dashboard',
       },
