@@ -14,10 +14,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@routes/*": ["./src/routes/*"],
       "@components/*": ["./src/components/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@state/*": ["./src/state/*"],
       "@i18n/*": ["./src/i18n/*"],
       "@data/*": ["./src/data/*"],
       "@styles/*": ["./src/styles/*"],
