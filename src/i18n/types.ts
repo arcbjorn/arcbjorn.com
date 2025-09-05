@@ -59,6 +59,7 @@ export type Dictionary = {
   };
 
   map: {
+    title: string;
     visited: string;
     plan_to_visit: string;
   };
@@ -93,7 +94,7 @@ export enum Ei18nToken {
   PLATFORMS_TITLE = 'extra.platforms.title',
 
   DASHBOARD_TITLE = 'extra.platforms.names.dashboard',
-  // MY_TRAVEL_MAP_TITLE = 'extra.platforms.names.my_travel_map',
+  MAP_TITLE = 'map.title',
 
   BOOKS_TITLE = 'extra.books.title',
 
