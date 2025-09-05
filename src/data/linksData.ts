@@ -57,28 +57,10 @@ export const socialLinks: TLink[] = [
     iconTitle: ELinkTitle.TWITTER,
   },
   {
-    href: ELinkUrl.REDDIT,
-    iconPrefix: EIconLibrary.FONT_AWESOME,
-    iconName: 'reddit',
-    iconTitle: ELinkTitle.REDDIT,
-  },
-  {
     href: ELinkUrl.INSTAGRAM,
     iconPrefix: EIconLibrary.FONT_AWESOME,
     iconName: 'instagram',
     iconTitle: ELinkTitle.INSTAGRAM,
-  },
-  {
-    href: ELinkUrl.SPOTIFY,
-    iconPrefix: EIconLibrary.FONT_AWESOME,
-    iconName: 'spotify',
-    iconTitle: ELinkTitle.SPOTIFY,
-  },
-  {
-    href: ELinkUrl.GOOD_READS,
-    iconPrefix: EIconLibrary.FONT_AWESOME,
-    iconName: 'goodreads',
-    iconTitle: ELinkTitle.GOOD_READS,
   },
 ];
 

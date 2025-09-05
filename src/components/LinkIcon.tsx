@@ -3,10 +3,7 @@ import {
   faLinkedin,
   faGithub,
   faTwitter,
-  faReddit,
   faInstagram,
-  faSpotify,
-  faGoodreads,
 } from '@fortawesome/free-brands-svg-icons';
 import { faTerminal, faEarthAmericas, faBook } from '@fortawesome/free-solid-svg-icons';
 import { EIconLibrary, TLink, IPlatformLinkPartial, IHomePageLinkPartial } from '@/types/types';
@@ -22,10 +19,7 @@ const faIconMap: Record<IconName | string, IconDefinition> = {
   linkedin: faLinkedin,
   github: faGithub,
   twitter: faTwitter,
-  reddit: faReddit,
   instagram: faInstagram,
-  spotify: faSpotify,
-  goodreads: faGoodreads,
   terminal: faTerminal,
   'earth-americas': faEarthAmericas,
   book: faBook,

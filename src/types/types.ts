@@ -64,10 +64,7 @@ export enum ELinkTitle {
   DASHBOARD = 'Dashboard',
 
   TWITTER = 'Twitter',
-  REDDIT = 'Reddit',
   INSTAGRAM = 'Instagram',
-  SPOTIFY = 'Spotify',
-  GOOD_READS = 'GoodReads',
 }
 
 export enum ELinkUrl {
@@ -86,8 +83,5 @@ export enum ELinkUrl {
   // MY_TRAVEL_MAP = 'https://www.mytravelmap.xyz/u/gg104931485347737929283',
 
   TWITTER = 'https://twitter.com/arcbjorn',
-  REDDIT = 'https://www.reddit.com/u/Arcbjorn',
   INSTAGRAM = 'https://www.instagram.com/arcbjorn',
-  SPOTIFY = 'https://open.spotify.com/user/hrpn170u8d82ch90nw6y1floe',
-  GOOD_READS = 'https://www.goodreads.com/arcbjorn',
 }
