@@ -1,5 +1,5 @@
 import { Component, createEffect, onMount } from 'solid-js';
-import L from 'leaflet';
+import type { Map as LeafletMap, Control as LeafletControl, LatLngBoundsLiteral } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import places from '@data/places.json';
@@ -33,15 +33,23 @@ const config = {
   MAX_BOUNDS: [
     [-85, -180],
     [85, 180],
-  ] as L.LatLngBoundsLiteral,
+  ] as LatLngBoundsLiteral,
   INITIAL_CENTER: [20, -20] as [number, number],
 } as const;
 
 const Map: Component = () => {
   const { t, language } = useI18n();
   let mapContainer: HTMLDivElement | undefined;
-  let mapInstance: L.Map | undefined;
-  let legendInstance: L.Control | undefined;
+  let mapInstance: LeafletMap | undefined;
+  let legendInstance: LeafletControl | undefined;
+  let L: any;
+
+  const ensureLeaflet = async () => {
+    if (!L) {
+      const mod = await import('leaflet');
+      L = mod.default ?? mod;
+    }
+  };
 
   const initializeMap = () => {
     if (!mapContainer) return;
@@ -117,8 +125,10 @@ const Map: Component = () => {
   });
 
   onMount(() => {
-    initializeMap();
-    loadGeoData();
+    ensureLeaflet().then(() => {
+      initializeMap();
+      loadGeoData();
+    });
   });
 
   return <div ref={mapContainer} class={styles.mapContainer} />;

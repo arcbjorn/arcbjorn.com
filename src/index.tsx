@@ -75,6 +75,7 @@ const prewarmMap = () => {
   idle(() => {
     // Preload the Map component (pulls Leaflet with it)
     import('@components/Map').catch(() => {});
+    import('leaflet').catch(() => {});
     // Prime the GeoJSON in the HTTP cache
     fetch(filteredGeoDataRaw).catch(() => {});
   });
