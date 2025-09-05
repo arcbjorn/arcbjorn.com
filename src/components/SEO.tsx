@@ -1,6 +1,6 @@
 // components/seo.js
 import { Component, createEffect } from 'solid-js';
-import { Meta, Title, Link, MetaProvider } from '@solidjs/meta';
+import { Meta, Title, Link } from '@solidjs/meta';
 import { useI18n } from '@i18n/useI18n';
 
 interface SEOProps {
@@ -35,7 +35,7 @@ const SEO: Component<SEOProps> = props => {
   };
 
   return (
-    <MetaProvider>
+    <>
       <Meta name="language" content={language()} />
       <Title>
         {() => `${SITE_TITLE}${props.description ? ` | ${props.description}` : ''}`}
@@ -57,7 +57,7 @@ const SEO: Component<SEOProps> = props => {
         ...structuredData,
         url: siteUrl()
       })}</script>
-    </MetaProvider>
+    </>
   );
 };
 
