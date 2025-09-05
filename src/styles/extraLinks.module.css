@@ -1,17 +1,31 @@
 @reference "../index.css";
 
+.linksContainer {
+  @apply flex;
+}
+
 .platformLinks {
-  @apply flex flex-col pt-2;
+  @apply flex flex-col flex-1 pr-0 relative;
 }
 
 .socialLinks {
-  @apply flex flex-wrap justify-around py-4;
+  @apply flex flex-col justify-center items-center px-2 pb-2 relative;
+  min-width: fit-content;
+}
 
-  border-top: 1px solid var(--extraPageBorderColor);
+/* Full-height divider that connects to fieldset border */
+.socialLinks::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc(-0.75rem - 4px);
+  bottom: -1px;
+  width: 1px;
+  background-color: var(--extraPageBorderColor);
 }
 
 .platformLink {
-  @apply flex flex-col px-5 py-4;
+  @apply flex flex-col pl-5 pr-0 py-4;
 }
 
 .platformLinkTitle {

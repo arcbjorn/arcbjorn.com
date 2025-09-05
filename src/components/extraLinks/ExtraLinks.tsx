@@ -14,16 +14,18 @@ const ExtraLinks: Component = () => {
         <TranslationMatrixEffect token={Ei18nToken.PLATFORMS_TITLE} />
       </legend>
 
-      <div class={styles.platformLinks}>
-        {platformLinks.map(link => (
-          <PlatformLink link={link} />
-        ))}
-      </div>
+      <div class={styles.linksContainer}>
+        <div class={styles.platformLinks}>
+          {platformLinks.map(link => (
+            <PlatformLink link={link} />
+          ))}
+        </div>
 
-      <div class={styles.socialLinks}>
-        {socialLinks.map(link => (
-          <SocialLink link={link} />
-        ))}
+        <div class={styles.socialLinks}>
+          {socialLinks.map(link => (
+            <SocialLink link={link} />
+          ))}
+        </div>
       </div>
     </fieldset>
   );
