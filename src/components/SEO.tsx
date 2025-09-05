@@ -2,6 +2,7 @@
 import { Component, createEffect } from 'solid-js';
 import { Meta, Title, Link } from '@solidjs/meta';
 import { useI18n } from '@i18n/useI18n';
+import iconUrl from '@/assets/icon.png';
 
 interface SEOProps {
   description: string;
@@ -48,10 +49,10 @@ const SEO: Component<SEOProps> = props => {
       <Meta property="og:type" content="website" />
       <Meta property="og:url" content={() => siteUrl()} />
       <Meta property="og:site_name" content={SITE_TITLE} />
-      <Meta property="og:image" content={() => `${siteUrl()}icon.png`} />
+      <Meta property="og:image" content={() => new URL(iconUrl, siteUrl()).toString()} />
       <Meta name="twitter:card" content="summary" />
       <Meta name="twitter:site" content="@arcbjorn" />
-      <Meta name="twitter:image" content={() => `${siteUrl()}icon.png`} />
+      <Meta name="twitter:image" content={() => new URL(iconUrl, siteUrl()).toString()} />
       <Link rel="canonical" href={() => siteUrl()} />
       <script type="application/ld+json">{() => JSON.stringify({
         ...structuredData,

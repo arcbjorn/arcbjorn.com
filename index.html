@@ -16,44 +16,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <script>
-      // Check localStorage first
-      const storedTheme = localStorage.getItem('theme');
-      const root = document.documentElement;
-
-      // Function to apply dark theme
-      function applyDarkTheme() {
-        document.body.classList.add('dark');
-        root.style.setProperty('--bg', '#1b1d1e');
-        root.style.setProperty('--color', '#dddddd');
-      }
-
-      // Function to apply light theme
-      function applyLightTheme() {
-        document.body.classList.remove('dark');
-        root.style.setProperty('--bg', '#f9f5ef');
-        root.style.setProperty('--color', '#1b1d1e');
-      }
-
-      if (storedTheme === 'dark') {
-        applyDarkTheme();
-      } else if (storedTheme === 'light') {
-        applyLightTheme();
-      } else {
-        // Check system preference if no stored theme
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          applyDarkTheme();
-        } else {
-          // Check time of day as fallback
-          const hour = new Date().getHours();
-          if (hour <= 6 || hour >= 20) {
-            applyDarkTheme();
-          } else {
-            applyLightTheme();
-          }
-        }
-      }
-    </script>
+    <script src="/theme-init.js"></script>
 
     <div id="root"></div>
 
