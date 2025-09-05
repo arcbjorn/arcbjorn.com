@@ -38,8 +38,7 @@ const SEO: Component<SEOProps> = props => {
     <MetaProvider>
       <Meta name="language" content={language()} />
       <Title>
-        {SITE_TITLE}
-        {props.description ? ` | ${props.description}` : ''}
+        {() => `${SITE_TITLE}${props.description ? ` | ${props.description}` : ''}`}
       </Title>
       <Meta charset="utf-8" />
       <Meta name="viewport" content="width=device-width, initial-scale=1" />
