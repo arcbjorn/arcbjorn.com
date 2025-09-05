@@ -2,11 +2,11 @@ import { Ei18nToken } from '@i18n/types';
 
 export const getLevelToken = (numLevel: number): Ei18nToken => {
   switch (numLevel) {
-    case 100:
+    case 85:
       return Ei18nToken.LANG_LEVEL_NATIVE;
-    case 90:
+    case 80:
       return Ei18nToken.LANG_LEVEL_FLUENT;
-    case 70:
+    case 60:
       return Ei18nToken.LANG_LEVEL_BASIC;
     default:
       return Ei18nToken.LANG_LEVEL_BASIC;
