@@ -34,6 +34,8 @@
     "vitest": "^3.0.6"
   },
   "dependencies": {
+    "@fontsource/cinzel": "^5.2.6",
+    "@fontsource/ibm-plex-mono": "^5.2.6",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
@@ -42,8 +44,10 @@
     "@solidjs/router": "^0.15.3",
     "@tailwindcss/vite": "^4.0.6",
     "@types/leaflet": "^1.9.16",
+    "flag-icons": "^7.5.0",
     "ldrs": "^1.0.2",
     "leaflet": "^1.9.4",
+    "material-icons": "^1.13.14",
     "solid-js": "^1.9.3",
     "tailwindcss": "^4.0.6"
   },

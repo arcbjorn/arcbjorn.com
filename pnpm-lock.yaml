@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/cinzel':
+        specifier: ^5.2.6
+        version: 5.2.6
+      '@fontsource/ibm-plex-mono':
+        specifier: ^5.2.6
+        version: 5.2.6
       '@fortawesome/fontawesome-svg-core':
         specifier: ^6.7.2
         version: 6.7.2
@@ -32,12 +38,18 @@ importers:
       '@types/leaflet':
         specifier: ^1.9.16
         version: 1.9.16
+      flag-icons:
+        specifier: ^7.5.0
+        version: 7.5.0
       ldrs:
         specifier: ^1.0.2
         version: 1.0.2
       leaflet:
         specifier: ^1.9.4
         version: 1.9.4
+      material-icons:
+        specifier: ^1.13.14
+        version: 1.13.14
       solid-js:
         specifier: ^1.9.3
         version: 1.9.3
@@ -390,6 +402,12 @@ packages:
   '@eslint/plugin-kit@0.2.5':
     resolution: {integrity: sha512-lB05FkqEdUg2AA0xEbUz0SnkXT1LcCTa438W4IWTUh4hdOnVbQyOJ81OrDXsJk/LSiJHubgGEFoR5EHq1NsH1A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fontsource/cinzel@5.2.6':
+    resolution: {integrity: sha512-ec+bdUJiEugRaDxoXAt7GWb0dYiAW6256a4OsZ8UXgAdsxF798xa9l/B/WrgHTExFhWYWNB0Y9xqcfbqWajTAw==}
+
+  '@fontsource/ibm-plex-mono@5.2.6':
+    resolution: {integrity: sha512-LTZJNTcpoT19fmwERZNMDI+ljHueuyhF2Qn+bICJ4Y4hxBLAAoJ2MRsGnyp0QNutW6t/25eyZpvaUK1LDrCo7Q==}
 
   '@fortawesome/fontawesome-common-types@6.7.2':
     resolution: {integrity: sha512-Zs+YeHUC5fkt7Mg1l6XTniei3k4bwG/yo3iFUtZWd/pMx9g3fdvkSK9E0FOC+++phXOka78uJcYb8JaFkW52Xg==}
@@ -1060,6 +1078,9 @@ packages:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
 
+  flag-icons@7.5.0:
+    resolution: {integrity: sha512-kd+MNXviFIg5hijH766tt+3x76ele1AXlo4zDdCxIvqWZhKt4T83bOtxUOOMlTx/EcFdUMH5yvQgYlFh1EqqFg==}
+
   flat-cache@4.0.1:
     resolution: {integrity: sha512-f7ccFPK3SXFHpx15UIGyRJ/FJQctuKZ0zVuN3frBo4HnK3cay9VEW0R6yPYFHC0AgqhukPzKjq22t5DmAyqGyw==}
     engines: {node: '>=16'}
@@ -1349,6 +1370,9 @@ packages:
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
+
+  material-icons@1.13.14:
+    resolution: {integrity: sha512-kZOfc7xCC0rAT8Q3DQixYAeT+tBqZnxkseQtp2bxBxz7q5pMAC+wmit7vJn1g/l7wRU+HEPq23gER4iPjGs5Cg==}
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -2117,6 +2141,10 @@ snapshots:
       '@eslint/core': 0.10.0
       levn: 0.4.1
 
+  '@fontsource/cinzel@5.2.6': {}
+
+  '@fontsource/ibm-plex-mono@5.2.6': {}
+
   '@fortawesome/fontawesome-common-types@6.7.2': {}
 
   '@fortawesome/fontawesome-svg-core@6.7.2':
@@ -2784,6 +2812,8 @@ snapshots:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
+  flag-icons@7.5.0: {}
+
   flat-cache@4.0.1:
     dependencies:
       flatted: 3.3.2
@@ -3039,6 +3069,8 @@ snapshots:
   magic-string@0.30.17:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  material-icons@1.13.14: {}
 
   math-intrinsics@1.1.0: {}
 

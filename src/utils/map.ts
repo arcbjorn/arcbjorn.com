@@ -112,7 +112,7 @@ export const createLegend = (visited: string | undefined, planned: string | unde
 export const createPopupContent = (feature: GeoJSON.Feature) => {
   const { admin: country, name: province, region } = feature.properties || {};
   const countryCode = countryToCode[country] || '';
-  const flag = countryCode ? `<span class="flag-icon flag-icon-${countryCode}"></span>` : '';
+  const flag = countryCode ? `<span class="fi fi-${countryCode}"></span>` : '';
 
   return `
     <div>

@@ -6,7 +6,7 @@
 @import '@fontsource/ibm-plex-mono/700.css';
 @import '@fontsource/cinzel/400.css';
 @import 'material-icons/iconfont/material-icons.css';
-@import 'flag-icon-css/css/flag-icons.min.css';
+@import 'flag-icons/css/flag-icons.min.css';
 
 @theme {
   --font-ibm: 'IBM Plex Mono', 'font-mono';
