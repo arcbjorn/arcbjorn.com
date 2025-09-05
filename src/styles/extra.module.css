@@ -12,7 +12,7 @@
 }
 
 .extraInfo {
-  @apply flex h-full flex-col gap-4 overflow-y-auto p-4 sm:flex-row;
+  @apply flex h-full flex-col gap-4 overflow-y-auto p-4 lg:flex-row;
 }
 
 .extraSection {
@@ -22,11 +22,11 @@
 
 /* Add specific classes for left and right sections */
 .extraSection:first-child {
-  @apply sm:w-[40%];
+  @apply lg:w-[40%];
 }
 
 .extraSection:last-child {
-  @apply sm:w-[60%];
+  @apply lg:w-[60%];
 }
 
 .extraInnerSection {
