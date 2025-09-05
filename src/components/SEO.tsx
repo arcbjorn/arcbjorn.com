@@ -47,14 +47,17 @@ const SEO: Component<SEOProps> = props => {
       <Meta property="og:title" content={SITE_TITLE} />
       <Meta property="og:description" content={props.description} />
       <Meta property="og:type" content="website" />
-      <Meta property="og:url" content={siteUrl()} />
+      <Meta property="og:url" content={() => siteUrl()} />
       <Meta property="og:site_name" content={SITE_TITLE} />
-      <Meta property="og:image" content={`${siteUrl()}icon.png`} />
+      <Meta property="og:image" content={() => `${siteUrl()}icon.png`} />
       <Meta name="twitter:card" content="summary" />
       <Meta name="twitter:site" content="@arcbjorn" />
-      <Meta name="twitter:image" content={`${siteUrl()}icon.png`} />
-      <Link rel="canonical" href={siteUrl()} />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      <Meta name="twitter:image" content={() => `${siteUrl()}icon.png`} />
+      <Link rel="canonical" href={() => siteUrl()} />
+      <script type="application/ld+json">{() => JSON.stringify({
+        ...structuredData,
+        url: siteUrl()
+      })}</script>
     </MetaProvider>
   );
 };
