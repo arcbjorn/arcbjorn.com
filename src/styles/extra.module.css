@@ -12,12 +12,25 @@
 }
 
 .extraInfo {
-  @apply flex h-full flex-col gap-4 overflow-y-auto p-4 lg:flex-row;
+  @apply flex flex-col gap-4 p-4 lg:flex-row h-full lg:overflow-hidden text-sm;
 }
 
 .extraSection {
   @apply flex flex-col;
   min-width: 300px;
+  min-height: 0;
+}
+
+/* enable independent column scroll only on desktop */
+@media (min-width: 1024px) {
+  .extraSection {
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .extraSection::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Add specific classes for left and right sections */
@@ -45,4 +58,5 @@
   @apply mx-6 -mt-3 w-max px-4 py-1;
   background-color: var(--bg);
   color: var(--focusColor);
+  @apply text-sm;
 }

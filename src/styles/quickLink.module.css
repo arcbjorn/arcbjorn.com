@@ -1,7 +1,7 @@
 @reference "../index.css";
 
 .icon {
-  @apply mr-3 flex items-center text-base sm:text-lg;
+  @apply mr-3 flex items-center text-base sm:text-base;
 }
 
 .quickLink {

@@ -21,7 +21,7 @@
 }
 
 .nav {
-  @apply flex flex-wrap items-center justify-around pl-2 text-base sm:text-lg;
+  @apply flex flex-wrap items-center justify-around pl-2 text-base sm:text-base;
 }
 
 .links {
