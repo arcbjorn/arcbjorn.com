@@ -43,7 +43,7 @@
 }
 
 .extraInnerSection {
-  @apply mx-4 mb-3 flex flex-col rounded-lg border p-0 relative;
+  @apply mx-4 mb-3 rounded-lg border p-0 relative;
   height: fit-content;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -59,4 +59,5 @@
   background-color: var(--bg);
   color: var(--focusColor);
   @apply text-sm;
+  @apply leading-tight;
 }
