@@ -44,6 +44,12 @@ const books: TBook[] = [
     href: 'https://www.goodreads.com/book/show/332792.Toward_a_Psychology_of_Being#CommunityReviews',
   },
   {
+    title: "Man's Search for Meaning",
+    author: 'V.E.Frankl',
+    category: EBookCategory.PSYCHOLOGY,
+    href: 'https://www.goodreads.com/book/show/4069.Man_s_Search_for_Meaning',
+  },
+  {
     title: 'Mastery',
     author: 'G.Leonard',
     category: EBookCategory.PSYCHOLOGY,
