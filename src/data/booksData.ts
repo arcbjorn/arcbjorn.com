@@ -26,10 +26,22 @@ const books: TBook[] = [
     href: 'https://www.amazon.com/War-Art-Winning-Creative-Battle/dp/1501260626',
   },
   {
-    title: 'SGTCIY',
-    author: 'C.Newport',
+    title: 'The Alchemist',
+    author: 'P.Coelho',
     category: EBookCategory.PSYCHOLOGY,
-    href: 'https://www.amazon.com/Good-They-Cant-Ignore-You/dp/1455509124',
+    href: 'https://www.goodreads.com/book/show/18144590-the-alchemist',
+  },
+  {
+    title: 'The Talent Code',
+    author: 'M.Csíkszentmihályi',
+    category: EBookCategory.PSYCHOLOGY,
+    href: 'https://www.goodreads.com/book/show/5771014-the-talent-code',
+  },
+  {
+    title: 'Toward a Psychology of Being',
+    author: 'A.Maslow',
+    category: EBookCategory.PSYCHOLOGY,
+    href: 'https://www.goodreads.com/book/show/332792.Toward_a_Psychology_of_Being#CommunityReviews',
   },
   {
     title: 'Mastery',
