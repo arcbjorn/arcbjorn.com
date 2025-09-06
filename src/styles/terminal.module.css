@@ -10,7 +10,7 @@
 }
 
 .terminalContent {
-  @apply flex w-full flex-col overflow-visible text-lg sm:text-3xl;
+  @apply flex w-full flex-col overflow-visible text-lg sm:text-xl;
   height: 400px; /* Fixed height for mobile */
   width: 350px; /* Fixed width for mobile */
   margin: 0 auto; /* Center the content */
@@ -20,7 +20,7 @@
   }
 
   @media (min-width: 1024px) {
-    width: 900px;
+    width: 700px;
   }
 }
 

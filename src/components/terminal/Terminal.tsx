@@ -147,7 +147,7 @@ export const Terminal: Component = () => {
           <span class="hidden sm:inline">&nbsp;</span>
           <span class={styles.infoLocation}>~/</span>$&nbsp;
           <Typewriter
-            class="inline text-lg sm:text-3xl"
+            class="inline text-lg sm:text-xl"
             strings={commandText()}
             delay={startTypeWriter() ? 60 : 60}
             autoStart={true}
