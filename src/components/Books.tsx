@@ -32,13 +32,13 @@ const Book: Component<BookProps> = props => {
 const categoryToI18nTokenMap: Record<EBookCategory, Ei18nToken> = {
   [EBookCategory.SOFTWARE]: Ei18nToken.SOFTWARE,
   [EBookCategory.PSYCHOLOGY]: Ei18nToken.PSYCHOLOGY,
-  [EBookCategory.FANTASY]: Ei18nToken.FANTASY,
+  [EBookCategory.MISCELLANEOUS]: Ei18nToken.MISCELLANEOUS,
 };
 
 const categoriesList: EBookCategory[] = [
   EBookCategory.SOFTWARE,
   EBookCategory.PSYCHOLOGY,
-  EBookCategory.FANTASY,
+  EBookCategory.MISCELLANEOUS,
 ];
 
 export const Books: Component = () => {

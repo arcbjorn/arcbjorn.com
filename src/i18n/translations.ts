@@ -38,7 +38,7 @@ export const de: Dictionary = {
       categories: {
         software: 'Software',
         psychology: 'Psychologie',
-        fantasy: 'Fantasy',
+        miscellaneous: 'Verschiedenes',
       },
     },
     languages: {
@@ -108,7 +108,7 @@ export const se: Dictionary = {
       categories: {
         software: 'Programvara',
         psychology: 'Psykologi',
-        fantasy: 'Fantasi',
+        miscellaneous: 'Diverse',
       },
     },
     languages: {
@@ -178,7 +178,7 @@ export const ru: Dictionary = {
       categories: {
         software: 'Разработка ПО',
         psychology: 'Психология',
-        fantasy: 'Фэнтази',
+        miscellaneous: 'Разное',
       },
     },
     languages: {
@@ -248,7 +248,7 @@ export const pt: Dictionary = {
       categories: {
         software: 'Software',
         psychology: 'Psicologia',
-        fantasy: 'Fantasia',
+        miscellaneous: 'Diverso',
       },
     },
     languages: {
@@ -318,7 +318,7 @@ export const ja: Dictionary = {
       categories: {
         software: 'ソフトウェア',
         psychology: '心理学',
-        fantasy: 'ファンタジー',
+        miscellaneous: 'その他',
       },
     },
     languages: {
@@ -388,7 +388,7 @@ export const es: Dictionary = {
       categories: {
         software: 'Software',
         psychology: 'Psicología',
-        fantasy: 'Fantasía',
+        miscellaneous: 'Varios',
       },
     },
     languages: {
@@ -457,7 +457,7 @@ export const en: Dictionary = {
       categories: {
         software: 'Software',
         psychology: 'Psychology',
-        fantasy: 'Fantasy',
+        miscellaneous: 'Miscellaneous',
       },
     },
     languages: {

@@ -22,7 +22,7 @@ export type TLanguage = {
 export enum EBookCategory {
   SOFTWARE = 'Software',
   PSYCHOLOGY = 'Psychology',
-  FANTASY = 'Fantasy',
+  MISCELLANEOUS = 'Miscellaneous',
 }
 
 export type TBook = {

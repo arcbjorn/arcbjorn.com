@@ -14,6 +14,30 @@ const books: TBook[] = [
     href: 'https://github.com/manjunath5496/The-Art-of-Computer-Programming-Books',
   },
   {
+    title: 'Design Patterns',
+    author: 'GoF',
+    category: EBookCategory.SOFTWARE,
+    href: 'https://www.goodreads.com/book/show/85009.Design_Patterns',
+  },
+  {
+    title: 'Designing Data-Intensive Applications',
+    author: 'M.Kleppmann',
+    category: EBookCategory.SOFTWARE,
+    href: 'https://www.goodreads.com/book/show/23463279-designing-data-intensive-applications',
+  },
+  {
+    title: 'Clean Code',
+    author: 'R.C.Martin',
+    category: EBookCategory.SOFTWARE,
+    href: 'https://www.goodreads.com/book/show/3735293-clean-code',
+  },
+  {
+    title: 'The Mythical Man-Month',
+    author: 'F.P.Brooks Jr.',
+    category: EBookCategory.SOFTWARE,
+    href: 'https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month',
+  },
+  {
     title: 'Psycho-Cybernetics',
     author: 'M.Maltz',
     category: EBookCategory.PSYCHOLOGY,
@@ -58,8 +82,14 @@ const books: TBook[] = [
   {
     title: 'The Legend of Drizzt',
     author: 'R. A. Salvatore',
-    category: EBookCategory.FANTASY,
+    category: EBookCategory.MISCELLANEOUS,
     href: 'https://en.wikipedia.org/wiki/The_Legend_of_Drizzt',
+  },
+  {
+    title: "The Hitchhiker's Guide to the Galaxy",
+    author: 'D.Adams',
+    category: EBookCategory.MISCELLANEOUS,
+    href: 'https://www.goodreads.com/book/show/11.The_Hitchhiker_s_Guide_to_the_Galaxy',
   },
 ];
 
