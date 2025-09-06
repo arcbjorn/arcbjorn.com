@@ -51,10 +51,10 @@ export const platformLinks: TLink<IPlatformLinkPartial>[] = [
 
 export const socialLinks: TLink[] = [
   {
-    href: ELinkUrl.TWITTER,
+    href: ELinkUrl.X,
     iconPrefix: EIconLibrary.FONT_AWESOME,
-    iconName: 'twitter',
-    iconTitle: ELinkTitle.TWITTER,
+    iconName: 'x-twitter',
+    iconTitle: ELinkTitle.X,
   },
   {
     href: ELinkUrl.INSTAGRAM,
@@ -80,11 +80,11 @@ export const quickAccessLinks: TLink[] = [
     iconTitle: 'Github account',
   },
   {
-    title: ELinkTitle.TWITTER,
-    href: ELinkUrl.TWITTER,
+    title: ELinkTitle.X,
+    href: ELinkUrl.X,
     iconPrefix: EIconLibrary.FONT_AWESOME,
-    iconName: 'twitter',
-    iconTitle: 'Twitter account',
+    iconName: 'x-twitter',
+    iconTitle: 'X account',
   },
   {
     title: ELinkTitle.EMAIL,

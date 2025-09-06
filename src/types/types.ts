@@ -80,7 +80,7 @@ export enum ELinkTitle {
   LEETCODE = 'LeetCode',
   DASHBOARD = 'Dashboard',
 
-  TWITTER = 'Twitter',
+  X = 'X',
   INSTAGRAM = 'Instagram',
 }
 
@@ -99,6 +99,6 @@ export enum ELinkUrl {
   DASHBOARD = 'https://dashboard.arcbjorn.com/',
   // MY_TRAVEL_MAP = 'https://www.mytravelmap.xyz/u/gg104931485347737929283',
 
-  TWITTER = 'https://twitter.com/arcbjorn',
+  X = 'https://x.com/arcbjorn',
   INSTAGRAM = 'https://www.instagram.com/arcbjorn',
 }

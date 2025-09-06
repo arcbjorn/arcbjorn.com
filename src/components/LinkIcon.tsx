@@ -3,6 +3,7 @@ import {
   faLinkedin,
   faGithub,
   faTwitter,
+  faXTwitter,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { faTerminal, faEarthAmericas, faBook } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +20,7 @@ const faIconMap: Record<IconName | string, IconDefinition> = {
   linkedin: faLinkedin,
   github: faGithub,
   twitter: faTwitter,
+  'x-twitter': faXTwitter,
   instagram: faInstagram,
   terminal: faTerminal,
   'earth-americas': faEarthAmericas,
