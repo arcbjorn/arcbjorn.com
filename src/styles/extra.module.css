@@ -16,7 +16,7 @@
 }
 
 .extraSection {
-  @apply flex flex-col;
+  @apply flex flex-col gap-4;
   min-width: 300px;
   min-height: 0;
 }
