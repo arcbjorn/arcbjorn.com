@@ -19,7 +19,7 @@ const MapPage: Component = () => {
     <Layout>
       <SEO description={EDocumentDescription.MAP} slug={`/${language()}/map`} />
       <div class={`relative flex h-full flex-col p-4 ${animations.longerFadeIn}`}>
-        <h1 class="mb-4 text-center text-xl sm:text-2xl">
+        <h1 class="mb-4 text-center text-lg sm:text-xl">
           <TranslationMatrixEffect token={Ei18nToken.MAP_TITLE} lowerCase={true} />
         </h1>
         <Suspense fallback={<Loader />}>
