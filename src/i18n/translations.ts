@@ -59,7 +59,6 @@ export const de: Dictionary = {
   },
 
   map: {
-    title: 'Meine Reisekarte',
     visited: 'Besucht',
     plan_to_visit: 'Plane zu besuchen',
   },
@@ -129,7 +128,6 @@ export const se: Dictionary = {
   },
 
   map: {
-    title: 'Min resekarta',
     visited: 'Besökt',
     plan_to_visit: 'Planerar att besöka',
   },
@@ -199,7 +197,6 @@ export const ru: Dictionary = {
   },
 
   map: {
-    title: 'Моя карта путешествий',
     visited: 'Посетил',
     plan_to_visit: 'Планирую посетить',
   },
@@ -269,7 +266,6 @@ export const pt: Dictionary = {
   },
 
   map: {
-    title: 'Meu mapa de viagem',
     visited: 'Visitado',
     plan_to_visit: 'Planejo visitar',
   },
@@ -339,7 +335,6 @@ export const ja: Dictionary = {
   },
 
   map: {
-    title: '私の旅行マップ',
     visited: '訪問済み',
     plan_to_visit: '訪問予定',
   },
@@ -409,7 +404,6 @@ export const es: Dictionary = {
   },
 
   map: {
-    title: 'Mi mapa de viaje',
     visited: 'Visitado',
     plan_to_visit: 'Planeo visitar',
   },
@@ -478,7 +472,6 @@ export const en: Dictionary = {
   },
 
   map: {
-    title: 'My travel map',
     visited: 'Visited',
     plan_to_visit: 'Plan to visit',
   },
