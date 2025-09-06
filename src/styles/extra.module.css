@@ -12,7 +12,7 @@
 }
 
 .extraInfo {
-  @apply flex flex-col gap-4 p-4 lg:flex-row h-full lg:overflow-hidden text-sm;
+  @apply flex flex-col gap-4 px-4 pb-4 pt-8 lg:flex-row h-full lg:overflow-hidden text-sm;
 }
 
 .extraSection {
