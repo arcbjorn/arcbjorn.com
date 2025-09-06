@@ -82,6 +82,16 @@ body {
   display: none; /* Chrome, Safari, Opera */
 }
 
+/* Themed text selection */
+::selection {
+  background-color: var(--focusColor);
+  color: var(--bg);
+}
+::-moz-selection {
+  background-color: var(--focusColor);
+  color: var(--bg);
+}
+
 body.dark {
   -webkit-font-smoothing: antialiased;
 
