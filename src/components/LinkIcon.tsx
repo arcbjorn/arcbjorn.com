@@ -2,7 +2,6 @@ import { Component, Show } from 'solid-js';
 import {
   faLinkedin,
   faGithub,
-  faTwitter,
   faXTwitter,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
@@ -19,7 +18,6 @@ interface LinkIconProps {
 const faIconMap: Record<IconName | string, IconDefinition> = {
   linkedin: faLinkedin,
   github: faGithub,
-  twitter: faTwitter,
   'x-twitter': faXTwitter,
   instagram: faInstagram,
   terminal: faTerminal,
