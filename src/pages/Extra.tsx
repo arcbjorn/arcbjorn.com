@@ -1,6 +1,7 @@
 import { Component, createEffect, createSignal } from 'solid-js';
 import Layout from '@layouts/Layout';
 import Books from '@/components/Books';
+import Utils from '@/components/Utils';
 import Loader from '@components/Loader';
 import ExtraLinks from '@components/extraLinks/ExtraLinks';
 import Languages from '@components/languages/Languages';
@@ -42,6 +43,7 @@ const ExtraPage: Component = () => {
 
           {/* Right Column */}
           <div class={styles.extraSection}>
+            <Utils />
             <Books />
           </div>
         </div>
