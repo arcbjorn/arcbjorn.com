@@ -21,11 +21,15 @@ export const Layout: Component<LayoutProps> = props => {
   });
 
   return (
-    <main class="container mx-auto h-screen overflow-hidden">
-      <header class="h-[10%]">
+    <main class="container mx-auto min-h-screen lg:h-screen flex flex-col overflow-hidden">
+      <header class="flex-none h-14">
         <Header />
       </header>
-      <section class="h-[90%]">{props.children}</section>
+      <section class="flex-1 min-h-0 lg:overflow-hidden">
+        <div class="lg:h-full lg:overflow-y-auto lg:grid lg:content-center">
+          {props.children}
+        </div>
+      </section>
     </main>
   );
 };
