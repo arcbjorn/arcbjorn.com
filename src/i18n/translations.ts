@@ -33,6 +33,9 @@ export const de: Dictionary = {
         dashboard: 'Armaturenbrett',
       },
     },
+    utils: {
+      title: 'Utilities / Experimente',
+    },
     books: {
       title: 'Bücher die ich mag',
       categories: {
@@ -101,6 +104,9 @@ export const se: Dictionary = {
       names: {
         dashboard: 'Instrumentpanelen',
       },
+    },
+    utils: {
+      title: 'Verktyg / Experiment',
     },
     books: {
       title: 'Böcker som jag gillar',
@@ -171,6 +177,9 @@ export const ru: Dictionary = {
         dashboard: 'Панель сервисов',
       },
     },
+    utils: {
+      title: 'Утилиты / Эксперименты',
+    },
     books: {
       title: 'Книги, которым отдаю предпочтение',
       categories: {
@@ -239,6 +248,9 @@ export const pt: Dictionary = {
       names: {
         dashboard: 'Painel',
       },
+    },
+    utils: {
+      title: 'Utilitários / Experimentos',
     },
     books: {
       title: 'Livros que eu gosto',
@@ -309,6 +321,9 @@ export const ja: Dictionary = {
         dashboard: '前板',
       },
     },
+    utils: {
+      title: 'ユーティリティ / 実験',
+    },
     books: {
       title: '好きな本',
       categories: {
@@ -378,6 +393,9 @@ export const es: Dictionary = {
         dashboard: 'Panel',
       },
     },
+    utils: {
+      title: 'Utilidades / Experimentos',
+    },
     books: {
       title: 'Libros que me gustan',
       categories: {
@@ -445,6 +463,9 @@ export const en: Dictionary = {
       names: {
         dashboard: 'Dashboard',
       },
+    },
+    utils: {
+      title: 'Utils / Experiments',
     },
     books: {
       title: 'Books that I like',
