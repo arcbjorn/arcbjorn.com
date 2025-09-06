@@ -37,18 +37,15 @@ const Language: Component<TLanguageProps> = props => {
               />
             </div>
           </div>
-          {isHovered() && (
-            <span
-              class={styles.levelText}
-              style={{
-                color: 'var(--bg)',
-                right: '15px',
-                'z-index': 2,
-              }}
-            >
-              {t(getLevelToken(props.level))}
-            </span>
-          )}
+          <span
+            class={styles.levelText}
+            style={{
+              right: '15px',
+              'z-index': 2,
+            }}
+          >
+            {t(getLevelToken(props.level))}
+          </span>
         </div>
       </div>
     </div>
