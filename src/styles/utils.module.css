@@ -1,0 +1,55 @@
+@reference "../index.css";
+
+.utils {
+  @apply flex flex-col;
+}
+
+.utilEntry {
+  @apply flex;
+}
+
+.utilEntry:hover {
+  color: var(--bookEntryHoverColor);
+  background-color: var(--bookEntryBackgroundHoverColor);
+}
+
+.utilEntry:active {
+  color: var(--bookEntryHoverColor);
+  background-color: var(--bookEntryBackgroundHoverColor);
+}
+
+
+/* Table-like row layout */
+.utilRow {
+  @apply flex-1 py-3 px-5 text-sm;
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Column styles */
+.utilName {
+  @apply font-medium;
+}
+
+.descriptionColumn {
+  @apply text-xs opacity-70;
+}
+
+.technologyColumn {
+  @apply text-xs text-right;
+  color: var(--titleColor);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .utilRow {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .technologyColumn {
+    @apply text-left;
+  }
+}
