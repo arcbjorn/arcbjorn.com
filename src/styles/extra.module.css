@@ -40,6 +40,8 @@
 
 .extraSection:last-child {
   @apply lg:w-[60%];
+  display: flex;
+  flex-direction: column;
 }
 
 .extraInnerSection {
@@ -49,6 +51,17 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+/* In the right column, Utils and Books split space equally */
+.extraSection:last-child .extraInnerSection:first-child {
+  flex: 1;
+  max-height: 50%;
+}
+
+.extraSection:last-child .extraInnerSection:last-child {
+  flex: 1;
+  max-height: 50%;
 }
 
 .extraInnerSection > div {
