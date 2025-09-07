@@ -26,7 +26,7 @@ const utils: UtilEntry[] = [
   {
     name: 'blog.arcbjorn.com',
     description: 'Personal blog with articles about programming and technology',
-    technology: 'TypeScript',
+    technology: 'Preact + Fresh + Deno',
     href: 'https://github.com/archellir/blog.arcbjorn.com',
     status: 'active',
   },
@@ -34,7 +34,7 @@ const utils: UtilEntry[] = [
     name: 'torimemo',
     description:
       'Lightning-fast, lightweight AI bookmark manager with text classification and context comprehension',
-    technology: 'Go',
+    technology: 'Go + FastText + ONNX',
     href: 'https://github.com/archellir/torimemo',
     status: 'active',
   },
@@ -49,7 +49,7 @@ const utils: UtilEntry[] = [
   {
     name: 'git.station',
     description: 'High-performance, extremely lightweight Git service',
-    technology: 'Zig',
+    technology: 'Zig + SvelteKit',
     href: 'https://github.com/archellir/git.station',
     status: 'experimental',
   },
@@ -92,14 +92,14 @@ const utils: UtilEntry[] = [
   {
     name: 'arc-crypto-monitor',
     description: 'Single-page application for real-time cryptocurrency monitoring',
-    technology: 'Vue 3',
+    technology: 'Vue 3 + TypeScript + WebSockets + Docker',
     href: 'https://github.com/arcbjorn/arc-crypto-monitor',
     status: 'active',
   },
   {
     name: 'arc-donation-widget',
     description: 'Donation widget with payment processing and tracking',
-    technology: 'Vue 3',
+    technology: 'Vue 3 + Koa.js + TypeScript + MongoDB',
     href: 'https://github.com/arcbjorn/arc-donation-widget',
     status: 'experimental',
   },
@@ -141,14 +141,14 @@ const utils: UtilEntry[] = [
   {
     name: 'email-verifier',
     description: 'Email verification service with MX, SPF, and DMARC record checking',
-    technology: 'Go',
+    technology: 'Go + gRPC',
     href: 'https://github.com/arcbjorn/email-verifier',
     status: 'experimental',
   },
   {
     name: 'arc-arch-linux-installation-guide',
     description: 'Comprehensive Arch Linux installation guide with Wayland desktop environment',
-    technology: 'Shell',
+    technology: 'Shell + btrfs + pipewire + sway',
     href: 'https://github.com/arcbjorn/arc-arch-linux-installation-guide',
     status: 'experimental',
   },
