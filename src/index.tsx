@@ -11,6 +11,7 @@ import MapPage from '@/pages/Map';
 
 import './index.css';
 import filteredGeoDataRaw from '@data/filtered_provinces.geojson?url';
+import { startTilePreloading } from '@utils/tilePreloader';
 
 const routes = [
   {
@@ -81,6 +82,8 @@ const prewarmMap = () => {
     import('leaflet').catch(() => {});
     // Prime the GeoJSON in the HTTP cache
     fetch(filteredGeoDataRaw).catch(() => {});
+    // Start preloading map tiles in background
+    startTilePreloading();
   });
 };
 
