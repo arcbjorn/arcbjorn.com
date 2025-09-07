@@ -13,9 +13,17 @@
   background-color: var(--bookEntryBackgroundHoverColor);
 }
 
+.utilEntry:hover .technologyColumn {
+  color: var(--bookEntryHoverColor);
+}
+
 .utilEntry:active {
   color: var(--bookEntryHoverColor);
   background-color: var(--bookEntryBackgroundHoverColor);
+}
+
+.utilEntry:active .technologyColumn {
+  color: var(--bookEntryHoverColor);
 }
 
 /* Single column layout */
