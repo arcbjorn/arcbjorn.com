@@ -16,7 +16,7 @@ const MapPage: Component = () => {
   return (
     <Layout>
       <SEO description={EDocumentDescription.MAP} slug={`/${language()}/map`} />
-      <div class={`relative flex h-full flex-col px-4 pt-4 pb-4 lg:px-0 lg:pt-0 ${animations.longerFadeIn}`}>
+      <div class={`relative flex h-full flex-col px-8 pt-8 pb-4 lg:px-0 lg:pt-0 ${animations.longerFadeIn}`}>
         <Suspense fallback={<Loader />}>
           <Map />
         </Suspense>
