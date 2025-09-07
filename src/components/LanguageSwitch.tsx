@@ -6,7 +6,7 @@ import { Ei18nToken } from '@i18n/types';
 
 import styles from '@styles/languageSwitch.module.css';
 
-export const LanguageSwitch: Component = () => {
+const LanguageSwitch: Component = () => {
   const { t, language, setLanguage } = useI18n();
   const location = useLocation();
   const navigate = useNavigate();
@@ -66,16 +66,18 @@ export const LanguageSwitch: Component = () => {
 
       {isOpen() && (
         <div class={styles.dropdown} role="listbox">
-          <For each={languages}>{lang => (
-            <button
-              class={`${styles.languageOption} ${lang === language() ? styles.active : ''}`}
-              onClick={() => handleLanguageSelect(lang)}
-              role="option"
-              aria-selected={lang === language()}
-            >
-              {lang.toUpperCase()}
-            </button>
-          )}</For>
+          <For each={languages}>
+            {lang => (
+              <button
+                class={`${styles.languageOption} ${lang === language() ? styles.active : ''}`}
+                onClick={() => handleLanguageSelect(lang)}
+                role="option"
+                aria-selected={lang === language()}
+              >
+                {lang.toUpperCase()}
+              </button>
+            )}
+          </For>
         </div>
       )}
     </div>

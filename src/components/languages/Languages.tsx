@@ -8,7 +8,6 @@ import styles from '@styles/languages.module.css';
 import extraStyles from '@styles/extra.module.css';
 
 const Languages: Component = () => {
-
   const groupedLanguages = createMemo(() => {
     const groups = new Map<number, any[]>();
 

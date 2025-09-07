@@ -192,15 +192,17 @@ export const Terminal: Component = () => {
                 onComplete={handleMatrixComplete}
               />
               &nbsp;
-              <For each={previousCompanies}>{(company, index) => (
-                <>
-                  @
-                  <a href={company.link} target="_blank" class={styles.company}>
-                    {company.name}
-                  </a>
-                  {previousCompanies.length > 1 && index % 2 === 0 && ', '}
-                </>
-              )}</For>
+              <For each={previousCompanies}>
+                {(company, index) => (
+                  <>
+                    @
+                    <a href={company.link} target="_blank" class={styles.company}>
+                      {company.name}
+                    </a>
+                    {previousCompanies.length > 1 && index % 2 === 0 && ', '}
+                  </>
+                )}
+              </For>
             </p>
             <p class="py-4 sm:pt-8">
               <TextMatrixEffect
@@ -223,9 +225,7 @@ export const Terminal: Component = () => {
             visibility: quickLinksDisplay() ? 'visible' : 'hidden',
           }}
         >
-          <For each={quickLinks}>{link => (
-            <QuickLink link={link} copyToClipboard={false} />
-          )}</For>
+          <For each={quickLinks}>{link => <QuickLink link={link} copyToClipboard={false} />}</For>
         </div>
       </div>
     </div>

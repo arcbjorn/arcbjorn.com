@@ -87,7 +87,7 @@ const MatrixEffect: Component<MatrixEffectProps> = props => {
         }}
       >
         <For each={matrixColumns()}>
-          {(column) => (
+          {column => (
             <div
               style={{
                 position: 'absolute',

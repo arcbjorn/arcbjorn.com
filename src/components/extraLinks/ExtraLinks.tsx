@@ -16,15 +16,11 @@ const ExtraLinks: Component = () => {
 
       <div class={styles.linksContainer}>
         <div class={styles.platformLinks}>
-          <For each={platformLinks}>{link => (
-            <PlatformLink link={link} />
-          )}</For>
+          <For each={platformLinks}>{link => <PlatformLink link={link} />}</For>
         </div>
 
         <div class={styles.socialLinks}>
-          <For each={socialLinks}>{link => (
-            <SocialLink link={link} />
-          )}</For>
+          <For each={socialLinks}>{link => <SocialLink link={link} />}</For>
         </div>
       </div>
     </fieldset>
