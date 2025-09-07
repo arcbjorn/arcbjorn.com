@@ -1,8 +1,7 @@
 @import 'tailwindcss';
-/* Critical fonts now inlined in HTML head for immediate availability */
+/* Critical fonts (400, 500, 600, 700) now inlined in HTML head for immediate availability */
 
-/* Fallback to @fontsource for other weights and icons */
-@import '@fontsource/ibm-plex-mono/700.css';
+/* Icons and remaining fonts */
 @import '@fontsource/cinzel/400.css';
 @import 'material-icons/iconfont/material-icons.css';
 @import 'flag-icons/css/flag-icons.min.css';
