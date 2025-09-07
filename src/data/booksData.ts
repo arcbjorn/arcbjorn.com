@@ -44,10 +44,10 @@ const books: TBook[] = [
     href: 'https://www.amazon.com/Psycho-Cybernetics-Updated-Expanded-Maxwell-Maltz/dp/0399176136',
   },
   {
-    title: 'War of Art',
-    author: 'S.Pressfield',
+    title: 'Mastery',
+    author: 'G.Leonard',
     category: EBookCategory.PSYCHOLOGY,
-    href: 'https://www.amazon.com/War-Art-Winning-Creative-Battle/dp/1501260626',
+    href: 'https://www.amazon.com/Mastery-Keys-Success-Long-Term-Fulfillment/dp/0452267560',
   },
   {
     title: 'The Alchemist',
@@ -56,16 +56,10 @@ const books: TBook[] = [
     href: 'https://www.goodreads.com/book/show/18144590-the-alchemist',
   },
   {
-    title: 'The Talent Code',
-    author: 'M.Csíkszentmihályi',
+    title: 'War of Art',
+    author: 'S.Pressfield',
     category: EBookCategory.PSYCHOLOGY,
-    href: 'https://www.goodreads.com/book/show/5771014-the-talent-code',
-  },
-  {
-    title: 'Toward a Psychology of Being',
-    author: 'A.Maslow',
-    category: EBookCategory.PSYCHOLOGY,
-    href: 'https://www.goodreads.com/book/show/332792.Toward_a_Psychology_of_Being#CommunityReviews',
+    href: 'https://www.amazon.com/War-Art-Winning-Creative-Battle/dp/1501260626',
   },
   {
     title: "Man's Search for Meaning",
@@ -74,22 +68,28 @@ const books: TBook[] = [
     href: 'https://www.goodreads.com/book/show/4069.Man_s_Search_for_Meaning',
   },
   {
-    title: 'Mastery',
-    author: 'G.Leonard',
+    title: 'Toward a Psychology of Being',
+    author: 'A.Maslow',
     category: EBookCategory.PSYCHOLOGY,
-    href: 'https://www.amazon.com/Mastery-Keys-Success-Long-Term-Fulfillment/dp/0452267560',
+    href: 'https://www.goodreads.com/book/show/332792.Toward_a_Psychology_of_Being#CommunityReviews',
   },
   {
-    title: 'The Legend of Drizzt',
-    author: 'R. A. Salvatore',
-    category: EBookCategory.MISCELLANEOUS,
-    href: 'https://en.wikipedia.org/wiki/The_Legend_of_Drizzt',
+    title: 'Flow',
+    author: 'M.Csíkszentmihályi',
+    category: EBookCategory.PSYCHOLOGY,
+    href: 'https://www.goodreads.com/book/show/66354.Flow',
   },
   {
     title: "The Hitchhiker's Guide to the Galaxy",
     author: 'D.Adams',
     category: EBookCategory.MISCELLANEOUS,
     href: 'https://www.goodreads.com/book/show/11.The_Hitchhiker_s_Guide_to_the_Galaxy',
+  },
+  {
+    title: 'The Legend of Drizzt',
+    author: 'R. A. Salvatore',
+    category: EBookCategory.MISCELLANEOUS,
+    href: 'https://en.wikipedia.org/wiki/The_Legend_of_Drizzt',
   },
 ];
 
