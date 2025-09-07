@@ -24,7 +24,7 @@ const utils: UtilEntry[] = [
   {
     name: 'kagikanri',
     description:
-      'Modern, secure password & OTP manager leveraging linux pass utility with optional passkey support',
+      'Modern, secure password & OTP manager leveraging linux pass utility with passkey support',
     technology: 'Rust, Svelte, TS',
     href: 'https://github.com/archellir/kagikanri',
     status: 'active',
