@@ -45,7 +45,7 @@ export const de: Dictionary = {
       },
     },
     languages: {
-      title: 'Sprachen',
+      title: 'Sprachen die ich spreche',
       english: 'Englisch',
       russian: 'Russisch',
       spanish: 'Spanisch',
@@ -117,7 +117,7 @@ export const se: Dictionary = {
       },
     },
     languages: {
-      title: 'Språk',
+      title: 'Språk jag talar',
       english: 'Engelska',
       russian: 'Ryska',
       spanish: 'Spanska',
@@ -189,7 +189,7 @@ export const ru: Dictionary = {
       },
     },
     languages: {
-      title: 'Языки',
+      title: 'Языки, которыми я владею',
       english: 'Английский',
       russian: 'Русский',
       spanish: 'Испанский',
@@ -261,7 +261,7 @@ export const pt: Dictionary = {
       },
     },
     languages: {
-      title: 'Idiomas',
+      title: 'Idiomas que eu falo',
       english: 'Inglês',
       russian: 'Russo',
       spanish: 'Espanhol',
@@ -333,7 +333,7 @@ export const ja: Dictionary = {
       },
     },
     languages: {
-      title: '言語',
+      title: '話す言語',
       english: '英語',
       russian: 'ロシア語',
       spanish: 'スペイン語',
@@ -405,7 +405,7 @@ export const es: Dictionary = {
       },
     },
     languages: {
-      title: 'Idiomas',
+      title: 'Idiomas que hablo',
       english: 'Inglés',
       russian: 'Ruso',
       spanish: 'Español',
@@ -476,7 +476,7 @@ export const en: Dictionary = {
       },
     },
     languages: {
-      title: 'Languages',
+      title: 'Languages I speak',
       english: 'English',
       russian: 'Russian',
       spanish: 'Spanish',
