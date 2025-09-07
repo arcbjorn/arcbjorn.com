@@ -25,7 +25,7 @@ const utils: UtilEntry[] = [
   },
   {
     name: 'blog.arcbjorn.com',
-    description: 'Blog, built with Preact, Fresh & Deno',
+    description: 'Personal blog with articles about programming and technology',
     technology: 'TypeScript',
     href: 'https://github.com/archellir/blog.arcbjorn.com',
     status: 'active',
@@ -33,7 +33,7 @@ const utils: UtilEntry[] = [
   {
     name: 'torimemo',
     description:
-      'A lightning-fast, lightweight AI bookmark manager with FastText classification & ONNX context comprehension',
+      'Lightning-fast, lightweight AI bookmark manager with text classification and context comprehension',
     technology: 'Go',
     href: 'https://github.com/archellir/torimemo',
     status: 'active',
@@ -48,15 +48,14 @@ const utils: UtilEntry[] = [
   },
   {
     name: 'git.station',
-    description:
-      'A high-performance, extremely lightweight Git service built with Zig and SvelteKit',
+    description: 'High-performance, extremely lightweight Git service',
     technology: 'Zig',
     href: 'https://github.com/archellir/git.station',
     status: 'experimental',
   },
   {
     name: 'sekisho',
-    description: 'A minimal zero-trust proxy for personal use. Single Go binary, no dependencies.',
+    description: 'Minimal zero-trust proxy for personal use with single binary deployment',
     technology: 'Go',
     href: 'https://github.com/archellir/sekisho',
     status: 'active',
@@ -64,7 +63,7 @@ const utils: UtilEntry[] = [
   {
     name: 'ishikura-db',
     description:
-      'A high-performance, ACID-compliant database written in C++ with enterprise-grade security features',
+      'High-performance, ACID-compliant database with enterprise-grade security features',
     technology: 'C++',
     href: 'https://github.com/arcbjorn/ishikura-db',
     status: 'experimental',
@@ -85,23 +84,22 @@ const utils: UtilEntry[] = [
   },
   {
     name: 'solidjs-i18n',
-    description: 'A lightweight, type-safe internationalization library for SolidJS applications',
+    description: 'Lightweight, type-safe internationalization library for SolidJS',
     technology: 'TypeScript',
     href: 'https://github.com/arcbjorn/solidjs-i18n',
     status: 'active',
   },
   {
     name: 'arc-crypto-monitor',
-    description:
-      'SPA for real-time monitoring of cryptocoins, using Vue 3, Typescript, WebSockets, Docker',
-    technology: 'TypeScript',
+    description: 'Single-page application for real-time cryptocurrency monitoring',
+    technology: 'Vue 3',
     href: 'https://github.com/arcbjorn/arc-crypto-monitor',
     status: 'active',
   },
   {
     name: 'arc-donation-widget',
-    description: 'Donation widget using Vue 3, Koa.js, Docker, Typescript, MongoDB, Mongoose',
-    technology: 'TypeScript',
+    description: 'Donation widget with payment processing and tracking',
+    technology: 'Vue 3',
     href: 'https://github.com/arcbjorn/arc-donation-widget',
     status: 'experimental',
   },
@@ -114,8 +112,7 @@ const utils: UtilEntry[] = [
   },
   {
     name: 'paseto-zig',
-    description:
-      'A secure, type-safe implementation of PASETO (Platform-Agnostic Security Tokens) v4 and PASERK for Zig',
+    description: 'Secure, type-safe implementation of PASETO v4 and PASERK tokens',
     technology: 'Zig',
     href: 'https://github.com/arcbjorn/paseto-zig',
     status: 'experimental',
@@ -143,32 +140,16 @@ const utils: UtilEntry[] = [
   },
   {
     name: 'email-verifier',
-    description: 'Email verifier (checks MX, SPF, DMARC records)',
+    description: 'Email verification service with MX, SPF, and DMARC record checking',
     technology: 'Go',
     href: 'https://github.com/arcbjorn/email-verifier',
     status: 'experimental',
   },
   {
     name: 'arc-arch-linux-installation-guide',
-    description:
-      'Arch linux installation guide (Wayland): btrfs, pipewire, sway, ly, wofi, waybar, dunst, foot',
+    description: 'Comprehensive Arch Linux installation guide with Wayland desktop environment',
     technology: 'Shell',
     href: 'https://github.com/arcbjorn/arc-arch-linux-installation-guide',
-    status: 'experimental',
-  },
-  {
-    name: 'arc-robust-arch-linux-installation-guide',
-    description:
-      'Arch linux installation guide (Xorg): btrfs, pipewire, i3-gaps, lightdm, rofi, dunst, kitty, polybar',
-    technology: 'Shell',
-    href: 'https://github.com/arcbjorn/arc-robust-arch-linux-installation-guide',
-    status: 'experimental',
-  },
-  {
-    name: 'store-management-system',
-    description: 'Store management system for laptops using Go, gRPC',
-    technology: 'Go',
-    href: 'https://github.com/arcbjorn/store-management-system',
     status: 'experimental',
   },
 ];
