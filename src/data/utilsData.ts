@@ -8,31 +8,16 @@ type UtilEntry = {
 
 const utils: UtilEntry[] = [
   {
-    name: 'sekisho',
-    description: 'Minimal zero-trust proxy for personal use with single binary deployment',
-    technology: 'Go',
-    href: 'https://github.com/archellir/sekisho',
+    name: 'denshimon',
+    description: 'Kubernetes and GitOps management platform with monitoring and PASETO auth',
+    technology: 'Go, React, TS',
+    href: 'https://github.com/archellir/denshimon',
     status: 'active',
-  },
-  {
-    name: 'git.station',
-    description: 'High-performance, extremely lightweight Git service',
-    technology: 'Zig, Svelte',
-    href: 'https://github.com/archellir/git.station',
-    status: 'experimental',
-  },
-  {
-    name: 'ishikura-db',
-    description:
-      'High-performance, ACID-compliant database with enterprise-grade security features',
-    technology: 'C++',
-    href: 'https://github.com/arcbjorn/ishikura-db',
-    status: 'experimental',
   },
   {
     name: 'crosspay',
     description: 'Verifiable, private, cross-chain payment infrastructure',
-    technology: 'Solidity, Svelte, TS, Go',
+    technology: 'Go, Solidity, Svelte, TS',
     href: 'https://github.com/arcbjorn/crosspay',
     status: 'experimental',
   },
@@ -45,11 +30,47 @@ const utils: UtilEntry[] = [
     status: 'active',
   },
   {
-    name: 'denshimon',
+    name: 'paseto-zig',
+    description: 'Secure, type-safe implementation of PASETO v4 and PASERK tokens',
+    technology: 'Zig',
+    href: 'https://github.com/arcbjorn/paseto-zig',
+    status: 'experimental',
+  },
+  {
+    name: 'ishikura-db',
+    description: 'High-performance, ACID-compliant database',
+    technology: 'C++',
+    href: 'https://github.com/arcbjorn/ishikura-db',
+    status: 'experimental',
+  },
+  {
+    name: 'torimemo',
     description:
-      'Kubernetes and GitOps management platform with integrated monitoring, PASETO authentication, and single binary deployment',
-    technology: 'Go, React, TS',
-    href: 'https://github.com/archellir/denshimon',
+      'Lightning-fast, lightweight AI bookmark manager with text classification and context comprehension',
+    technology: 'Go, TS, Lit, FastText, ONNX',
+    href: 'https://github.com/archellir/torimemo',
+    status: 'active',
+  },
+  {
+    name: 'sekisho',
+    description: 'Minimal zero-trust proxy for personal use with single binary deployment',
+    technology: 'Go',
+    href: 'https://github.com/archellir/sekisho',
+    status: 'active',
+  },
+  {
+    name: 'arc-arch-linux-installation-guide',
+    description:
+      'Comprehensive Arch Linux installation guide with Wayland: btrfs, pipewire, sway, ly, wofi, waybar, dunst, foot',
+    technology: 'Shell',
+    href: 'https://github.com/arcbjorn/arc-arch-linux-installation-guide',
+    status: 'experimental',
+  },
+  {
+    name: 'tools',
+    description: 'A clean system for managing personal CLI utilities and scripts',
+    technology: 'Shell',
+    href: 'https://github.com/arcbjorn/tools',
     status: 'active',
   },
   {
@@ -68,28 +89,6 @@ const utils: UtilEntry[] = [
     status: 'active',
   },
   {
-    name: 'torimemo',
-    description:
-      'Lightning-fast, lightweight AI bookmark manager with text classification and context comprehension',
-    technology: 'Go, TS, Lit',
-    href: 'https://github.com/archellir/torimemo',
-    status: 'active',
-  },
-  {
-    name: 'tools',
-    description: 'A clean system for managing personal CLI utilities and scripts',
-    technology: 'Shell',
-    href: 'https://github.com/arcbjorn/tools',
-    status: 'active',
-  },
-  {
-    name: 'solidjs-i18n',
-    description: 'Lightweight, type-safe internationalization library',
-    technology: 'SolidJS, TS',
-    href: 'https://github.com/arcbjorn/solidjs-i18n',
-    status: 'active',
-  },
-  {
     name: 'arc-crypto-monitor',
     description: 'Single-page application for real-time cryptocurrency monitoring',
     technology: 'Vue 3, TS, WebSockets, Docker',
@@ -104,17 +103,24 @@ const utils: UtilEntry[] = [
     status: 'experimental',
   },
   {
+    name: 'solidjs-i18n',
+    description: 'Lightweight, type-safe internationalization library',
+    technology: 'SolidJS, TS',
+    href: 'https://github.com/arcbjorn/solidjs-i18n',
+    status: 'active',
+  },
+  {
     name: 'dashboard.arcbjorn.com',
     description: 'Dashboard with public & internal services',
-    technology: 'TS',
+    technology: 'Astro, Preact, TS',
     href: 'https://github.com/archellir/dashboard.arcbjorn.com',
     status: 'experimental',
   },
   {
-    name: 'paseto-zig',
-    description: 'Secure, type-safe implementation of PASETO v4 and PASERK tokens',
-    technology: 'Zig',
-    href: 'https://github.com/arcbjorn/paseto-zig',
+    name: 'git.station',
+    description: 'High-performance, extremely lightweight Git service',
+    technology: 'Zig, Svelte',
+    href: 'https://github.com/archellir/git.station',
     status: 'experimental',
   },
   {
@@ -127,7 +133,7 @@ const utils: UtilEntry[] = [
   {
     name: 'hn-frontend',
     description: 'Hacker News frontend implementation',
-    technology: 'TS',
+    technology: 'Hyperapp, TS',
     href: 'https://github.com/arcbjorn/hn-frontend',
     status: 'experimental',
   },
@@ -143,14 +149,6 @@ const utils: UtilEntry[] = [
     description: 'Email verification service with MX, SPF, and DMARC record checking',
     technology: 'Go, gRPC',
     href: 'https://github.com/arcbjorn/email-verifier',
-    status: 'experimental',
-  },
-  {
-    name: 'arc-arch-linux-installation-guide',
-    description:
-      'Comprehensive Arch Linux installation guide with Wayland: btrfs, pipewire, sway, ly, wofi, waybar, dunst, foot',
-    technology: 'Shell',
-    href: 'https://github.com/arcbjorn/arc-arch-linux-installation-guide',
     status: 'experimental',
   },
 ];
