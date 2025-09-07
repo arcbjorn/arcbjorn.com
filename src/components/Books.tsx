@@ -1,4 +1,4 @@
-import { Component, For } from 'solid-js';
+import { Component, For, createSignal } from 'solid-js';
 import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
 import TreeNode from '@components/ui/TreeNode';
 import { EBookCategory } from '@/types/types';
@@ -42,6 +42,24 @@ const categoriesList: EBookCategory[] = [
 ];
 
 export const Books: Component = () => {
+  const [expandedSections, setExpandedSections] = createSignal<Set<EBookCategory>>(
+    new Set([EBookCategory.PSYCHOLOGY]) // Psychology open by default
+  );
+
+  const toggleSection = (category: EBookCategory) => {
+    setExpandedSections(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(category)) {
+        newSet.delete(category);
+      } else {
+        newSet.add(category);
+      }
+      return newSet;
+    });
+  };
+
+  const isExpanded = (category: EBookCategory) => expandedSections().has(category);
+
   return (
     <fieldset class={extraStyles.extraInnerSection}>
       <legend class={extraStyles.extraSectionTitle}>
@@ -50,21 +68,31 @@ export const Books: Component = () => {
       <div class={styles.books}>
         <For each={categoriesList}>
           {option => (
-            <>
-              <span class={styles.categoryTitle}>
-                <TranslationMatrixEffect token={categoryToI18nTokenMap[option]} />
-              </span>
-              <div class={styles.bookList}>
-                <For each={books.filter(({ category }) => category === option)}>
-                  {({ title, author, href }) => (
-                    <div class={styles.bookEntry}>
-                      <TreeNode class={styles.treeNode} />
-                      <Book title={title} author={author} href={href} />
-                    </div>
-                  )}
-                </For>
-              </div>
-            </>
+            <div class={styles.categorySection}>
+              <button 
+                class={styles.categoryButton}
+                onClick={() => toggleSection(option)}
+              >
+                <span class={`${styles.expandIcon} ${isExpanded(option) ? styles.expanded : ''}`}>
+                  ▶
+                </span>
+                <span class={styles.categoryTitle}>
+                  <TranslationMatrixEffect token={categoryToI18nTokenMap[option]} />
+                </span>
+              </button>
+              {isExpanded(option) && (
+                <div class={styles.bookList}>
+                  <For each={books.filter(({ category }) => category === option)}>
+                    {({ title, author, href }) => (
+                      <div class={styles.bookEntry}>
+                        <TreeNode class={styles.treeNode} />
+                        <Book title={title} author={author} href={href} />
+                      </div>
+                    )}
+                  </For>
+                </div>
+              )}
+            </div>
           )}
         </For>
       </div>

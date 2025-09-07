@@ -9,13 +9,34 @@
 }
 
 .bookList {
-  @apply py-5;
+  @apply py-2;
+}
+
+.categorySection {
+  @apply flex flex-col;
+}
+
+.categoryButton {
+  @apply flex items-center gap-2 px-5 py-2 text-left border-none bg-transparent cursor-pointer;
+  color: var(--titleColor);
+  transition: color 0.2s ease;
+}
+
+.categoryButton:hover {
+  color: var(--focusColor);
 }
 
 .categoryTitle {
-  @apply px-5 text-sm;
+  @apply text-sm;
+}
 
-  color: var(--titleColor);
+.expandIcon {
+  @apply text-xs transition-transform duration-200;
+  color: var(--color);
+}
+
+.expandIcon.expanded {
+  transform: rotate(90deg);
 }
 
 .bookEntry {
