@@ -35,11 +35,11 @@
 
 /* Add specific classes for left and right sections */
 .extraSection:first-child {
-  @apply lg:w-[40%];
+  @apply lg:w-[50%];
 }
 
 .extraSection:last-child {
-  @apply lg:w-[60%];
+  @apply lg:w-[50%];
   display: flex;
   flex-direction: column;
 }
@@ -47,21 +47,35 @@
 .extraInnerSection {
   @apply mx-4 mb-3 rounded-lg border p-0 relative;
   height: fit-content;
-  max-height: calc(100vh - 120px);
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* In the right column, Utils and Books split space equally */
-.extraSection:last-child .extraInnerSection:first-child {
+/* Left column: Platforms (fixed height) + Utils (expandable) */
+.extraSection:first-child .extraInnerSection:first-child {
+  /* Platforms section - fixed height, no stretching */
+  max-height: fit-content;
+  flex-shrink: 0;
+}
+
+.extraSection:first-child .extraInnerSection:last-child {
+  /* Utils section - can expand to fill remaining space */
   flex: 1;
-  max-height: 50%;
+  max-height: calc(100vh - 200px); /* Leave space for platforms above */
+}
+
+/* Right column: Books (expandable) + Languages (fixed height) */
+.extraSection:last-child .extraInnerSection:first-child {
+  /* Books section - expandable but leave space for languages below */
+  flex: 1;
+  max-height: calc(100vh - 200px); /* Leave space for languages below */
 }
 
 .extraSection:last-child .extraInnerSection:last-child {
-  flex: 1;
-  max-height: 50%;
+  /* Languages section - fixed height, no stretching */
+  max-height: fit-content;
+  flex-shrink: 0;
 }
 
 .extraInnerSection > div {

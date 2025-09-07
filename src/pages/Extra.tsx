@@ -38,13 +38,13 @@ const ExtraPage: Component = () => {
           {/* Left Column */}
           <div class={styles.extraSection}>
             <ExtraLinks />
-            <Languages />
+            <Utils />
           </div>
 
           {/* Right Column */}
           <div class={styles.extraSection}>
-            <Utils />
             <Books />
+            <Languages />
           </div>
         </div>
       )}
