@@ -38,7 +38,7 @@ export const ThemeToggle: Component = () => {
   return (
     <button
       onClick={toggleTheme}
-      class="mx-4 h-9 rounded-lg border border-transparent px-2 leading-none transition-colors hover:border-neutral-600"
+      class="z-10 mx-4 h-9 cursor-pointer rounded-lg border border-transparent px-2 leading-none transition-colors hover:border-neutral-600"
       aria-label={t(Ei18nToken.ARIA_LABEL_TOGGLE_THEME)}
     >
       {isDark() ? (
