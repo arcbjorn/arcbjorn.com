@@ -5,7 +5,7 @@ const books: TBook[] = [
     title: 'Code Complete',
     author: 'S.McConnell',
     category: EBookCategory.SOFTWARE,
-    href: 'https://github.com/manh-nguyen/ccomplete2/blob/master/Steve%20McConnell-Code%20Complete_%20A%20Practical%20Handbook%20of%20Software%20Construction.%202%20ed.-Microsoft%20Press.epub',
+    href: 'https://www.goodreads.com/book/show/4845.Code_Complete',
   },
   {
     title: 'The Art of Computer Programming',
@@ -41,13 +41,13 @@ const books: TBook[] = [
     title: 'Psycho-Cybernetics',
     author: 'M.Maltz',
     category: EBookCategory.PSYCHOLOGY,
-    href: 'https://www.amazon.com/Psycho-Cybernetics-Updated-Expanded-Maxwell-Maltz/dp/0399176136',
+    href: 'https://www.goodreads.com/book/show/155981.Psycho_Cybernetics',
   },
   {
     title: 'Mastery',
     author: 'G.Leonard',
     category: EBookCategory.PSYCHOLOGY,
-    href: 'https://www.amazon.com/Mastery-Keys-Success-Long-Term-Fulfillment/dp/0452267560',
+    href: 'https://www.goodreads.com/book/show/13589182-mastery',
   },
   {
     title: 'The Alchemist',
@@ -59,7 +59,7 @@ const books: TBook[] = [
     title: 'War of Art',
     author: 'S.Pressfield',
     category: EBookCategory.PSYCHOLOGY,
-    href: 'https://www.amazon.com/War-Art-Winning-Creative-Battle/dp/1501260626',
+    href: 'https://www.goodreads.com/book/show/1319.The_War_of_Art',
   },
   {
     title: "Man's Search for Meaning",
@@ -71,7 +71,7 @@ const books: TBook[] = [
     title: 'Toward a Psychology of Being',
     author: 'A.Maslow',
     category: EBookCategory.PSYCHOLOGY,
-    href: 'https://www.goodreads.com/book/show/332792.Toward_a_Psychology_of_Being#CommunityReviews',
+    href: 'https://www.goodreads.com/book/show/332792.Toward_a_Psychology_of_Being',
   },
   {
     title: 'Flow',
