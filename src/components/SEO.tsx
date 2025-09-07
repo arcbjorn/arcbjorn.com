@@ -24,9 +24,7 @@ const SEO: Component<SEOProps> = props => {
   return (
     <>
       <Meta name="language" content={language()} />
-      <Title>
-        {() => `${SITE_TITLE}${props.description ? ` | ${props.description}` : ''}`}
-      </Title>
+      <Title>{() => `${SITE_TITLE}${props.description ? ` | ${props.description}` : ''}`}</Title>
       <Meta charset="utf-8" />
       <Meta name="viewport" content="width=device-width, initial-scale=1" />
       <Meta name="description" content={props.description} />
@@ -40,7 +38,7 @@ const SEO: Component<SEOProps> = props => {
       <Meta name="twitter:site" content="@arcbjorn" />
       <Meta name="twitter:image" content={() => `${siteUrl()}icon.png`} />
       <Link rel="canonical" href={() => siteUrl()} />
-      <script type="application/ld+json" src="/structured-data.json"></script>
+      <script type="application/ld+json" src="/structured-data.json" />
     </>
   );
 };

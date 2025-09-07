@@ -21,14 +21,12 @@ export const Layout: Component<LayoutProps> = props => {
   });
 
   return (
-    <main class="container mx-auto min-h-screen lg:h-screen flex flex-col overflow-hidden">
-      <header class="flex-none h-14">
+    <main class="container mx-auto flex min-h-screen flex-col overflow-hidden lg:h-screen">
+      <header class="h-14 flex-none">
         <Header />
       </header>
-      <section class="flex-1 min-h-0 lg:overflow-hidden">
-        <div class="lg:h-full lg:overflow-y-auto lg:grid lg:content-center">
-          {props.children}
-        </div>
+      <section class="min-h-0 flex-1 lg:overflow-hidden">
+        <div class="lg:grid lg:h-full lg:content-center lg:overflow-y-auto">{props.children}</div>
       </section>
     </main>
   );

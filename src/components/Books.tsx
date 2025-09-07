@@ -69,10 +69,7 @@ export const Books: Component = () => {
         <For each={categoriesList}>
           {option => (
             <div class={styles.categorySection}>
-              <button 
-                class={styles.categoryButton}
-                onClick={() => toggleSection(option)}
-              >
+              <button class={styles.categoryButton} onClick={() => toggleSection(option)}>
                 <span class={`${styles.expandIcon} ${isExpanded(option) ? styles.expanded : ''}`}>
                   ▶
                 </span>

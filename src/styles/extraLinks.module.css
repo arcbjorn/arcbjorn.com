@@ -5,11 +5,11 @@
 }
 
 .platformLinks {
-  @apply flex flex-col flex-1 pr-0 relative;
+  @apply relative flex flex-1 flex-col pr-0;
 }
 
 .socialLinks {
-  @apply flex flex-col justify-center items-center px-2 pb-2 relative;
+  @apply relative flex flex-col items-center justify-center px-2 pb-2;
   min-width: fit-content;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .platformLink {
-  @apply flex flex-col pl-5 pr-0 py-4;
+  @apply flex flex-col py-4 pr-0 pl-5;
 }
 
 .platformLinkTitle {

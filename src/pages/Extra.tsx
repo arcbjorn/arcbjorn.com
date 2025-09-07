@@ -5,19 +5,17 @@ import Utils from '@/components/Utils';
 import Loader from '@components/Loader';
 import ExtraLinks from '@components/extraLinks/ExtraLinks';
 import Languages from '@components/languages/Languages';
-import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
 import SEO from '@components/SEO';
 
 import { useI18n } from '@i18n/useI18n';
 import { EDocumentDescription } from '@/types/types';
-import { Ei18nToken } from '@/i18n/types';
 
 import styles from '@styles/extra.module.css';
 import animations from '@styles/animations.module.css';
 
 const ExtraPage: Component = () => {
   const [isLoading, setLoading] = createSignal(true);
-  const { t, language } = useI18n();
+  const { language } = useI18n();
 
   createEffect(() => {
     const timer = setTimeout(() => {

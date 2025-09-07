@@ -59,11 +59,14 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   );
 }
 
-render(() => (
-  <MetaProvider>
-    <Router>{routes}</Router>
-  </MetaProvider>
-), root!);
+render(
+  () => (
+    <MetaProvider>
+      <Router>{routes}</Router>
+    </MetaProvider>
+  ),
+  root!
+);
 
 // Preload Map code and data in the background for instant nav
 const prewarmMap = () => {
@@ -85,7 +88,9 @@ prewarmMap();
 
 // Load analytics only in production
 if (import.meta.env.PROD) {
-  const existing = document.querySelector('script[data-website-id="8f336108-6224-410f-8d56-8025fae879f7"]');
+  const existing = document.querySelector(
+    'script[data-website-id="8f336108-6224-410f-8d56-8025fae879f7"]'
+  );
   if (!existing) {
     const s = document.createElement('script');
     s.defer = true;

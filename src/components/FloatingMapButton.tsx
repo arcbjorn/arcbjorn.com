@@ -1,11 +1,7 @@
 import { Component, createSignal, onMount } from 'solid-js';
 import { A, useParams } from '@solidjs/router';
 import { getNavMenuLinkPath } from '@utils/navigation';
-import { useI18n } from '@i18n/useI18n';
-import { Ei18nToken } from '@i18n/types';
-
 const FloatingMapButton: Component = () => {
-  const { t } = useI18n();
   const params = useParams();
   const [isVisible, setIsVisible] = createSignal(false);
 

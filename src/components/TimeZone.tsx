@@ -51,7 +51,7 @@ export const TimeZone = () => {
   };
 
   return (
-    <div class="hidden lg:flex text-sm">
+    <div class="hidden text-sm lg:flex">
       <svg
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"

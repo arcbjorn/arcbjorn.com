@@ -1,4 +1,4 @@
-import { Component } from 'solid-js';
+import { Component, For } from 'solid-js';
 import { Ei18nToken } from '@i18n/types';
 import PlatformLink from '@/components/extraLinks/PlatformLink';
 import SocialLink from '@/components/extraLinks/SocialLink';
@@ -16,15 +16,15 @@ const ExtraLinks: Component = () => {
 
       <div class={styles.linksContainer}>
         <div class={styles.platformLinks}>
-          {platformLinks.map(link => (
+          <For each={platformLinks}>{link => (
             <PlatformLink link={link} />
-          ))}
+          )}</For>
         </div>
 
         <div class={styles.socialLinks}>
-          {socialLinks.map(link => (
+          <For each={socialLinks}>{link => (
             <SocialLink link={link} />
-          ))}
+          )}</For>
         </div>
       </div>
     </fieldset>

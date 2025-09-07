@@ -1,11 +1,9 @@
-import { Component, createEffect, createSignal, lazy, Suspense } from 'solid-js';
+import { Component, lazy, Suspense } from 'solid-js';
 import Layout from '@layouts/Layout';
 import SEO from '@components/SEO';
 import Loader from '@components/Loader';
-import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
 
 import { EDocumentDescription } from '@/types/types';
-import { Ei18nToken } from '@i18n/types';
 import { useI18n } from '@i18n/useI18n';
 
 const Map = lazy(() => import('@components/Map'));

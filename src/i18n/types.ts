@@ -117,7 +117,6 @@ export enum Ei18nToken {
   LANG_JAPANESE_NAME = 'extra.languages.japanese',
   LANG_SWEDISH_NAME = 'extra.languages.swedish',
 
-
   LANG_LEVEL_NATIVE = 'extra.languages.levels.native',
   LANG_LEVEL_FLUENT = 'extra.languages.levels.fluent',
   LANG_LEVEL_BASIC = 'extra.languages.levels.basic',

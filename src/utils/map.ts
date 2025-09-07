@@ -17,6 +17,7 @@ const colours = {
 } as const;
 
 export const getFeatureStyle = (
+  // eslint-disable-next-line no-undef
   feature: GeoJSON.Feature | undefined,
   placesData: Places
 ): L.PathOptions => {
@@ -63,6 +64,7 @@ export const getFeatureStyle = (
   };
 };
 
+// eslint-disable-next-line no-undef
 export const isRelevant = (feature: GeoJSON.Feature | undefined, placesData: Places) => {
   if (!feature) return false;
 
@@ -109,6 +111,7 @@ export const createLegend = (visited: string | undefined, planned: string | unde
   return legend;
 };
 
+// eslint-disable-next-line no-undef
 export const createPopupContent = (feature: GeoJSON.Feature) => {
   const { admin: country, name: province, region } = feature.properties || {};
   const countryCode = countryToCode[country] || '';

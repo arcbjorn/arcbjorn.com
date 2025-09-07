@@ -17,19 +17,10 @@ type UtilRowProps = {
 
 const UtilRow: Component<UtilRowProps> = props => {
   return (
-    <a
-      href={props.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      class={styles.utilRow}
-    >
+    <a href={props.href} target="_blank" rel="noopener noreferrer" class={styles.utilRow}>
       <span class={styles.utilName}>{props.name}</span>
-      <span class={styles.descriptionColumn}>
-        {props.description}
-      </span>
-      <span class={styles.technologyColumn}>
-        {props.technology}
-      </span>
+      <span class={styles.descriptionColumn}>{props.description}</span>
+      <span class={styles.technologyColumn}>{props.technology}</span>
     </a>
   );
 };
@@ -44,12 +35,12 @@ export const Utils: Component = () => {
         <For each={utils}>
           {({ name, description, technology, href, status }) => (
             <div class={styles.utilEntry}>
-              <UtilRow 
-                name={name} 
-                description={description} 
-                technology={technology} 
-                href={href} 
-                status={status} 
+              <UtilRow
+                name={name}
+                description={description}
+                technology={technology}
+                href={href}
+                status={status}
               />
             </div>
           )}

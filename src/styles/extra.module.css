@@ -12,7 +12,7 @@
 }
 
 .extraInfo {
-  @apply flex flex-col gap-4 px-4 pb-4 pt-8 lg:flex-row h-full lg:overflow-hidden text-sm;
+  @apply flex h-full flex-col gap-4 px-4 pt-8 pb-4 text-sm lg:flex-row lg:overflow-hidden;
 }
 
 .extraSection {
@@ -45,7 +45,7 @@
 }
 
 .extraInnerSection {
-  @apply mx-4 mb-3 rounded-lg border p-0 relative;
+  @apply relative mx-4 mb-3 rounded-lg border p-0;
   height: fit-content;
   overflow: hidden;
   display: flex;

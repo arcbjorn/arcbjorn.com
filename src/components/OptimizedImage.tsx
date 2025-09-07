@@ -14,7 +14,7 @@ const OptimizedImage: Component<OptimizedImageProps> = props => {
   const [isLoading, setIsLoading] = createSignal(true);
 
   const webpSrc = props.src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-  
+
   return (
     <picture class={props.class}>
       <Show when={!imageError()}>
@@ -30,7 +30,7 @@ const OptimizedImage: Component<OptimizedImageProps> = props => {
         onError={() => setImageError(true)}
         style={{
           opacity: isLoading() ? 0 : 1,
-          transition: 'opacity 0.3s ease-in-out'
+          transition: 'opacity 0.3s ease-in-out',
         }}
       />
     </picture>

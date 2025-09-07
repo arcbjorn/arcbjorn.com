@@ -94,6 +94,7 @@ const Map: Component = () => {
 
       L.geoJSON(provincesData, {
         style: feature => getFeatureStyle(feature, placesData),
+        // eslint-disable-next-line no-undef
         onEachFeature: (feature: GeoJSON.Feature, layer: L.Layer) => {
           if (isRelevant(feature, placesData)) {
             layer.bindPopup(createPopupContent(feature));

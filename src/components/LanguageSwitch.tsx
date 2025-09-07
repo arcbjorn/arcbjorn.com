@@ -1,4 +1,4 @@
-import { Component, createSignal, onMount, onCleanup } from 'solid-js';
+import { Component, createSignal, onMount, onCleanup, For } from 'solid-js';
 import { useLocation, useNavigate } from '@solidjs/router';
 import { useI18n, Language, languages } from '@i18n/useI18n';
 import { getNavPathOnLanguageChange } from '@utils/navigation';
@@ -66,7 +66,7 @@ export const LanguageSwitch: Component = () => {
 
       {isOpen() && (
         <div class={styles.dropdown} role="listbox">
-          {languages.map(lang => (
+          <For each={languages}>{lang => (
             <button
               class={`${styles.languageOption} ${lang === language() ? styles.active : ''}`}
               onClick={() => handleLanguageSelect(lang)}
@@ -75,7 +75,7 @@ export const LanguageSwitch: Component = () => {
             >
               {lang.toUpperCase()}
             </button>
-          ))}
+          )}</For>
         </div>
       )}
     </div>

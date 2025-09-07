@@ -1,5 +1,4 @@
 import { Component, For, createMemo } from 'solid-js';
-import { useI18n } from '@i18n/useI18n';
 import { Ei18nToken } from '@i18n/types';
 import languages from '@/data/languagesData';
 import { getLevelToken } from '@utils/languages';
@@ -9,11 +8,10 @@ import styles from '@styles/languages.module.css';
 import extraStyles from '@styles/extra.module.css';
 
 const Languages: Component = () => {
-  const { t } = useI18n();
 
   const groupedLanguages = createMemo(() => {
     const groups = new Map<number, any[]>();
-    
+
     languages.forEach(({ token, level }) => {
       if (!groups.has(level)) {
         groups.set(level, []);
@@ -22,8 +20,7 @@ const Languages: Component = () => {
     });
 
     const levelOrder = { 80: 0, 60: 1, 85: 2 }; // fluent, basic, native
-    return Array.from(groups.entries())
-      .sort((a, b) => levelOrder[a[0]] - levelOrder[b[0]]);
+    return Array.from(groups.entries()).sort((a, b) => levelOrder[a[0]] - levelOrder[b[0]]);
   });
 
   return (
@@ -42,7 +39,7 @@ const Languages: Component = () => {
                     {(token, i) => (
                       <>
                         <TranslationMatrixEffect token={token} />
-                        {i() < tokens.length - 1 && ", "}
+                        {i() < tokens.length - 1 && ', '}
                       </>
                     )}
                   </For>

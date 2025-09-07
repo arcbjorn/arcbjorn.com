@@ -1,7 +1,7 @@
 @reference "../index.css";
 
 .language {
-  @apply flex flex-1 justify-between py-3 pr-5 pl-5 md:pl-0 text-sm;
+  @apply flex flex-1 justify-between py-3 pr-5 pl-5 text-sm md:pl-0;
 }
 
 .nameLevel {

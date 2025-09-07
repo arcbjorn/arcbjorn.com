@@ -1,4 +1,4 @@
-import { Component, createSignal, createEffect, createMemo } from 'solid-js';
+import { Component, createSignal, createEffect, createMemo, For } from 'solid-js';
 import Typewriter from '@/components/terminal/TypeWriter';
 import TextMatrixEffect from '@components/TextMatrixEffect';
 import QuickLink from '@components/QuickLink';
@@ -6,7 +6,7 @@ import { useI18n } from '@i18n/useI18n';
 
 import { quickLinks } from '@data/linksData';
 import { Ei18nToken } from '@i18n/types';
-import { previousCompanies, currentCompany } from '@data/terminalData';
+import { previousCompanies } from '@data/terminalData';
 import styles from '@styles/terminal.module.css';
 
 export const Terminal: Component = () => {
@@ -31,7 +31,7 @@ export const Terminal: Component = () => {
     interests: false,
   });
 
-  const [_, setMatrixCompleteCount] = createSignal(0);
+  const [, setMatrixCompleteCount] = createSignal(0);
   const [currentTranslations, setCurrentTranslations] = createSignal({
     name: t(Ei18nToken.NAME),
     shortName: t(Ei18nToken.SHORT_NAME),
@@ -113,7 +113,7 @@ export const Terminal: Component = () => {
 
   // Effect that handles language changes
   createEffect(() => {
-    const _ = language();
+    language(); // Track language changes
     if (typewriterRef) {
       typewriterRef.reset();
       setQuickLinksVisibility(false);
@@ -192,7 +192,7 @@ export const Terminal: Component = () => {
                 onComplete={handleMatrixComplete}
               />
               &nbsp;
-              {previousCompanies.map((company, index) => (
+              <For each={previousCompanies}>{(company, index) => (
                 <>
                   @
                   <a href={company.link} target="_blank" class={styles.company}>
@@ -200,7 +200,7 @@ export const Terminal: Component = () => {
                   </a>
                   {previousCompanies.length > 1 && index % 2 === 0 && ', '}
                 </>
-              ))}
+              )}</For>
             </p>
             <p class="py-4 sm:pt-8">
               <TextMatrixEffect
@@ -223,9 +223,9 @@ export const Terminal: Component = () => {
             visibility: quickLinksDisplay() ? 'visible' : 'hidden',
           }}
         >
-          {quickLinks.map(link => (
+          <For each={quickLinks}>{link => (
             <QuickLink link={link} copyToClipboard={false} />
-          ))}
+          )}</For>
         </div>
       </div>
     </div>

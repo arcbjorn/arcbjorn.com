@@ -18,10 +18,9 @@
   background-color: var(--bookEntryBackgroundHoverColor);
 }
 
-
 /* Table-like row layout */
 .utilRow {
-  @apply flex-1 py-3 px-5 text-sm;
+  @apply flex-1 px-5 py-3 text-sm;
   display: grid;
   grid-template-columns: 2fr 3fr 1fr;
   gap: 1rem;
@@ -38,7 +37,7 @@
 }
 
 .technologyColumn {
-  @apply text-xs text-right;
+  @apply text-right text-xs;
   color: var(--titleColor);
 }
 

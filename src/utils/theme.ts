@@ -41,7 +41,7 @@ export const getInitialTheme = (): Theme => {
         return Theme.LIGHT;
       }
     }
-  } catch (e) {
+  } catch {
     // Ignore errors from this method, it's just an additional detection attempt
   }
 
