@@ -18,8 +18,10 @@ type UtilRowProps = {
 const UtilRow: Component<UtilRowProps> = props => {
   return (
     <a href={props.href} target="_blank" rel="noopener noreferrer" class={styles.utilRow}>
-      <span class={styles.utilName}>{props.name}</span>
-      <span class={styles.descriptionColumn}>{props.description}</span>
+      <div class={styles.projectInfo}>
+        <span class={styles.utilName}>{props.name}</span>
+        <span class={styles.descriptionColumn}>{props.description}</span>
+      </div>
       <span class={styles.technologyColumn}>{props.technology}</span>
     </a>
   );

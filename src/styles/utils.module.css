@@ -18,37 +18,51 @@
   background-color: var(--bookEntryBackgroundHoverColor);
 }
 
-/* Table-like row layout */
+/* 2-column row layout */
 .utilRow {
   @apply flex-1 px-5 py-3 text-sm;
   display: grid;
-  grid-template-columns: 2fr 3fr 1fr;
-  gap: 1rem;
-  align-items: center;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
 }
 
-/* Column styles */
+/* Left column: project info stacked */
+.projectInfo {
+  @apply flex flex-col;
+  gap: 0.25rem;
+}
+
 .utilName {
   @apply font-medium;
 }
 
 .descriptionColumn {
-  @apply text-xs opacity-70;
+  @apply text-xs leading-relaxed opacity-70;
 }
 
+/* Right column: technology with more space */
 .technologyColumn {
-  @apply text-right text-xs;
+  @apply text-right text-xs font-medium whitespace-nowrap;
   color: var(--titleColor);
+  min-width: 200px;
 }
 
 /* Responsive layout */
 @media (max-width: 768px) {
   .utilRow {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .projectInfo {
     gap: 0.5rem;
   }
 
   .technologyColumn {
     @apply text-left;
+    min-width: unset;
+    font-size: 0.75rem;
+    padding: 0.25rem 0;
   }
 }
