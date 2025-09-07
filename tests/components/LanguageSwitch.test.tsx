@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, fireEvent, screen } from '@solidjs/testing-library';
-import { LanguageSwitch } from '@components/LanguageSwitch';
+import LanguageSwitch from '@components/LanguageSwitch';
 import { Router, Route } from '@solidjs/router';
 import { Language } from '@i18n/useI18n';
 
@@ -34,6 +34,11 @@ vi.mock('@i18n/useI18n', async () => {
     }),
   };
 });
+
+// Mock the navigation utility
+vi.mock('@utils/navigation', () => ({
+  getNavPathOnLanguageChange: vi.fn((pathname: string, lang: string) => `/${lang}${pathname}`),
+}));
 
 describe('LanguageSwitch', () => {
   beforeEach(() => {
