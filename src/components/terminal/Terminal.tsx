@@ -199,7 +199,7 @@ export const Terminal: Component = () => {
                     <a href={company.link} target="_blank" class={styles.company}>
                       {company.name}
                     </a>
-                    {index() < previousCompanies.length - 1 && ' '}
+                    {index() < previousCompanies.length - 1 && ', '}
                   </>
                 )}
               </For>
