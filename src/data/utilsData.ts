@@ -98,6 +98,79 @@ const utils: UtilEntry[] = [
     href: 'https://github.com/arcbjorn/arc-crypto-monitor',
     status: 'active',
   },
+  {
+    name: 'arc-donation-widget',
+    description: 'Donation widget using Vue 3, Koa.js, Docker, Typescript, MongoDB, Mongoose',
+    technology: 'TypeScript',
+    href: 'https://github.com/arcbjorn/arc-donation-widget',
+    status: 'experimental',
+  },
+  {
+    name: 'dashboard.arcbjorn.com',
+    description: 'Dashboard with public & internal services',
+    technology: 'TypeScript',
+    href: 'https://github.com/archellir/dashboard.arcbjorn.com',
+    status: 'experimental',
+  },
+  {
+    name: 'paseto-zig',
+    description:
+      'A secure, type-safe implementation of PASETO (Platform-Agnostic Security Tokens) v4 and PASERK for Zig',
+    technology: 'Zig',
+    href: 'https://github.com/arcbjorn/paseto-zig',
+    status: 'experimental',
+  },
+  {
+    name: 'pii-autofill-extention',
+    description: 'Browser extension for PII autofill functionality',
+    technology: 'TypeScript',
+    href: 'https://github.com/arcbjorn/pii-autofill-extention',
+    status: 'experimental',
+  },
+  {
+    name: 'hn-frontend',
+    description: 'Hacker News frontend implementation',
+    technology: 'TypeScript',
+    href: 'https://github.com/arcbjorn/hn-frontend',
+    status: 'experimental',
+  },
+  {
+    name: 'gh-activity-graph-sh',
+    description: 'GitHub activity graph generator',
+    technology: 'Rust',
+    href: 'https://github.com/arcbjorn/gh-activity-graph-sh',
+    status: 'experimental',
+  },
+  {
+    name: 'email-verifier',
+    description: 'Email verifier (checks MX, SPF, DMARC records)',
+    technology: 'Go',
+    href: 'https://github.com/arcbjorn/email-verifier',
+    status: 'experimental',
+  },
+  {
+    name: 'arc-arch-linux-installation-guide',
+    description:
+      'Arch linux installation guide (Wayland): btrfs, pipewire, sway, ly, wofi, waybar, dunst, foot',
+    technology: 'Shell',
+    href: 'https://github.com/arcbjorn/arc-arch-linux-installation-guide',
+    status: 'experimental',
+  },
+  {
+    name: 'arc-robust-arch-linux-installation-guide',
+    description:
+      'Arch linux installation guide (Xorg): btrfs, pipewire, i3-gaps, lightdm, rofi, dunst, kitty, polybar',
+    technology: 'Shell',
+    href: 'https://github.com/arcbjorn/arc-robust-arch-linux-installation-guide',
+    status: 'experimental',
+  },
+  {
+    name: 'store-management-system',
+    description: 'Store management system for laptops using Go, gRPC',
+    technology: 'Go',
+    href: 'https://github.com/arcbjorn/store-management-system',
+    status: 'experimental',
+  },
 ];
 
 export default utils;
