@@ -8,6 +8,43 @@ type UtilEntry = {
 
 const utils: UtilEntry[] = [
   {
+    name: 'sekisho',
+    description: 'Minimal zero-trust proxy for personal use with single binary deployment',
+    technology: 'Go',
+    href: 'https://github.com/archellir/sekisho',
+    status: 'active',
+  },
+  {
+    name: 'git.station',
+    description: 'High-performance, extremely lightweight Git service',
+    technology: 'Zig, Svelte',
+    href: 'https://github.com/archellir/git.station',
+    status: 'experimental',
+  },
+  {
+    name: 'ishikura-db',
+    description:
+      'High-performance, ACID-compliant database with enterprise-grade security features',
+    technology: 'C++',
+    href: 'https://github.com/arcbjorn/ishikura-db',
+    status: 'experimental',
+  },
+  {
+    name: 'crosspay',
+    description: 'Verifiable, private, cross-chain payment infrastructure',
+    technology: 'Solidity, Svelte, TS, Go',
+    href: 'https://github.com/arcbjorn/crosspay',
+    status: 'experimental',
+  },
+  {
+    name: 'kagikanri',
+    description:
+      'Modern, secure password & OTP manager leveraging linux pass utility with optional passkey support',
+    technology: 'Rust, Svelte, TS',
+    href: 'https://github.com/archellir/kagikanri',
+    status: 'active',
+  },
+  {
     name: 'denshimon',
     description:
       'Kubernetes and GitOps management platform with integrated monitoring, PASETO authentication, and single binary deployment',
@@ -37,43 +74,6 @@ const utils: UtilEntry[] = [
     technology: 'Go, TS, Lit',
     href: 'https://github.com/archellir/torimemo',
     status: 'active',
-  },
-  {
-    name: 'kagikanri',
-    description:
-      'Modern, secure password & OTP manager leveraging linux pass utility with optional passkey support',
-    technology: 'Rust, Svelte, TS',
-    href: 'https://github.com/archellir/kagikanri',
-    status: 'active',
-  },
-  {
-    name: 'git.station',
-    description: 'High-performance, extremely lightweight Git service',
-    technology: 'Zig, Svelte',
-    href: 'https://github.com/archellir/git.station',
-    status: 'experimental',
-  },
-  {
-    name: 'sekisho',
-    description: 'Minimal zero-trust proxy for personal use with single binary deployment',
-    technology: 'Go',
-    href: 'https://github.com/archellir/sekisho',
-    status: 'active',
-  },
-  {
-    name: 'ishikura-db',
-    description:
-      'High-performance, ACID-compliant database with enterprise-grade security features',
-    technology: 'C++',
-    href: 'https://github.com/arcbjorn/ishikura-db',
-    status: 'experimental',
-  },
-  {
-    name: 'crosspay',
-    description: 'Verifiable, private, cross-chain payment infrastructure',
-    technology: 'Solidity, Svelte, TS, Go',
-    href: 'https://github.com/arcbjorn/crosspay',
-    status: 'experimental',
   },
   {
     name: 'tools',
