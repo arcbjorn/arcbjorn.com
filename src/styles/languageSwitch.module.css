@@ -5,7 +5,7 @@
 }
 
 .switcherButton {
-  @apply flex items-center gap-2 rounded-md px-3 py-2 transition-colors;
+  @apply flex items-center gap-2 rounded-md px-3 py-2 transition-colors cursor-pointer;
   color: var(--color);
   background-color: transparent;
   border: 1px solid transparent;
@@ -34,7 +34,7 @@
 }
 
 .languageOption {
-  @apply flex w-full items-center justify-center px-3 py-2 text-left text-sm transition-colors;
+  @apply flex w-full items-center justify-center px-3 py-2 text-left text-sm transition-colors cursor-pointer;
   color: var(--color);
 }
 
