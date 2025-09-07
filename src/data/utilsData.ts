@@ -84,8 +84,8 @@ const utils: UtilEntry[] = [
   },
   {
     name: 'solidjs-i18n',
-    description: 'Lightweight, type-safe internationalization library for SolidJS',
-    technology: 'TS',
+    description: 'Lightweight, type-safe internationalization library',
+    technology: 'SolidJS, TS',
     href: 'https://github.com/arcbjorn/solidjs-i18n',
     status: 'active',
   },
@@ -147,8 +147,9 @@ const utils: UtilEntry[] = [
   },
   {
     name: 'arc-arch-linux-installation-guide',
-    description: 'Comprehensive Arch Linux installation guide with Wayland desktop environment',
-    technology: 'Shell, btrfs, pipewire, sway',
+    description:
+      'Comprehensive Arch Linux installation guide with Wayland: btrfs, pipewire, sway, ly, wofi, waybar, dunst, foot',
+    technology: 'Shell',
     href: 'https://github.com/arcbjorn/arc-arch-linux-installation-guide',
     status: 'experimental',
   },
