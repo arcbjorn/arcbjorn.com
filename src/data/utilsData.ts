@@ -136,6 +136,12 @@ const utils: UtilEntry[] = [
     technology: 'Go, gRPC',
     href: 'https://github.com/arcbjorn/email-verifier',
   },
+  {
+    name: 'number-base-converter-cli',
+    description: 'CLI tool for converting numbers between different base systems (2-36) with fractional support',
+    technology: 'Rust',
+    href: 'https://github.com/arcbjorn/number-base-converter-cli',
+  },
 ];
 
 export default utils;
