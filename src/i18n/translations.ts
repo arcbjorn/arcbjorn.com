@@ -19,6 +19,7 @@ export const de: Dictionary = {
   home: {
     file: 'über_mich',
     greeting: 'Hallo, ich heiße Oleg',
+    pronunciation: '/ˈoːlɛk/',
     position: 'Softwareentwickler',
     formerly: 'zuvor',
     interests: 'Web • Systeme • AI • Blockchain',
@@ -91,6 +92,7 @@ export const se: Dictionary = {
   home: {
     file: 'om_mig',
     greeting: 'Hej, jag heter Oleg',
+    pronunciation: '/ˈuːlɛj/',
     position: 'Mjukvaruingenjör',
     formerly: 'tidigare',
     interests: 'Webb • System • AI • Blockchain',
@@ -163,6 +165,7 @@ export const ru: Dictionary = {
   home: {
     file: 'обо_мне',
     greeting: 'Привет, меня зовут Олег',
+    pronunciation: '[ɐˈlʲek]',
     position: 'Инженер ПО',
     formerly: 'ранее',
     interests: 'Web • Системы • ИИ • Блокчейн',
@@ -235,6 +238,7 @@ export const pt: Dictionary = {
   home: {
     file: 'sobre_mim',
     greeting: 'Olá, sou Oleg',
+    pronunciation: '/oˈlɛɡi/',
     position: 'Engenheiro de Software',
     formerly: 'anteriormente',
     interests: 'Web • Sistemas • IA • Blockchain',
@@ -307,6 +311,7 @@ export const ja: Dictionary = {
   home: {
     file: '私',
     greeting: 'こんにちは、オレグ です',
+    pronunciation: 'オレグ [oˈreɡɯ]',
     position: 'ソフトウェアエンジニア',
     formerly: '以前',
     interests: 'Web • システム • 人工知能 • ブロックチェーン',
@@ -379,6 +384,7 @@ export const es: Dictionary = {
   home: {
     file: 'sobre_mi',
     greeting: 'Hola, soy Oleg',
+    pronunciation: '/oˈleɣ/',
     position: 'Ingeniero de software',
     formerly: 'anteriormente',
     interests: 'Web • Sistemas • IA • Blockchain',
@@ -450,6 +456,7 @@ export const en: Dictionary = {
   home: {
     file: 'about_me',
     greeting: "Hi, I'm Oleg",
+    pronunciation: '/ˈoʊlɛɡ/',
     position: 'Software engineer',
     formerly: 'formerly',
     interests: 'Web • Systems • AI • Blockchain',

@@ -26,6 +26,7 @@ export const Terminal: Component = () => {
     name: false,
     shortName: false,
     greeting: false,
+    pronunciation: false,
     position: false,
     formerly: false,
     interests: false,
@@ -37,6 +38,7 @@ export const Terminal: Component = () => {
     shortName: t(Ei18nToken.SHORT_NAME),
     file: t(Ei18nToken.FILE),
     greeting: t(Ei18nToken.GREETING),
+    pronunciation: t(Ei18nToken.PRONUNCIATION),
     position: t(Ei18nToken.POSITION),
     formerly: t(Ei18nToken.FORMERLY),
     interests: t(Ei18nToken.INTERESTS),
@@ -54,6 +56,7 @@ export const Terminal: Component = () => {
       shortName: t(Ei18nToken.SHORT_NAME)!,
       file: t(Ei18nToken.FILE)!,
       greeting: t(Ei18nToken.GREETING)!,
+      pronunciation: t(Ei18nToken.PRONUNCIATION)!,
       position: t(Ei18nToken.POSITION)!,
       formerly: t(Ei18nToken.FORMERLY)!,
       interests: t(Ei18nToken.INTERESTS)!,
@@ -65,6 +68,7 @@ export const Terminal: Component = () => {
         name: lastTranslations?.name !== newTranslations.name,
         shortName: lastTranslations?.shortName !== newTranslations.shortName,
         greeting: lastTranslations?.greeting !== newTranslations.greeting,
+        pronunciation: lastTranslations?.pronunciation !== newTranslations.pronunciation,
         position: lastTranslations?.position !== newTranslations.position,
         formerly: lastTranslations?.formerly !== newTranslations.formerly,
         interests: lastTranslations?.interests !== newTranslations.interests,
@@ -91,6 +95,7 @@ export const Terminal: Component = () => {
           name: false,
           shortName: false,
           greeting: false,
+          pronunciation: false,
           position: false,
           formerly: false,
           interests: false,
@@ -171,6 +176,14 @@ export const Terminal: Component = () => {
                 showEffect={matrixEffects().greeting}
                 onComplete={handleMatrixComplete}
               />
+              <span style={{ color: 'var(--focusColor)', 'margin-left': '0.5rem' }}>
+                <TextMatrixEffect
+                  text={currentTranslations().pronunciation}
+                  language={language()}
+                  showEffect={matrixEffects().pronunciation}
+                  onComplete={handleMatrixComplete}
+                />
+              </span>
             </p>
             <p class="pb-4">
               <TextMatrixEffect

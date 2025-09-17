@@ -17,6 +17,7 @@ export type Dictionary = {
   home: {
     file: string;
     greeting: string;
+    pronunciation: string;
     position: string;
     formerly: string;
     interests: string;
@@ -89,6 +90,7 @@ export enum Ei18nToken {
 
   FILE = 'home.file',
   GREETING = 'home.greeting',
+  PRONUNCIATION = 'home.pronunciation',
   POSITION = 'home.position',
   FORMERLY = 'home.formerly',
   INTERESTS = 'home.interests',
