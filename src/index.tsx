@@ -92,13 +92,13 @@ prewarmMap();
 // Load analytics only in production
 if (import.meta.env.PROD) {
   const existing = document.querySelector(
-    'script[data-website-id="8f336108-6224-410f-8d56-8025fae879f7"]'
+    'script[data-website-id="21c5a32b-a29d-491c-afb2-fa7ffaa81e2b"]'
   );
   if (!existing) {
     const s = document.createElement('script');
     s.defer = true;
-    s.src = 'https://analytics.arcbjorn.com/script.js';
-    s.setAttribute('data-website-id', '8f336108-6224-410f-8d56-8025fae879f7');
+    s.src = 'https://analytics.arcbjorn.com/t.js';
+    s.setAttribute('data-website-id', '21c5a32b-a29d-491c-afb2-fa7ffaa81e2b');
     document.head.appendChild(s);
   }
 }
