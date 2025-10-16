@@ -1,0 +1,13 @@
+# robots.txt for arcbjorn.com
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://arcbjorn.com/sitemap.xml
+Sitemap: https://www.arcbjorn.com/sitemap.xml
+
+# Block analytics endpoints if any
+Disallow: /api/
+
+# Common crawl optimization
+Crawl-delay: 1
