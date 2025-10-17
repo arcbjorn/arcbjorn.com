@@ -2,24 +2,24 @@ export const getLanguageChars = (language: string): string => {
   switch (language) {
     case 'ru':
     case 'extra.languages.russian':
-      return 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
+      return 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
     case 'ja':
     case 'extra.languages.japanese':
       return 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん';
     case 'de':
     case 'extra.languages.german':
-      return 'ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜß';
+      return 'abcdefghijklmnopqrstuvwxyzäöüß';
     case 'es':
     case 'extra.languages.spanish':
-      return 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúü¡¿';
+      return 'abcdefghijklmnopqrstuvwxyzñáéíóúü¡¿';
     case 'pt':
     case 'extra.languages.portuguese':
-      return 'ABCDEFGHIJKLMNOPQRSTUVWXYZÃÕÇáàâãçéêíóôõú';
+      return 'abcdefghijklmnopqrstuvwxyzãõçáàâéêíóôú';
     case 'se':
     case 'extra.languages.swedish':
-      return 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖåäö';
+      return 'abcdefghijklmnopqrstuvwxyzåäö';
     default:
-      return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      return 'abcdefghijklmnopqrstuvwxyz';
   }
 };
 
