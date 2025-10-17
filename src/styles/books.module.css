@@ -1,9 +1,5 @@
 @reference "../index.css";
 
-.book {
-  @apply flex flex-1 justify-between py-3 pr-5 pl-5 text-sm md:pl-0;
-}
-
 .books {
   @apply flex flex-col p-2;
 }

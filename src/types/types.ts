@@ -75,8 +75,6 @@ export enum ELinkTitle {
   LINKEDIN = 'LinkedIn',
   GITHUB = 'Github',
   EMAIL = 'EMail',
-
-  BLOG = 'Blog',
   LEETCODE = 'LeetCode',
 
   X = 'X',

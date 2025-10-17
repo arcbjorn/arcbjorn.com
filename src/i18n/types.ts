@@ -42,7 +42,7 @@ export type Dictionary = {
       categories: {
         software: string;
         psychology: string;
-        fantasy: string;
+        miscellaneous: string;
       };
     };
 
