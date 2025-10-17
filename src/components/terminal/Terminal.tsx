@@ -18,6 +18,7 @@ export const Terminal: Component = () => {
     greeting: false,
     pronunciation: false,
     formerly: false,
+    built: false,
     summary_line1: false,
     summary_line2: false,
     summary_line3: false,
@@ -28,6 +29,7 @@ export const Terminal: Component = () => {
     greeting: t(Ei18nToken.GREETING),
     pronunciation: t(Ei18nToken.PRONUNCIATION),
     formerly: t(Ei18nToken.FORMERLY),
+    built: t(Ei18nToken.BUILT),
     summary_line1: t(Ei18nToken.SUMMARY_LINE1),
     summary_line2: t(Ei18nToken.SUMMARY_LINE2),
     summary_line3: t(Ei18nToken.SUMMARY_LINE3),
@@ -39,6 +41,7 @@ export const Terminal: Component = () => {
       greeting: t(Ei18nToken.GREETING)!,
       pronunciation: t(Ei18nToken.PRONUNCIATION)!,
       formerly: t(Ei18nToken.FORMERLY)!,
+      built: t(Ei18nToken.BUILT)!,
       summary_line1: t(Ei18nToken.SUMMARY_LINE1)!,
       summary_line2: t(Ei18nToken.SUMMARY_LINE2)!,
       summary_line3: t(Ei18nToken.SUMMARY_LINE3)!,
@@ -50,6 +53,7 @@ export const Terminal: Component = () => {
         greeting: lastTranslations?.greeting !== newTranslations.greeting,
         pronunciation: lastTranslations?.pronunciation !== newTranslations.pronunciation,
         formerly: lastTranslations?.formerly !== newTranslations.formerly,
+        built: lastTranslations?.built !== newTranslations.built,
         summary_line1: lastTranslations?.summary_line1 !== newTranslations.summary_line1,
         summary_line2: lastTranslations?.summary_line2 !== newTranslations.summary_line2,
         summary_line3: lastTranslations?.summary_line3 !== newTranslations.summary_line3,
@@ -72,6 +76,7 @@ export const Terminal: Component = () => {
           greeting: false,
           pronunciation: false,
           formerly: false,
+          built: false,
           summary_line1: false,
           summary_line2: false,
           summary_line3: false,
@@ -126,7 +131,7 @@ export const Terminal: Component = () => {
                 onComplete={handleMatrixComplete}
               />
             </p>
-            <p class="py-4 sm:pt-8">
+            <p class="pb-4">
               <TextMatrixEffect
                 text={currentTranslations().formerly}
                 language={language()}
@@ -151,6 +156,21 @@ export const Terminal: Component = () => {
 
         <div class="flex flex-wrap items-center justify-start py-10">
           <For each={quickLinks}>{link => <QuickLink link={link} copyToClipboard={false} />}</For>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-start pt-4 text-xs">
+          <TextMatrixEffect
+            text={currentTranslations().built}
+            language={language()}
+            showEffect={matrixEffects().built}
+            onComplete={handleMatrixComplete}
+          />
+          &nbsp;
+          <a href="https://sumi.finance/" target="_blank" class={styles.company}>Sumi Finance</a>,
+          &nbsp;
+          <a href="https://humansconnect.ai/" target="_blank" class={styles.company}>Humans Connect AI</a>,
+          &nbsp;
+          <a href="https://argentinamusic.space/" target="_blank" class={styles.company}>Argentina Music Space</a>
         </div>
       </div>
     </div>
