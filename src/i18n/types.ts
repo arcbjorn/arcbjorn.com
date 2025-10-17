@@ -18,9 +18,9 @@ export type Dictionary = {
     file: string;
     greeting: string;
     pronunciation: string;
-    position: string;
     formerly: string;
-    interests: string;
+    summary_line1: string;
+    summary_line2: string;
     cv: string;
     blog: string;
   };
@@ -28,9 +28,6 @@ export type Dictionary = {
   extra: {
     platforms: {
       title: string;
-      names: {
-        dashboard: string;
-      };
     };
 
     utils: {
@@ -64,7 +61,6 @@ export type Dictionary = {
   };
 
   map: {
-    title: string;
     visited: string;
     plan_to_visit: string;
   };
@@ -91,9 +87,10 @@ export enum Ei18nToken {
   FILE = 'home.file',
   GREETING = 'home.greeting',
   PRONUNCIATION = 'home.pronunciation',
-  POSITION = 'home.position',
   FORMERLY = 'home.formerly',
-  INTERESTS = 'home.interests',
+  SUMMARY_LINE1 = 'home.summary_line1',
+  SUMMARY_LINE2 = 'home.summary_line2',
+  SUMMARY_LINE3 = 'home.summary_line3',
   CV = 'home.cv',
   BLOG_TITLE = 'home.blog',
 
