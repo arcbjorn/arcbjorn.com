@@ -1,18 +1,24 @@
 @reference "../index.css";
 
+.platformsWrapper {
+  @apply flex justify-center;
+  margin: 0;
+}
+
+.compactSection {
+  max-width: 280px;
+  width: 100%;
+}
+
 .linksContainer {
-  @apply flex items-start pb-3;
+  @apply flex items-center justify-center gap-6 pt-1 pb-4;
   overflow-y: visible !important;
 }
 
-.platformLinks {
-  @apply flex flex-1 flex-col pr-0;
-  border-right: 1px solid var(--extraPageBorderColor);
-}
-
-.socialLinks {
-  @apply flex flex-col items-center justify-start px-2;
-  min-width: fit-content;
+.divider {
+  width: 1px;
+  height: 2rem;
+  background-color: var(--extraPageBorderColor);
 }
 
 .platformLink {
@@ -47,10 +53,10 @@
 }
 
 .socialLinkIcon {
-  @apply p-3 my-1;
+  @apply p-3;
 
   svg {
-    @apply h-5 w-5;
+    @apply h-6 w-6;
   }
 
   color: var(--extraLinkColor);
