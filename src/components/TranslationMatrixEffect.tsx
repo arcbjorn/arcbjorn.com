@@ -12,7 +12,11 @@ const TranslationMatrixEffect: Component<TranslationMatrixEffectProps> = props =
   const { t, language } = useI18n();
   let isMounted = false;
   const [showMatrixEffect, setShowMatrixEffect] = createSignal(false);
-  let previousText = props.lowerCase ? t(props.token)?.toLowerCase() : t(props.token);
+  const getText = () => {
+    const text = t(props.token) as string;
+    return props.lowerCase ? text.toLowerCase() : text;
+  };
+  let previousText = getText();
 
   createEffect(() => {
     // Track language changes
@@ -25,7 +29,7 @@ const TranslationMatrixEffect: Component<TranslationMatrixEffectProps> = props =
     }
 
     // Check if text changed and trigger effect
-    const currentText = props.lowerCase ? t(props.token)?.toLowerCase() : t(props.token);
+    const currentText = getText();
     if (currentText !== previousText) {
       setShowMatrixEffect(true);
       previousText = currentText;
@@ -37,7 +41,7 @@ const TranslationMatrixEffect: Component<TranslationMatrixEffectProps> = props =
       language={language()}
       showEffect={showMatrixEffect()}
       onComplete={() => setShowMatrixEffect(false)}
-      text={props.lowerCase ? t(props.token)?.toLowerCase() : t(props.token)}
+      text={getText()}
     />
   );
 };
