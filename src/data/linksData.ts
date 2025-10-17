@@ -40,13 +40,6 @@ export const platformLinks: TLink<IPlatformLinkPartial>[] = [
     iconName: 'leetcode',
     iconTitle: 'LeetCode',
   },
-  {
-    title: Ei18nToken.DASHBOARD_TITLE,
-    href: ELinkUrl.DASHBOARD,
-    iconPrefix: EIconLibrary.FONT_AWESOME,
-    iconName: 'earth-americas',
-    iconTitle: 'Dashboard',
-  },
 ];
 
 export const socialLinks: TLink[] = [
