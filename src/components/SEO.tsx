@@ -48,17 +48,17 @@ const SEO: Component<SEOProps> = props => {
   return (
     <>
       <Meta name="language" content={language()} />
-      <Title>{() => `${SITE_TITLE}${props.description ? ` | ${props.description}` : ''}`}</Title>
+      <Title>{`${SITE_TITLE}${props.description ? ` | ${props.description}` : ''}`}</Title>
       <Meta charset="utf-8" />
       <Meta name="viewport" content="width=device-width, initial-scale=1" />
       <Meta name="description" content={props.description} />
       <Meta property="og:title" content={SITE_TITLE} />
       <Meta property="og:description" content={props.description} />
       <Meta property="og:type" content="website" />
-      <Meta property="og:url" content={() => siteUrl()} />
+      <Meta property="og:url" content={siteUrl()} />
       <Meta property="og:site_name" content={SITE_TITLE} />
-      <Meta property="og:image" content={() => `${baseUrl()}/icon.png`} />
-      <Meta property="og:locale" content={() => {
+      <Meta property="og:image" content={`${baseUrl()}/icon.png`} />
+      <Meta property="og:locale" content={(() => {
         const langMap: Record<string, string> = {
           en: 'en_US',
           es: 'es_ES',
@@ -69,13 +69,13 @@ const SEO: Component<SEOProps> = props => {
           se: 'sv_SE',
         };
         return langMap[language()] || 'en_US';
-      }} />
+      })()} />
       <Meta name="twitter:card" content="summary" />
       <Meta name="twitter:site" content="@arcbjorn" />
-      <Meta name="twitter:image" content={() => `${baseUrl()}/icon.png`} />
+      <Meta name="twitter:image" content={`${baseUrl()}/icon.png`} />
 
       {/* Canonical URL - always point to non-www */}
-      <Link rel="canonical" href={() => siteUrl()} />
+      <Link rel="canonical" href={siteUrl()} />
 
       {/* Hreflang tags for language variants */}
       <For each={LANGUAGES}>
