@@ -30,13 +30,13 @@ export const de: Dictionary = {
 
   extra: {
     platforms: {
-      title: 'Ich auf anderen Plattformen',
+      title: 'Andere Plattformen',
     },
     utils: {
       title: 'Utilities / Experimente',
     },
     books: {
-      title: 'Bücher die ich mag',
+      title: 'Gute Bücher',
       categories: {
         software: 'Software',
         psychology: 'Psychologie',
@@ -44,7 +44,6 @@ export const de: Dictionary = {
       },
     },
     languages: {
-      title: 'Sprachen die ich spreche',
       english: 'Englisch',
       russian: 'Russisch',
       spanish: 'Spanisch',
@@ -101,13 +100,13 @@ export const se: Dictionary = {
 
   extra: {
     platforms: {
-      title: 'Mig på andra plattformar',
+      title: 'Andra plattformar',
     },
     utils: {
       title: 'Verktyg / Experiment',
     },
     books: {
-      title: 'Böcker som jag gillar',
+      title: 'Bra böcker',
       categories: {
         software: 'Programvara',
         psychology: 'Psykologi',
@@ -115,7 +114,6 @@ export const se: Dictionary = {
       },
     },
     languages: {
-      title: 'Språk jag talar',
       english: 'Engelska',
       russian: 'Ryska',
       spanish: 'Spanska',
@@ -172,13 +170,13 @@ export const ru: Dictionary = {
 
   extra: {
     platforms: {
-      title: 'Я на других платформах',
+      title: 'Другие платформы',
     },
     utils: {
       title: 'Утилиты / Эксперименты',
     },
     books: {
-      title: 'Книги, которым отдаю предпочтение',
+      title: 'Хорошие книги',
       categories: {
         software: 'Разработка ПО',
         psychology: 'Психология',
@@ -186,7 +184,6 @@ export const ru: Dictionary = {
       },
     },
     languages: {
-      title: 'Языки, которыми я владею',
       english: 'Английский',
       russian: 'Русский',
       spanish: 'Испанский',
@@ -243,13 +240,13 @@ export const pt: Dictionary = {
 
   extra: {
     platforms: {
-      title: 'Eu em outras plataformas',
+      title: 'Outras plataformas',
     },
     utils: {
       title: 'Utilitários / Experimentos',
     },
     books: {
-      title: 'Livros que eu gosto',
+      title: 'Bons livros',
       categories: {
         software: 'Software',
         psychology: 'Psicologia',
@@ -257,7 +254,6 @@ export const pt: Dictionary = {
       },
     },
     languages: {
-      title: 'Idiomas que eu falo',
       english: 'Inglês',
       russian: 'Russo',
       spanish: 'Espanhol',
@@ -314,13 +310,13 @@ export const ja: Dictionary = {
 
   extra: {
     platforms: {
-      title: '他のプラットフォームでの私',
+      title: '他のプラットフォーム',
     },
     utils: {
       title: 'ユーティリティ / 実験',
     },
     books: {
-      title: '好きな本',
+      title: '良い本',
       categories: {
         software: 'ソフトウェア',
         psychology: '心理学',
@@ -328,7 +324,6 @@ export const ja: Dictionary = {
       },
     },
     languages: {
-      title: '話す言語',
       english: '英語',
       russian: 'ロシア語',
       spanish: 'スペイン語',
@@ -385,13 +380,13 @@ export const es: Dictionary = {
 
   extra: {
     platforms: {
-      title: 'Yo en otras plataformas',
+      title: 'Otras plataformas',
     },
     utils: {
       title: 'Utilidades / Experimentos',
     },
     books: {
-      title: 'Libros que me gustan',
+      title: 'Buenos libros',
       categories: {
         software: 'Software',
         psychology: 'Psicología',
@@ -399,7 +394,6 @@ export const es: Dictionary = {
       },
     },
     languages: {
-      title: 'Idiomas que hablo',
       english: 'Inglés',
       russian: 'Ruso',
       spanish: 'Español',
@@ -455,13 +449,13 @@ export const en: Dictionary = {
 
   extra: {
     platforms: {
-      title: 'Me on other platforms',
+      title: 'Other platforms',
     },
     utils: {
       title: 'Utils / Experiments',
     },
     books: {
-      title: 'Books that I like',
+      title: 'Good books',
       categories: {
         software: 'Software',
         psychology: 'Psychology',
@@ -469,7 +463,6 @@ export const en: Dictionary = {
       },
     },
     languages: {
-      title: 'Languages I speak',
       english: 'English',
       russian: 'Russian',
       spanish: 'Spanish',
