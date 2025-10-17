@@ -64,7 +64,7 @@ const getInitialLanguage = (): Language => {
     }
   }
 
-  // 6. Fallback to default language
+  // 5. Fallback to default language
   return Language.EN;
 };
 
