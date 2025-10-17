@@ -30,15 +30,14 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.DEPLOY_ADDRESS }}
-          username: ${{ secrets.DEPLOY_USER }}
-          password: ${{ secrets.DEPLOY_PASS }}
-          local-dir: ./dist/
-          server-dir: /
-          timeout: 300000
-          log-level: verbose
-          protocol: ftps
-          port: 21
+      - name: Deploy with lftp (robust FTP client)
+        run: |
+          sudo apt-get update && sudo apt-get install -y lftp
+          lftp -c "
+            set ftp:ssl-allow no;
+            set net:timeout 10;
+            set net:max-retries 3;
+            set net:reconnect-interval-base 5;
+            open -u ${{ secrets.DEPLOY_USER }},${{ secrets.DEPLOY_PASS }} ${{ secrets.DEPLOY_ADDRESS }};
+            mirror --reverse --delete --verbose --parallel=5 ./dist/ /;
+          "
