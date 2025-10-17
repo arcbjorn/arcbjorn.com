@@ -19,6 +19,7 @@ export type Dictionary = {
     greeting: string;
     pronunciation: string;
     formerly: string;
+    built: string;
     summary_line1: string;
     summary_line2: string;
     cv: string;
@@ -88,6 +89,7 @@ export enum Ei18nToken {
   GREETING = 'home.greeting',
   PRONUNCIATION = 'home.pronunciation',
   FORMERLY = 'home.formerly',
+  BUILT = 'home.built',
   SUMMARY_LINE1 = 'home.summary_line1',
   SUMMARY_LINE2 = 'home.summary_line2',
   SUMMARY_LINE3 = 'home.summary_line3',
