@@ -1,6 +1,7 @@
 import { Component, createSignal, createEffect, For } from 'solid-js';
 import TextMatrixEffect from '@components/TextMatrixEffect';
 import QuickLink from '@components/QuickLink';
+import ProjectPreview from '@components/terminal/ProjectPreview';
 import { useI18n } from '@i18n/useI18n';
 
 import { quickLinks } from '@data/linksData';
@@ -34,6 +35,14 @@ export const Terminal: Component = () => {
     summary_line2: t(Ei18nToken.SUMMARY_LINE2),
     summary_line3: t(Ei18nToken.SUMMARY_LINE3),
   });
+
+  const [hoveredProject, setHoveredProject] = createSignal<string | null>(null);
+
+  const projects = [
+    { name: 'Sumi Finance', url: 'https://sumi.finance/' },
+    { name: 'Humans Connect AI', url: 'https://humansconnect.ai/' },
+    { name: 'Argentina Music Space', url: 'https://argentinamusic.space/' },
+  ];
 
   // Update translations when language changes
   createEffect(() => {
@@ -166,11 +175,28 @@ export const Terminal: Component = () => {
             onComplete={handleMatrixComplete}
           />
           &nbsp;
-          <a href="https://sumi.finance/" target="_blank" class={styles.company}>Sumi Finance</a>,
-          &nbsp;
-          <a href="https://humansconnect.ai/" target="_blank" class={styles.company}>Humans Connect AI</a>,
-          &nbsp;
-          <a href="https://argentinamusic.space/" target="_blank" class={styles.company}>Argentina Music Space</a>
+          <For each={projects}>
+            {(project, index) => (
+              <>
+                <span
+                  style={{ position: 'relative', display: 'inline-block' }}
+                  onMouseEnter={() => setHoveredProject(project.name)}
+                  onMouseLeave={() => setHoveredProject(null)}
+                >
+                  <a href={project.url} target="_blank" class={styles.company}>
+                    {project.name}
+                  </a>
+                  <ProjectPreview
+                    url={project.url}
+                    name={project.name}
+                    isVisible={hoveredProject() === project.name}
+                  />
+                </span>
+                {index() < projects.length - 1 && ', '}
+                {index() < projects.length - 1 && <>&nbsp;</>}
+              </>
+            )}
+          </For>
         </div>
       </div>
     </div>
