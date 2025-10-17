@@ -2,7 +2,6 @@ import { Component } from 'solid-js';
 import { A, useParams, useLocation } from '@solidjs/router';
 import ThemeToggle from '@components/ThemeToggle';
 import LanguageSwitch from '@components/LanguageSwitch';
-import TimeZone from '@components/TimeZone';
 import TranslationMatrixEffect from '@components/TranslationMatrixEffect';
 
 import { getNavMenuLinkPath, isActiveNavPath } from '@utils/navigation';
@@ -20,7 +19,6 @@ export const Header: Component = () => {
       <A class={styles.logo} href={getNavMenuLinkPath('/', params)}>
         <TranslationMatrixEffect token={Ei18nToken.NAME} />
       </A>
-      <TimeZone />
       <div class={styles.nav}>
         <div class={styles.links}>
           <A
