@@ -179,7 +179,7 @@ export const Terminal: Component = () => {
             {(project, index) => (
               <>
                 <span
-                  style={{ position: 'relative', display: 'inline-block' }}
+                  class={styles.projectLink}
                   onMouseEnter={() => setHoveredProject(project.name)}
                   onMouseLeave={() => setHoveredProject(null)}
                 >
