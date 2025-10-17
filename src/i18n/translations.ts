@@ -30,9 +30,6 @@ export const de: Dictionary = {
   extra: {
     platforms: {
       title: 'Ich auf anderen Plattformen',
-      names: {
-        dashboard: 'Armaturenbrett',
-      },
     },
     utils: {
       title: 'Utilities / Experimente',
@@ -103,9 +100,6 @@ export const se: Dictionary = {
   extra: {
     platforms: {
       title: 'Mig på andra plattformar',
-      names: {
-        dashboard: 'Instrumentpanelen',
-      },
     },
     utils: {
       title: 'Verktyg / Experiment',
@@ -176,9 +170,6 @@ export const ru: Dictionary = {
   extra: {
     platforms: {
       title: 'Я на других платформах',
-      names: {
-        dashboard: 'Панель сервисов',
-      },
     },
     utils: {
       title: 'Утилиты / Эксперименты',
@@ -249,9 +240,6 @@ export const pt: Dictionary = {
   extra: {
     platforms: {
       title: 'Eu em outras plataformas',
-      names: {
-        dashboard: 'Painel',
-      },
     },
     utils: {
       title: 'Utilitários / Experimentos',
@@ -322,9 +310,6 @@ export const ja: Dictionary = {
   extra: {
     platforms: {
       title: '他のプラットフォームでの私',
-      names: {
-        dashboard: '前板',
-      },
     },
     utils: {
       title: 'ユーティリティ / 実験',
@@ -395,9 +380,6 @@ export const es: Dictionary = {
   extra: {
     platforms: {
       title: 'Yo en otras plataformas',
-      names: {
-        dashboard: 'Panel',
-      },
     },
     utils: {
       title: 'Utilidades / Experimentos',
@@ -467,9 +449,6 @@ export const en: Dictionary = {
   extra: {
     platforms: {
       title: 'Me on other platforms',
-      names: {
-        dashboard: 'Dashboard',
-      },
     },
     utils: {
       title: 'Utils / Experiments',

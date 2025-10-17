@@ -99,8 +99,6 @@ export enum Ei18nToken {
 
   PLATFORMS_TITLE = 'extra.platforms.title',
 
-  DASHBOARD_TITLE = 'extra.platforms.names.dashboard',
-
   UTILS_TITLE = 'extra.utils.title',
 
   BOOKS_TITLE = 'extra.books.title',
