@@ -1,0 +1,29 @@
+.previewContainer {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 8px;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  border: 1px solid var(--focusColor);
+  border-radius: 4px;
+  background: #fff;
+  pointer-events: none;
+  z-index: 1000;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .previewContainer {
+    display: block;
+  }
+}
+
+.previewIframe {
+  width: 1200px;
+  height: 900px;
+  border: none;
+  transform: scale(0.333);
+  transform-origin: 0 0;
+}
