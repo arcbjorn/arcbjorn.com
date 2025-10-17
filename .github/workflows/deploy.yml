@@ -30,28 +30,7 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: Deploy to FTP (exclude large files)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.DEPLOY_ADDRESS }}
-          username: ${{ secrets.DEPLOY_USER }}
-          password: ${{ secrets.DEPLOY_PASS }}
-          local-dir: ./dist/
-          server-dir: /
-          timeout: 180000
-          exclude: |
-            **/filtered_provinces-*.geojson
-
-      - name: Upload GeoJSON with curl (retry logic)
+      - name: Deploy with rsync over SSH (password auth)
         run: |
-          for i in {1..5}; do
-            echo "Attempt $i of 5..."
-            curl -T ./dist/assets/data/filtered_provinces-*.geojson \
-              ftp://${{ secrets.DEPLOY_ADDRESS }}/assets/data/ \
-              --user "${{ secrets.DEPLOY_USER }}:${{ secrets.DEPLOY_PASS }}" \
-              --connect-timeout 30 \
-              --max-time 180 \
-              --retry 3 \
-              --retry-delay 5 \
-              --ftp-create-dirs && break || sleep 10
-          done
+          sudo apt-get update && sudo apt-get install -y sshpass
+          sshpass -p "${{ secrets.DEPLOY_PASS }}" rsync -avz --delete --progress -e "ssh -o StrictHostKeyChecking=no" ./dist/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_ADDRESS }}:${{ secrets.DEPLOY_PATH || '/home/'${{ secrets.DEPLOY_USER }}'/public_html' }}
