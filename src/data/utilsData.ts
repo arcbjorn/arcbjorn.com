@@ -3,6 +3,7 @@ type UtilEntry = {
   description: string;
   technology: string;
   href: string;
+  status?: 'active' | 'experimental' | 'archived';
 };
 
 const utils: UtilEntry[] = [
