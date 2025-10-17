@@ -34,14 +34,11 @@
   }
 }
 
-.userAndHost {
-  color: var(--userandhostColor);
-}
-
-.infoLocation {
-  color: var(--infolocationColor);
-}
-
 .company {
   color: var(--companyColor);
+}
+
+.projectLink {
+  position: relative;
+  display: inline-block;
 }
