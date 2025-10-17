@@ -91,7 +91,6 @@ export enum Ei18nToken {
   BUILT = 'home.built',
   SUMMARY_LINE1 = 'home.summary_line1',
   SUMMARY_LINE2 = 'home.summary_line2',
-  SUMMARY_LINE3 = 'home.summary_line3',
   CV = 'home.cv',
   BLOG_TITLE = 'home.blog',
 
