@@ -17,18 +17,20 @@ export const Terminal: Component = () => {
   const [matrixEffects, setMatrixEffects] = createSignal<Record<string, boolean>>({
     greeting: false,
     pronunciation: false,
-    position: false,
     formerly: false,
-    interests: false,
+    summary_line1: false,
+    summary_line2: false,
+    summary_line3: false,
   });
 
   const [, setMatrixCompleteCount] = createSignal(0);
   const [currentTranslations, setCurrentTranslations] = createSignal({
     greeting: t(Ei18nToken.GREETING),
     pronunciation: t(Ei18nToken.PRONUNCIATION),
-    position: t(Ei18nToken.POSITION),
     formerly: t(Ei18nToken.FORMERLY),
-    interests: t(Ei18nToken.INTERESTS),
+    summary_line1: t(Ei18nToken.SUMMARY_LINE1),
+    summary_line2: t(Ei18nToken.SUMMARY_LINE2),
+    summary_line3: t(Ei18nToken.SUMMARY_LINE3),
   });
 
   // Update translations when language changes
@@ -36,9 +38,10 @@ export const Terminal: Component = () => {
     const newTranslations = {
       greeting: t(Ei18nToken.GREETING)!,
       pronunciation: t(Ei18nToken.PRONUNCIATION)!,
-      position: t(Ei18nToken.POSITION)!,
       formerly: t(Ei18nToken.FORMERLY)!,
-      interests: t(Ei18nToken.INTERESTS)!,
+      summary_line1: t(Ei18nToken.SUMMARY_LINE1)!,
+      summary_line2: t(Ei18nToken.SUMMARY_LINE2)!,
+      summary_line3: t(Ei18nToken.SUMMARY_LINE3)!,
     };
 
     if (!isInitialLoad) {
@@ -46,9 +49,10 @@ export const Terminal: Component = () => {
       const newEffects = {
         greeting: lastTranslations?.greeting !== newTranslations.greeting,
         pronunciation: lastTranslations?.pronunciation !== newTranslations.pronunciation,
-        position: lastTranslations?.position !== newTranslations.position,
         formerly: lastTranslations?.formerly !== newTranslations.formerly,
-        interests: lastTranslations?.interests !== newTranslations.interests,
+        summary_line1: lastTranslations?.summary_line1 !== newTranslations.summary_line1,
+        summary_line2: lastTranslations?.summary_line2 !== newTranslations.summary_line2,
+        summary_line3: lastTranslations?.summary_line3 !== newTranslations.summary_line3,
       };
       setMatrixEffects(newEffects);
     }
@@ -67,9 +71,10 @@ export const Terminal: Component = () => {
         setMatrixEffects({
           greeting: false,
           pronunciation: false,
-          position: false,
           formerly: false,
-          interests: false,
+          summary_line1: false,
+          summary_line2: false,
+          summary_line3: false,
         });
         return 0;
       }
@@ -83,7 +88,7 @@ export const Terminal: Component = () => {
       <div class={styles.terminalContent}>
         <div class={styles.terminalText}>
           <div class="flex flex-col pt-4">
-            <p class="py-4 sm:py-8">
+            <p class="pb-8 pt-4 sm:pt-8">
               <TextMatrixEffect
                 text={currentTranslations().greeting}
                 language={language()}
@@ -99,19 +104,29 @@ export const Terminal: Component = () => {
                 />
               </span>
             </p>
-            <p class="pb-4">
+            <p class="pb-8 leading-relaxed">
               <TextMatrixEffect
-                text={currentTranslations().position}
+                text={currentTranslations().summary_line1}
                 language={language()}
-                showEffect={matrixEffects().position}
+                showEffect={matrixEffects().summary_line1}
                 onComplete={handleMatrixComplete}
               />
-              {/* &nbsp;@
-              <a href={currentCompany.link} target="_blank" class={styles.company}>
-                {currentCompany.name}
-              </a> */}
+              <br />
+              <TextMatrixEffect
+                text={currentTranslations().summary_line2}
+                language={language()}
+                showEffect={matrixEffects().summary_line2}
+                onComplete={handleMatrixComplete}
+              />
+              <br />
+              <TextMatrixEffect
+                text={currentTranslations().summary_line3}
+                language={language()}
+                showEffect={matrixEffects().summary_line3}
+                onComplete={handleMatrixComplete}
+              />
             </p>
-            <p class="pb-4">
+            <p class="py-4 sm:pt-8">
               <TextMatrixEffect
                 text={currentTranslations().formerly}
                 language={language()}
@@ -130,14 +145,6 @@ export const Terminal: Component = () => {
                   </>
                 )}
               </For>
-            </p>
-            <p class="py-4 sm:pt-8">
-              <TextMatrixEffect
-                text={currentTranslations().interests}
-                language={language()}
-                showEffect={matrixEffects().interests}
-                onComplete={handleMatrixComplete}
-              />
             </p>
           </div>
         </div>
