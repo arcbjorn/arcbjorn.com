@@ -36,8 +36,8 @@ export const platformLinks: TLink<IPlatformLinkPartial>[] = [
   {
     title: ELinkTitle.LEETCODE,
     href: ELinkUrl.LEETCODE,
-    iconPrefix: EIconLibrary.FONT_AWESOME,
-    iconName: 'terminal',
+    iconPrefix: EIconLibrary.CUSTOM,
+    iconName: 'leetcode',
     iconTitle: 'LeetCode',
   },
   {
