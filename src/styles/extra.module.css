@@ -52,17 +52,17 @@
   flex-direction: column;
 }
 
-/* Left column: Platforms (fixed height) + Utils (expandable) */
+/* Left column: Utils (expandable) + Platforms (fixed height) */
 .extraSection:first-child .extraInnerSection:first-child {
-  /* Platforms section - fixed height, no stretching */
-  max-height: fit-content;
-  flex-shrink: 0;
+  /* Utils section - expandable, leave space for platforms below */
+  flex: 1;
+  max-height: calc(100vh - 200px); /* Leave space for platforms below */
 }
 
 .extraSection:first-child .extraInnerSection:last-child {
-  /* Utils section - can expand to fill remaining space */
-  flex: 1;
-  max-height: calc(100vh - 200px); /* Leave space for platforms above */
+  /* Platforms section - fixed height, no stretching */
+  max-height: fit-content;
+  flex-shrink: 0;
 }
 
 /* Right column: Books (expandable) + Languages (fixed height) */

@@ -35,8 +35,8 @@ const ExtraPage: Component = () => {
         <div class={`${styles.extraInfo} ${animations.fadeIn}`}>
           {/* Left Column */}
           <div class={styles.extraSection}>
-            <ExtraLinks />
             <Utils />
+            <ExtraLinks />
           </div>
 
           {/* Right Column */}
