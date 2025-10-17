@@ -78,7 +78,6 @@ export enum ELinkTitle {
 
   BLOG = 'Blog',
   LEETCODE = 'LeetCode',
-  DASHBOARD = 'Dashboard',
 
   X = 'X',
   INSTAGRAM = 'Instagram',
@@ -96,8 +95,6 @@ export enum ELinkUrl {
   COPY_MAIL = 'oleg.luganskiy@gmail.com',
 
   LEETCODE = 'https://leetcode.com/arcbjorn',
-  DASHBOARD = 'https://dashboard.arcbjorn.com/',
-  // MY_TRAVEL_MAP = 'https://www.mytravelmap.xyz/u/gg104931485347737929283',
 
   X = 'https://x.com/arcbjorn',
   INSTAGRAM = 'https://www.instagram.com/arcbjorn',
