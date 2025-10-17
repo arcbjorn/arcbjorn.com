@@ -38,3 +38,5 @@ jobs:
           password: ${{ secrets.DEPLOY_PASS }}
           local-dir: ./dist/
           server-dir: /
+          timeout: 300000
+          log-level: verbose
