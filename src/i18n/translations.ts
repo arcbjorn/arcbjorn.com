@@ -228,7 +228,7 @@ export const pt: Dictionary = {
 
   home: {
     file: 'sobre_mim',
-    greeting: 'Olá, sou Oleg',
+    greeting: 'Olá, meu nome é Oleg',
     pronunciation: '/oˈlɛɡi/',
     position: 'Engenheiro de Software',
     formerly: 'anteriormente',
@@ -368,7 +368,7 @@ export const es: Dictionary = {
 
   home: {
     file: 'sobre_mi',
-    greeting: 'Hola, soy Oleg',
+    greeting: 'Hola, me llamo Oleg',
     pronunciation: '/oˈleɣ/',
     position: 'Ingeniero de software',
     formerly: 'anteriormente',
@@ -437,7 +437,7 @@ export const en: Dictionary = {
 
   home: {
     file: 'about_me',
-    greeting: "Hi, I'm Oleg",
+    greeting: 'Hi, my name is Oleg',
     pronunciation: '/ˈoʊlɛɡ/',
     position: 'Software engineer',
     formerly: 'formerly',
