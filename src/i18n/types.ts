@@ -45,7 +45,6 @@ export type Dictionary = {
     };
 
     languages: {
-      title: string;
       english: string;
       russian: string;
       swedish: string;
@@ -105,8 +104,6 @@ export enum Ei18nToken {
   SOFTWARE = 'extra.books.categories.software',
   PSYCHOLOGY = 'extra.books.categories.psychology',
   MISCELLANEOUS = 'extra.books.categories.miscellaneous',
-
-  LANGUAGES_TITLE = 'extra.languages.title',
 
   LANG_ENGLISH_NAME = 'extra.languages.english',
   LANG_RUSSIAN_NAME = 'extra.languages.russian',
