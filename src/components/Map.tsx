@@ -70,9 +70,11 @@ const Map: Component = () => {
       bounds: config.MAX_BOUNDS,
     }).addTo(mapInstance);
 
-    addRegionLabels(mapInstance, language());
-    legendInstance = createLegend(t(Ei18nToken.MAP_VISITED), t(Ei18nToken.MAP_PLAN_TO_VISIT));
-    legendInstance.addTo(mapInstance);
+    if (mapInstance) {
+      addRegionLabels(mapInstance, language());
+      legendInstance = createLegend(t(Ei18nToken.MAP_VISITED), t(Ei18nToken.MAP_PLAN_TO_VISIT));
+      legendInstance.addTo(mapInstance);
+    }
   };
 
   const handleResize = () => {
@@ -93,7 +95,7 @@ const Map: Component = () => {
       const provincesData = await response.json();
 
       L.geoJSON(provincesData, {
-        style: feature => getFeatureStyle(feature, placesData),
+        style: (feature: GeoJSON.Feature | undefined) => getFeatureStyle(feature, placesData),
         // eslint-disable-next-line no-undef
         onEachFeature: (feature: GeoJSON.Feature, layer: L.Layer) => {
           if (isRelevant(feature, placesData)) {
