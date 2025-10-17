@@ -12,7 +12,7 @@ type UtilRowProps = {
   description: string;
   technology: string;
   href: string;
-  status: 'active' | 'experimental' | 'archived';
+  status?: 'active' | 'experimental' | 'archived';
 };
 
 const UtilRow: Component<UtilRowProps> = props => {
