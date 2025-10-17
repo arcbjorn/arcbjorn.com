@@ -22,7 +22,6 @@ export const Terminal: Component = () => {
     built: false,
     summary_line1: false,
     summary_line2: false,
-    summary_line3: false,
   });
 
   const [, setMatrixCompleteCount] = createSignal(0);
@@ -33,7 +32,6 @@ export const Terminal: Component = () => {
     built: t(Ei18nToken.BUILT),
     summary_line1: t(Ei18nToken.SUMMARY_LINE1),
     summary_line2: t(Ei18nToken.SUMMARY_LINE2),
-    summary_line3: t(Ei18nToken.SUMMARY_LINE3),
   });
 
   const [hoveredProject, setHoveredProject] = createSignal<string | null>(null);
@@ -53,7 +51,6 @@ export const Terminal: Component = () => {
       built: t(Ei18nToken.BUILT)!,
       summary_line1: t(Ei18nToken.SUMMARY_LINE1)!,
       summary_line2: t(Ei18nToken.SUMMARY_LINE2)!,
-      summary_line3: t(Ei18nToken.SUMMARY_LINE3)!,
     };
 
     if (!isInitialLoad) {
@@ -65,7 +62,6 @@ export const Terminal: Component = () => {
         built: lastTranslations?.built !== newTranslations.built,
         summary_line1: lastTranslations?.summary_line1 !== newTranslations.summary_line1,
         summary_line2: lastTranslations?.summary_line2 !== newTranslations.summary_line2,
-        summary_line3: lastTranslations?.summary_line3 !== newTranslations.summary_line3,
       };
       setMatrixEffects(newEffects);
     }
@@ -88,7 +84,6 @@ export const Terminal: Component = () => {
           built: false,
           summary_line1: false,
           summary_line2: false,
-          summary_line3: false,
         });
         return 0;
       }
@@ -130,13 +125,6 @@ export const Terminal: Component = () => {
                 text={currentTranslations().summary_line2}
                 language={language()}
                 showEffect={matrixEffects().summary_line2}
-                onComplete={handleMatrixComplete}
-              />
-              <br />
-              <TextMatrixEffect
-                text={currentTranslations().summary_line3}
-                language={language()}
-                showEffect={matrixEffects().summary_line3}
                 onComplete={handleMatrixComplete}
               />
             </p>
