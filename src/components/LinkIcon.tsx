@@ -1,11 +1,11 @@
 import { Component, Show } from 'solid-js';
 import { faLinkedin, faGithub, faXTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faTerminal, faEarthAmericas, faBook } from '@fortawesome/free-solid-svg-icons';
-import { EIconLibrary, TLink, IPlatformLinkPartial, IHomePageLinkPartial } from '@/types/types';
+import { EIconLibrary, TLink, ILinkWithTitle } from '@/types/types';
 import { IconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 
 interface LinkIconProps {
-  link: TLink | TLink<IPlatformLinkPartial> | TLink<IHomePageLinkPartial>;
+  link: TLink | TLink<ILinkWithTitle>;
   class?: string;
 }
 

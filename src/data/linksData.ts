@@ -1,14 +1,7 @@
 import { Ei18nToken } from '@i18n/types';
-import { EIconLibrary, TLink, ELinkTitle, ELinkUrl, IPlatformLinkPartial } from '@/types/types';
+import { EIconLibrary, TLink, ELinkTitle, ELinkUrl, ILinkWithTitle } from '@/types/types';
 
 export const quickLinks: TLink[] = [
-  {
-    title: ELinkTitle.LINKEDIN,
-    href: ELinkUrl.LINKEDIN,
-    iconPrefix: EIconLibrary.FONT_AWESOME,
-    iconName: 'linkedin',
-    iconTitle: 'LinkedIn account',
-  },
   {
     title: ELinkTitle.GITHUB,
     href: ELinkUrl.GITHUB,
@@ -24,6 +17,13 @@ export const quickLinks: TLink[] = [
     iconTitle: 'Blog',
   },
   {
+    title: ELinkTitle.LINKEDIN,
+    href: ELinkUrl.LINKEDIN,
+    iconPrefix: EIconLibrary.FONT_AWESOME,
+    iconName: 'linkedin',
+    iconTitle: 'LinkedIn account',
+  },
+  {
     title: Ei18nToken.CV,
     href: ELinkUrl.CV,
     iconPrefix: EIconLibrary.MATERIAL,
@@ -32,7 +32,7 @@ export const quickLinks: TLink[] = [
   },
 ];
 
-export const platformLinks: TLink<IPlatformLinkPartial>[] = [
+export const platformLinks: TLink<ILinkWithTitle>[] = [
   {
     title: ELinkTitle.LEETCODE,
     href: ELinkUrl.LEETCODE,

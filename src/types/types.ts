@@ -63,11 +63,7 @@ export type TLink<TLinkPartial = Record<string, unknown>> =
   | (MaterialLink & TLinkPartial)
   | (CustomLink & TLinkPartial);
 
-export type IHomePageLinkPartial = {
-  title: ELinkTitle | Ei18nToken;
-};
-
-export interface IPlatformLinkPartial {
+export interface ILinkWithTitle {
   title: ELinkTitle | Ei18nToken;
 }
 
