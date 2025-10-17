@@ -40,3 +40,5 @@ jobs:
           server-dir: /
           timeout: 300000
           log-level: verbose
+          protocol: ftps
+          port: 21
