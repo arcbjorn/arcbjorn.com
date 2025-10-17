@@ -21,17 +21,18 @@ const QuickLink: Component<QuickLinkProps> = props => {
   let processedHref = href;
   let cvLinkCss = '';
 
-  const translatedTitle = () => {
+  if (title === Ei18nToken.CV) {
+    cvLinkCss = styles.cvLink;
+    processedHref = copyToClipboard ? ELinkUrl.CV_LINK : href;
+  }
+
+  const displayTitle = () => {
+    if (isCopied()) return 'Copied!';
     if (title === Ei18nToken.CV || title === Ei18nToken.BLOG_TITLE) {
       return t(title) ?? title;
     }
     return title;
   };
-
-  if (title === Ei18nToken.CV) {
-    cvLinkCss = styles.cvLink;
-    processedHref = copyToClipboard ? ELinkUrl.CV_LINK : href;
-  }
 
   const handleClick = async (e: MouseEvent) => {
     if (copyToClipboard) {
@@ -57,7 +58,7 @@ const QuickLink: Component<QuickLinkProps> = props => {
       rel="noopener noreferrer"
     >
       <LinkIcon link={props.link} class={styles.icon} />
-      {isCopied() ? 'Copied!' : translatedTitle()}
+      {displayTitle()}
     </a>
   );
 };
