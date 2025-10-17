@@ -26,12 +26,12 @@ const QuickLink: Component<QuickLinkProps> = props => {
     processedHref = copyToClipboard ? ELinkUrl.CV_LINK : href;
   }
 
-  const displayTitle = () => {
+  const displayTitle = (): string => {
     if (isCopied()) return 'Copied!';
     if (title === Ei18nToken.CV || title === Ei18nToken.BLOG_TITLE) {
-      return t(title) ?? title;
+      return (t(title) as string) ?? String(title);
     }
-    return title;
+    return String(title);
   };
 
   const handleClick = async (e: MouseEvent) => {
