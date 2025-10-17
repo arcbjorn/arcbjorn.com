@@ -1,4 +1,4 @@
-import { Component, createSignal, createEffect } from 'solid-js';
+import { Component, createSignal, createEffect, JSX } from 'solid-js';
 import { getLanguageChars } from '@utils/typing';
 
 interface TextMatrixEffectProps {
@@ -6,6 +6,7 @@ interface TextMatrixEffectProps {
   onComplete: () => void;
   language: string;
   showEffect: boolean;
+  slot?: JSX.Element;
 }
 
 export const TextMatrixEffect: Component<TextMatrixEffectProps> = props => {
@@ -50,7 +51,26 @@ export const TextMatrixEffect: Component<TextMatrixEffectProps> = props => {
     }
   });
 
-  return <span>{currentText()}</span>;
+  const renderText = () => {
+    const text = currentText();
+    if (!text) return null;
+    if (!props.slot) return text;
+
+    const slotIndex = text.indexOf('{name}');
+    if (slotIndex === -1) {
+      return <>{text} {props.slot}</>;
+    }
+
+    return (
+      <>
+        {text.slice(0, slotIndex)}
+        {props.slot}
+        {text.slice(slotIndex + 6)}
+      </>
+    );
+  };
+
+  return <span>{renderText()}</span>;
 };
 
 export default TextMatrixEffect;

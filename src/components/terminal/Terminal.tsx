@@ -103,15 +103,17 @@ export const Terminal: Component = () => {
                 language={language()}
                 showEffect={matrixEffects().greeting}
                 onComplete={handleMatrixComplete}
+                slot={
+                  <span style={{ color: 'var(--focusColor)' }}>
+                    <TextMatrixEffect
+                      text={currentTranslations().pronunciation}
+                      language={language()}
+                      showEffect={matrixEffects().pronunciation}
+                      onComplete={handleMatrixComplete}
+                    />
+                  </span>
+                }
               />
-              <span style={{ color: 'var(--focusColor)', 'margin-left': '0.5rem' }}>
-                <TextMatrixEffect
-                  text={currentTranslations().pronunciation}
-                  language={language()}
-                  showEffect={matrixEffects().pronunciation}
-                  onComplete={handleMatrixComplete}
-                />
-              </span>
             </p>
             <p class="pb-8 leading-relaxed">
               <TextMatrixEffect
