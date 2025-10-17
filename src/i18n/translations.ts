@@ -298,8 +298,8 @@ export const ja: Dictionary = {
 
   home: {
     file: '私',
-    greeting: 'こんにちは、',
-    pronunciation: 'オレグ [oˈreɡɯ]です',
+    greeting: 'こんにちは、{name} です',
+    pronunciation: 'オレグ [oˈreɡɯ]',
     formerly: '以前',
     built: '構築しました:',
     summary_line1: '分散システム & ウェブアプリを設計し',
