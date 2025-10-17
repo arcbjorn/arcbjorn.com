@@ -13,10 +13,6 @@ export const Terminal: Component = () => {
   let lastTranslations: Record<string, string> | null = null;
   let isInitialLoad = true;
 
-  // State signals for controlling component behavior
-  const [quickLinksVisibility, setQuickLinksVisibility] = createSignal(true);
-  const [quickLinksDisplay, setQuickLinksDisplay] = createSignal(true);
-
   // Replace single showMatrixEffect with per-field effects
   const [matrixEffects, setMatrixEffects] = createSignal<Record<string, boolean>>({
     greeting: false,
