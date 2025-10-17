@@ -55,6 +55,38 @@ const LeetCodeIcon: Component<{ title: string }> = props => {
   );
 };
 
+const DescriptionIcon: Component<{ title: string }> = props => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      class="h-5 w-5"
+      fill="currentColor"
+      aria-label={props.title}
+      role="img"
+    >
+      <title>{props.title}</title>
+      <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+    </svg>
+  );
+};
+
+const MailIcon: Component<{ title: string }> = props => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      class="h-5 w-5"
+      fill="currentColor"
+      aria-label={props.title}
+      role="img"
+    >
+      <title>{props.title}</title>
+      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+  );
+};
+
 const LinkIcon: Component<LinkIconProps> = props => {
   const isFontAwesome = () => props.link.iconPrefix === EIconLibrary.FONT_AWESOME;
   const isMaterialIcon = () => props.link.iconPrefix === EIconLibrary.MATERIAL;
@@ -66,10 +98,12 @@ const LinkIcon: Component<LinkIconProps> = props => {
         <FontAwesomeIcon icon={faIconMap[props.link.iconName]} title={props.link.iconTitle} />
       </Show>
 
-      <Show when={isMaterialIcon()}>
-        <span class="material-icons" aria-label={props.link.iconTitle}>
-          {props.link.iconName}
-        </span>
+      <Show when={isMaterialIcon() && props.link.iconName === 'description'}>
+        <DescriptionIcon title={props.link.iconTitle} />
+      </Show>
+
+      <Show when={isMaterialIcon() && props.link.iconName === 'mail'}>
+        <MailIcon title={props.link.iconTitle} />
       </Show>
 
       <Show when={isCustomIcon() && props.link.iconName === 'leetcode'}>
