@@ -1,5 +1,4 @@
 import { Component, For, createMemo } from 'solid-js';
-import { Ei18nToken } from '@i18n/types';
 import languages from '@/data/languagesData';
 import { getLevelToken } from '@utils/languages';
 import TreeNode from '@components/ui/TreeNode';
@@ -18,7 +17,7 @@ const Languages: Component = () => {
       groups.get(level)!.push(token);
     });
 
-    const levelOrder = { 80: 0, 60: 1, 85: 2 }; // fluent, basic, native
+    const levelOrder: Record<number, number> = { 80: 0, 60: 1, 85: 2 }; // fluent, basic, native
     return Array.from(groups.entries()).sort((a, b) => levelOrder[a[0]] - levelOrder[b[0]]);
   });
 
