@@ -47,3 +47,6 @@
   margin-right: 0.5rem;
 }
 
+.quickLinks {
+  @apply flex flex-wrap items-center justify-start;
+}
