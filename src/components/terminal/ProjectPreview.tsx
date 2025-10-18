@@ -15,8 +15,8 @@ export const ProjectPreview: Component<ProjectPreviewProps> = props => {
   const [previousUrl, setPreviousUrl] = createSignal<string | null>(null);
   const [currentThemeColor, setCurrentThemeColor] = createSignal('#1b1d1e');
   const [loadFailed, setLoadFailed] = createSignal(false);
-  const [alignRight, setAlignRight] = createSignal(false);
   let containerEl: HTMLDivElement | undefined;
+  const [pos, setPos] = createSignal<{ left: number; top: number }>({ left: 0, top: 0 });
 
   const handleIframeLoad = () => {
     setIsLoaded(true);
@@ -93,33 +93,51 @@ export const ProjectPreview: Component<ProjectPreviewProps> = props => {
     });
   });
 
-  // Auto-flip preview if it would overflow right edge of main container
-  const recomputeAlign = () => {
+  // Position preview using fixed overlay to avoid clipping by ancestors
+  const computePosition = () => {
     if (!containerEl) return;
-    const main = document.querySelector('main');
-    const boundary = main?.getBoundingClientRect();
-    const left = containerEl.getBoundingClientRect().left;
-    const fullWidth = containerEl.offsetWidth; // un-clipped width
-    const rightEdge = left + fullWidth;
-    const limit = boundary ? boundary.right : window.innerWidth;
-    setAlignRight(rightEdge > limit - 8);
+    const anchor = containerEl.parentElement as HTMLElement | null;
+    if (!anchor) return;
+    const a = anchor.getBoundingClientRect();
+    const width = containerEl.offsetWidth || 400;
+    const height = containerEl.offsetHeight || 300;
+
+    let left = a.left;
+    let top = a.top - height - 8; // show above
+
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    // clamp horizontally within viewport with 8px margin
+    if (left + width > vw - 8) left = Math.max(8, vw - width - 8);
+    if (left < 8) left = 8;
+
+    // if above top, place below anchor
+    if (top < 8) top = Math.min(vh - height - 8, a.bottom + 8);
+
+    setPos({ left, top });
   };
 
   createEffect(() => {
     if (!props.isVisible) return;
-    // compute on next frame when element is laid out
-    requestAnimationFrame(recomputeAlign);
-    const onResize = () => requestAnimationFrame(recomputeAlign);
+    requestAnimationFrame(computePosition);
+    const onResize = () => requestAnimationFrame(computePosition);
+    const onScroll = () => requestAnimationFrame(computePosition);
     window.addEventListener('resize', onResize);
-    onCleanup(() => window.removeEventListener('resize', onResize));
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onCleanup(() => {
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('scroll', onScroll);
+    });
   });
 
   return (
     <Show when={props.isVisible}>
       <div
         ref={el => (containerEl = el)}
-        class={`${styles.previewContainer} ${alignRight() ? styles.alignRight : ''}`}
+        class={styles.previewContainer}
         aria-busy={!isLoaded()}
+        style={{ position: 'fixed', left: `${pos().left}px`, top: `${pos().top}px` }}
       >
         <Show when={!isLoaded() && loaderReady()}>
           <div class={styles.loaderContainer} role="status" aria-live="polite">
