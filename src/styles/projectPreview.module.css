@@ -8,22 +8,10 @@
   overflow: hidden;
   border: 1px solid var(--focusColor);
   border-radius: 4px;
-  background: #fff;
+  background: var(--bg);
   pointer-events: none;
   z-index: 1000;
   display: none;
-}
-
-/* Light theme preview when site is in light mode */
-:global(:root:not(.dark)) .previewContainer {
-  background: #f9f5ef;
-  border-color: #666;
-}
-
-/* Dark theme preview when site is in dark mode */
-:global(.dark) .previewContainer {
-  background: #1b1d1e;
-  border-color: #666;
 }
 
 @media (min-width: 768px) {
