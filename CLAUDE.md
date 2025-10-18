@@ -57,7 +57,7 @@ cp hooks/pre-commit .git/hooks/ && chmod +x .git/hooks/pre-commit
 
 All routes support optional language prefix (`/:lang/path`):
 
-- `/` or `/:lang` → Index page with terminal animation
+- `/` or `/:lang` → Index page with intro animation
 - `/extra` or `/:lang/extra` → Extra content page
 - `/links` or `/:lang/links` → Social/professional links
 - `/map` or `/:lang/map` → Interactive travel map
@@ -101,7 +101,7 @@ The project uses TypeScript path aliases for cleaner imports:
 #### Component Organization
 
 - `components/ui/` - Reusable UI primitives
-- `components/terminal/` - Terminal animation components
+- `components/intro/` - Intro animation components
 - `components/languages/` - Language display components
 - `components/extraLinks/` - Social link components
 - Page-level components in `src/pages/`
@@ -126,7 +126,7 @@ Production deployment includes security headers via `public/_headers`:
 ### Data Files
 
 - `src/data/places.json` - Travel locations (triggers map regeneration on change)
-- `src/data/terminalData.ts` - Terminal animation content
+- `src/data/introData.ts` - Intro animation content
 - `src/data/languagesData.ts` - Programming languages display data
 - `src/data/booksData.ts` - Book recommendations
 - `src/data/linksData.ts` - Social/professional links

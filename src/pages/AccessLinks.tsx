@@ -5,7 +5,7 @@ import Layout from '@layouts/Layout';
 import SEO from '@components/SEO';
 import { quickAccessLinks } from '@data/linksData';
 import QuickLink from '@/components/QuickLink';
-import styles from '@styles/terminal.module.css';
+import styles from '@styles/intro.module.css';
 
 const AccessLinksPage: Component = () => {
   const { language } = useI18n();

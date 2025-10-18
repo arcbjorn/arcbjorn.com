@@ -1,15 +1,15 @@
 import { Component, createSignal, createEffect, For } from 'solid-js';
 import TextMatrixEffect from '@components/TextMatrixEffect';
 import QuickLink from '@components/QuickLink';
-import ProjectPreview from '@components/terminal/ProjectPreview';
+import ProjectPreview from '@components/intro/ProjectPreview';
 import { useI18n } from '@i18n/useI18n';
 
 import { quickLinks } from '@data/linksData';
 import { Ei18nToken } from '@i18n/types';
-import { previousCompanies } from '@data/terminalData';
-import styles from '@styles/terminal.module.css';
+import { previousCompanies } from '@data/introData';
+import styles from '@styles/intro.module.css';
 
-export const Terminal: Component = () => {
+export const Intro: Component = () => {
   const { t, language } = useI18n();
   let lastTranslations: Record<string, string> | null = null;
   let isInitialLoad = true;
@@ -93,9 +93,9 @@ export const Terminal: Component = () => {
 
 
   return (
-    <div class={styles.terminal}>
-      <div class={styles.terminalContent}>
-        <div class={styles.terminalText}>
+    <div class={styles.intro}>
+      <div class={styles.introContent}>
+        <div class={styles.introText}>
           <div class="flex flex-col pt-4">
             <p class="pb-8 pt-4 sm:pt-8">
               <TextMatrixEffect
@@ -192,4 +192,4 @@ export const Terminal: Component = () => {
   );
 };
 
-export default Terminal;
+export default Intro;

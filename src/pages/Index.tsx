@@ -1,7 +1,7 @@
 import { Component } from 'solid-js';
 import FloatingMapButton from '@components/FloatingMapButton';
 import Layout from '@layouts/Layout';
-import Terminal from '@components/terminal/Terminal';
+import Intro from '@components/intro/Intro';
 import SEO from '@components/SEO';
 
 import { EDocumentDescription } from '@/types/types';
@@ -13,7 +13,7 @@ const IndexPage: Component = () => {
   return (
     <Layout>
       <SEO description={EDocumentDescription.INDEX_PAGE} slug={`/${language()}/`} />
-      <Terminal />
+      <Intro />
       <FloatingMapButton />
     </Layout>
   );

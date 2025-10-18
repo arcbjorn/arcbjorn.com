@@ -1,6 +1,6 @@
 @reference "../index.css";
 
-.terminal {
+.intro {
   @apply flex h-screen items-center justify-center px-6;
   margin-top: -5vh; /* Smaller offset for mobile */
 
@@ -9,7 +9,7 @@
   }
 }
 
-.terminalContent {
+.introContent {
   @apply flex w-full flex-col overflow-visible text-lg sm:text-xl;
   height: 400px; /* Fixed height for mobile */
   width: 350px; /* Fixed width for mobile */
@@ -24,7 +24,7 @@
   }
 }
 
-.terminalText {
+.introText {
   @apply mb-4 flex flex-wrap;
   height: 400px;
   overflow: visible;
@@ -46,3 +46,4 @@
 .projectLink:not(:last-child) {
   margin-right: 0.5rem;
 }
+

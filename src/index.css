@@ -35,7 +35,7 @@ body {
   --focusColor: #f15025;
   --titleColor: #008080;
 
-  /* Terminal */
+  /* Intro */
   --userandhostColor: var(--titleColor);
   --infolocationColor: var(--focusColor);
   --companyColor: var(--focusColor);
