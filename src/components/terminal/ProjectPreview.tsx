@@ -38,32 +38,34 @@ export const ProjectPreview: Component<ProjectPreviewProps> = props => {
     return currentTheme === Theme.DARK ? '#dddddd' : '#1b1d1e';
   };
 
-  // Set up theme change listeners in render cycle
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  const handleThemeChange = () => {
-    setCurrentThemeColor(getCurrentThemeColor());
-  };
-
-  // Also listen for localStorage changes (when user manually toggles theme)
-  const storageListener = (e: StorageEvent) => {
-    if (e.key === 'theme') {
-      setCurrentThemeColor(getCurrentThemeColor());
-    }
-  };
-
-  // Set up listeners
+  // Set up theme change listeners
   createEffect(() => {
-    // Only add listeners when component is visible to avoid unnecessary work
-    if (props.isVisible) {
-      mediaQuery.addEventListener('change', handleThemeChange);
-      window.addEventListener('storage', storageListener);
+    if (!props.isVisible) return;
 
-      // Cleanup listeners
-      onCleanup(() => {
-        mediaQuery.removeEventListener('change', handleThemeChange);
-        window.removeEventListener('storage', storageListener);
-      });
+    const handleThemeChange = () => setCurrentThemeColor(getCurrentThemeColor());
+
+    // system theme changes
+    let mediaQuery: MediaQueryList | undefined;
+    if (typeof window !== 'undefined' && 'matchMedia' in window) {
+      mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      mediaQuery.addEventListener('change', handleThemeChange);
     }
+
+    // cross-tab theme changes
+    const storageListener = (e: StorageEvent) => {
+      if (e.key === 'theme') handleThemeChange();
+    };
+    window.addEventListener('storage', storageListener);
+
+    // same-tab theme changes via applyTheme()
+    const customListener = () => handleThemeChange();
+    window.addEventListener('themechange', customListener as EventListener);
+
+    onCleanup(() => {
+      if (mediaQuery) mediaQuery.removeEventListener('change', handleThemeChange);
+      window.removeEventListener('storage', storageListener);
+      window.removeEventListener('themechange', customListener as EventListener);
+    });
   });
 
   onMount(async () => {
