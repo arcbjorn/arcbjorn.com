@@ -181,9 +181,8 @@ export const Terminal: Component = () => {
                     name={project.name}
                     isVisible={hoveredProject() === project.name}
                   />
+                  {index() < projects.length - 1 ? ', ' : ''}
                 </span>
-                {index() < projects.length - 1 && ', '}
-                {index() < projects.length - 1 && <>&nbsp;</>}
               </>
             )}
           </For>
