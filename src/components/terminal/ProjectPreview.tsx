@@ -3,19 +3,6 @@ import { getInitialTheme } from '@utils/theme';
 import { Theme } from '@/types/types';
 import styles from '@styles/projectPreview.module.css';
 
-declare module 'solid-js' {
-  namespace JSX {
-    interface IntrinsicElements {
-      'l-zoomies': {
-        size?: string;
-        stroke?: string;
-        speed?: string;
-        color?: string;
-      };
-    }
-  }
-}
-
 interface ProjectPreviewProps {
   url: string;
   name: string;
