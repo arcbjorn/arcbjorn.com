@@ -14,7 +14,6 @@
   display: none;
 }
 
-/* alignRight no longer needed; position computed in TS */
 
 @media (min-width: 768px) {
   .previewContainer {

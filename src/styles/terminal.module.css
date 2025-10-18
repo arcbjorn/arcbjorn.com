@@ -44,5 +44,5 @@
 }
 
 .projectLink:not(:last-child) {
-  margin-right: 0.5rem; /* space after comma */
+  margin-right: 0.5rem;
 }

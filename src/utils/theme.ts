@@ -77,6 +77,5 @@ export const applyTheme = (theme: Theme) => {
   try {
     window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
   } catch {
-    // no-op if window is unavailable
   }
 };
