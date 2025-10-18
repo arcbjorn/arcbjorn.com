@@ -42,3 +42,7 @@
   position: relative;
   display: inline-block;
 }
+
+.projectLink:not(:last-child) {
+  margin-right: 0.25rem; /* space after comma */
+}
