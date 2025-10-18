@@ -1,6 +1,6 @@
 import { Component, Show } from 'solid-js';
 import { faLinkedin, faGithub, faXTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faTerminal, faEarthAmericas, faBook } from '@fortawesome/free-solid-svg-icons';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { EIconLibrary, TLink, ILinkWithTitle } from '@/types/types';
 import { IconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 
@@ -15,8 +15,6 @@ const faIconMap: Record<IconName | string, IconDefinition> = {
   github: faGithub,
   'x-twitter': faXTwitter,
   instagram: faInstagram,
-  terminal: faTerminal,
-  'earth-americas': faEarthAmericas,
   book: faBook,
 };
 
