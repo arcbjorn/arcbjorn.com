@@ -15,6 +15,8 @@ export const ProjectPreview: Component<ProjectPreviewProps> = props => {
   const [previousUrl, setPreviousUrl] = createSignal<string | null>(null);
   const [currentThemeColor, setCurrentThemeColor] = createSignal('#1b1d1e');
   const [loadFailed, setLoadFailed] = createSignal(false);
+  const [alignRight, setAlignRight] = createSignal(false);
+  let containerEl: HTMLDivElement | undefined;
 
   const handleIframeLoad = () => {
     setIsLoaded(true);
@@ -91,9 +93,34 @@ export const ProjectPreview: Component<ProjectPreviewProps> = props => {
     });
   });
 
+  // Auto-flip preview if it would overflow right edge of main container
+  const recomputeAlign = () => {
+    if (!containerEl) return;
+    const main = document.querySelector('main');
+    const boundary = main?.getBoundingClientRect();
+    const left = containerEl.getBoundingClientRect().left;
+    const fullWidth = containerEl.offsetWidth; // un-clipped width
+    const rightEdge = left + fullWidth;
+    const limit = boundary ? boundary.right : window.innerWidth;
+    setAlignRight(rightEdge > limit - 8);
+  };
+
+  createEffect(() => {
+    if (!props.isVisible) return;
+    // compute on next frame when element is laid out
+    requestAnimationFrame(recomputeAlign);
+    const onResize = () => requestAnimationFrame(recomputeAlign);
+    window.addEventListener('resize', onResize);
+    onCleanup(() => window.removeEventListener('resize', onResize));
+  });
+
   return (
     <Show when={props.isVisible}>
-      <div class={styles.previewContainer} aria-busy={!isLoaded()}>
+      <div
+        ref={el => (containerEl = el)}
+        class={`${styles.previewContainer} ${alignRight() ? styles.alignRight : ''}`}
+        aria-busy={!isLoaded()}
+      >
         <Show when={!isLoaded() && loaderReady()}>
           <div class={styles.loaderContainer} role="status" aria-live="polite">
             <div class={styles.miniLoader}>
