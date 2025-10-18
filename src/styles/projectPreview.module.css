@@ -14,6 +14,18 @@
   display: none;
 }
 
+/* Light theme preview when site is in light mode */
+:global(:root:not(.dark)) .previewContainer {
+  background: #f9f5ef;
+  border-color: #666;
+}
+
+/* Dark theme preview when site is in dark mode */
+:global(.dark) .previewContainer {
+  background: #1b1d1e;
+  border-color: #666;
+}
+
 @media (min-width: 768px) {
   .previewContainer {
     display: block;
@@ -26,4 +38,19 @@
   border: none;
   transform: scale(0.333);
   transform-origin: 0 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.loaderContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.miniLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
