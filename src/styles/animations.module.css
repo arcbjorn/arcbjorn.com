@@ -1,23 +1,5 @@
 @reference "../index.css";
 
-.clockBlink {
-  animation: blink 1s step-end infinite;
-}
-
-.cursorBlink {
-  animation: blink 1s ease-in-out infinite;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
 .longerFadeIn {
   -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 5s; /* Firefox < 16 */

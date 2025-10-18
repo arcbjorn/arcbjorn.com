@@ -7,8 +7,3 @@ export const previousCompanies: ICompany[] = [
   { name: 'Sardine', link: 'https://www.sardine.ai/' },
   { name: 'FundraiseUp', link: 'https://www.fundraiseup.com/' },
 ];
-
-export const currentCompany: ICompany = {
-  name: 'Sardine',
-  link: 'https://www.sardine.ai/',
-};
