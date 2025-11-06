@@ -1,4 +1,4 @@
-import { Component, createSignal, createEffect, For } from 'solid-js';
+import { Component, createSignal, createEffect, For, onCleanup } from 'solid-js';
 import TextMatrixEffect from '@components/TextMatrixEffect';
 import QuickLink from '@components/QuickLink';
 import ProjectPreview from '@components/intro/ProjectPreview';
@@ -35,6 +35,28 @@ export const Intro: Component = () => {
   });
 
   const [hoveredProject, setHoveredProject] = createSignal<string | null>(null);
+  let hidePreviewTimeout: number | undefined;
+
+  const cancelHidePreview = () => {
+    if (typeof window === 'undefined') return;
+    if (hidePreviewTimeout !== undefined) {
+      window.clearTimeout(hidePreviewTimeout);
+      hidePreviewTimeout = undefined;
+    }
+  };
+
+  const scheduleHidePreview = () => {
+    if (typeof window === 'undefined') return;
+    cancelHidePreview();
+    hidePreviewTimeout = window.setTimeout(() => {
+      setHoveredProject(null);
+      hidePreviewTimeout = undefined;
+    }, 150);
+  };
+
+  onCleanup(() => {
+    cancelHidePreview();
+  });
 
   const projects = [
     { name: 'Sumi Finance', url: 'https://sumi.finance/' },
@@ -170,8 +192,11 @@ export const Intro: Component = () => {
               <>
                 <span
                   class={styles.projectLink}
-                  onMouseEnter={() => setHoveredProject(project.name)}
-                  onMouseLeave={() => setHoveredProject(null)}
+                  onMouseEnter={() => {
+                    cancelHidePreview();
+                    setHoveredProject(project.name);
+                  }}
+                  onMouseLeave={scheduleHidePreview}
                 >
                   <a href={project.url} target="_blank" class={styles.company}>
                     {project.name}
@@ -180,6 +205,11 @@ export const Intro: Component = () => {
                     url={project.url}
                     name={project.name}
                     isVisible={hoveredProject() === project.name}
+                    onPreviewEnter={() => {
+                      cancelHidePreview();
+                      setHoveredProject(project.name);
+                    }}
+                    onPreviewLeave={scheduleHidePreview}
                   />
                   {index() < projects.length - 1 ? ', ' : ''}
                 </span>

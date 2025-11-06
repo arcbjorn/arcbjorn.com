@@ -7,6 +7,8 @@ interface ProjectPreviewProps {
   url: string;
   name: string;
   isVisible: boolean;
+  onPreviewEnter?: () => void;
+  onPreviewLeave?: () => void;
 }
 
 export const ProjectPreview: Component<ProjectPreviewProps> = props => {
@@ -124,6 +126,8 @@ export const ProjectPreview: Component<ProjectPreviewProps> = props => {
         class={styles.previewContainer}
         aria-busy={!isLoaded()}
         style={{ position: 'fixed', left: `${pos().left}px`, top: `${pos().top}px` }}
+        onMouseEnter={() => props.onPreviewEnter?.()}
+        onMouseLeave={() => props.onPreviewLeave?.()}
       >
         <Show when={!isLoaded() && loaderReady()}>
           <div class={styles.loaderContainer} role="status" aria-live="polite">
