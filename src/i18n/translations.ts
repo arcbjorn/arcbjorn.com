@@ -33,7 +33,7 @@ export const de: Dictionary = {
       title: 'Andere Plattformen',
     },
     utils: {
-      title: 'Utilities / Experimente',
+      title: 'Code / Forschung',
     },
     books: {
       title: 'Gute Bücher',
@@ -103,7 +103,7 @@ export const se: Dictionary = {
       title: 'Andra plattformar',
     },
     utils: {
-      title: 'Verktyg / Experiment',
+      title: 'Kod / Forskning',
     },
     books: {
       title: 'Bra böcker',
@@ -173,7 +173,7 @@ export const ru: Dictionary = {
       title: 'Другие платформы',
     },
     utils: {
-      title: 'Утилиты / Эксперименты',
+      title: 'Код / Исследования',
     },
     books: {
       title: 'Хорошие книги',
@@ -243,7 +243,7 @@ export const pt: Dictionary = {
       title: 'Outras plataformas',
     },
     utils: {
-      title: 'Utilitários / Experimentos',
+      title: 'Código / Pesquisa',
     },
     books: {
       title: 'Bons livros',
@@ -313,7 +313,7 @@ export const ja: Dictionary = {
       title: '他のプラットフォーム',
     },
     utils: {
-      title: 'ユーティリティ / 実験',
+      title: 'コード / 研究',
     },
     books: {
       title: '良い本',
@@ -383,7 +383,7 @@ export const es: Dictionary = {
       title: 'Otras plataformas',
     },
     utils: {
-      title: 'Utilidades / Experimentos',
+      title: 'Código / Investigación',
     },
     books: {
       title: 'Buenos libros',
@@ -452,7 +452,7 @@ export const en: Dictionary = {
       title: 'Other platforms',
     },
     utils: {
-      title: 'Utils / Experiments',
+      title: 'Code / Research',
     },
     books: {
       title: 'Good books',
