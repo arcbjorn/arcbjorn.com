@@ -8,6 +8,13 @@ type UtilEntry = {
 
 const utils: UtilEntry[] = [
   {
+    name: 'frontier-delta',
+    description:
+      'Small-compute research pipeline for recursive LLM self-improvement and support-set evaluation',
+    technology: 'Python, ML, LLM, RL',
+    href: 'https://github.com/arcbjorn/frontier-delta',
+  },
+  {
     name: 'denshimon',
     description: 'Kubernetes and GitOps management platform with monitoring and PASETO auth',
     technology: 'Go, React, TS',
@@ -139,7 +146,8 @@ const utils: UtilEntry[] = [
   },
   {
     name: 'number-base-converter-cli',
-    description: 'CLI tool for converting numbers between different base systems (2-36) with fractional support',
+    description:
+      'CLI tool for converting numbers between different base systems (2-36) with fractional support',
     technology: 'Rust',
     href: 'https://github.com/arcbjorn/number-base-converter-cli',
   },
