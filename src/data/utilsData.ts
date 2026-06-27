@@ -15,24 +15,17 @@ const utils: UtilEntry[] = [
     href: 'https://www.arky.foundation/',
   },
   {
-    name: 'arkestra',
-    description:
-      'Multi-agent coding orchestrator in tmux — a lead delegates scoped tasks to specialist CLI agents, reviews their output, and integrates the results',
+    name: 'Arkestra',
+    description: 'Multi-agent tmux orchestrator — delegate specialist agents, review, and integrate',
     technology: 'Shell, tmux',
     href: 'https://github.com/arcbjorn/arkestra',
   },
   {
-    name: 'frontier-delta',
+    name: 'Frontier Delta',
     description:
       'Small-compute research pipeline for recursive LLM self-improvement and support-set evaluation',
     technology: 'Python, ML, LLM, RL',
     href: 'https://github.com/arcbjorn/frontier-delta',
-  },
-  {
-    name: 'denshimon',
-    description: 'Kubernetes and GitOps management platform with monitoring and PASETO auth',
-    technology: 'Go, React, TS',
-    href: 'https://github.com/archellir/denshimon',
   },
   {
     name: 'crosspay',
@@ -41,11 +34,30 @@ const utils: UtilEntry[] = [
     href: 'https://github.com/arcbjorn/crosspay',
   },
   {
-    name: 'kagikanri',
+    name: 'Denshimon',
+    description: 'Kubernetes and GitOps management platform with monitoring and PASETO auth',
+    technology: 'Go, React, TS',
+    href: 'https://github.com/archellir/denshimon',
+  },
+  {
+    name: 'Kagikanri',
     description:
       'Modern, secure password & OTP manager leveraging linux pass utility with passkey support',
     technology: 'Rust, Svelte, TS',
     href: 'https://github.com/archellir/kagikanri',
+  },
+  {
+    name: 'Torimemo',
+    description:
+      'Lightning-fast, lightweight AI bookmark manager with text classification and context comprehension',
+    technology: 'Go, TS, Lit, FastText, ONNX',
+    href: 'https://github.com/archellir/torimemo',
+  },
+  {
+    name: 'Ishikura DB',
+    description: 'High-performance, ACID-compliant database',
+    technology: 'C++',
+    href: 'https://github.com/arcbjorn/ishikura-db',
   },
   {
     name: 'paseto-zig',
@@ -54,20 +66,7 @@ const utils: UtilEntry[] = [
     href: 'https://github.com/arcbjorn/paseto-zig',
   },
   {
-    name: 'ishikura-db',
-    description: 'High-performance, ACID-compliant database',
-    technology: 'C++',
-    href: 'https://github.com/arcbjorn/ishikura-db',
-  },
-  {
-    name: 'torimemo',
-    description:
-      'Lightning-fast, lightweight AI bookmark manager with text classification and context comprehension',
-    technology: 'Go, TS, Lit, FastText, ONNX',
-    href: 'https://github.com/archellir/torimemo',
-  },
-  {
-    name: 'sekisho',
+    name: 'Sekisho',
     description: 'Minimal zero-trust proxy for personal use with single binary deployment',
     technology: 'Go',
     href: 'https://github.com/archellir/sekisho',
@@ -80,7 +79,7 @@ const utils: UtilEntry[] = [
     href: 'https://github.com/arcbjorn/arc-arch-linux-installation-guide',
   },
   {
-    name: 'mailcross',
+    name: 'Mailcross',
     description: 'Fast, secure, and keyboard-driven multi-account email client',
     technology: 'Rust, IMAP',
     href: 'https://github.com/arcbjorn/mailcross',
@@ -90,13 +89,6 @@ const utils: UtilEntry[] = [
     description: 'A clean system for managing personal CLI utilities and scripts',
     technology: 'Shell',
     href: 'https://github.com/arcbjorn/tools',
-  },
-  {
-    name: 'base_infrastructure',
-    description:
-      'Self-hosted services infrastructure deployed on Kubernetes with persistent storage and ingress routing',
-    technology: 'Kubernetes',
-    href: 'https://github.com/archellir/base_infrastructure',
   },
   {
     name: 'blog.arcbjorn.com',
