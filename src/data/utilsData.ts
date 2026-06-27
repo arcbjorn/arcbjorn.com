@@ -8,6 +8,20 @@ type UtilEntry = {
 
 const utils: UtilEntry[] = [
   {
+    name: 'Arky Open Protocol',
+    description:
+      'Public standard for accountable action and verification across agents, money, chains, and machines — signed, content-addressed receipts any system can replay',
+    technology: 'Rust, TypeScript',
+    href: 'https://www.arky.foundation/',
+  },
+  {
+    name: 'arkestra',
+    description:
+      'Multi-agent coding orchestrator in tmux — a lead delegates scoped tasks to specialist CLI agents, reviews their output, and integrates the results',
+    technology: 'Shell, tmux',
+    href: 'https://github.com/arcbjorn/arkestra',
+  },
+  {
     name: 'frontier-delta',
     description:
       'Small-compute research pipeline for recursive LLM self-improvement and support-set evaluation',
