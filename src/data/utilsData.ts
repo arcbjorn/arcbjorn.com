@@ -16,7 +16,8 @@ const utils: UtilEntry[] = [
   },
   {
     name: 'Arkestra',
-    description: 'Multi-agent tmux orchestrator — delegate specialist agents, review, and integrate',
+    description:
+      'Multi-agent tmux orchestrator — delegate specialist agents, review, and integrate',
     technology: 'Shell, tmux',
     href: 'https://github.com/arcbjorn/arkestra',
   },
@@ -28,7 +29,7 @@ const utils: UtilEntry[] = [
     href: 'https://github.com/arcbjorn/frontier-delta',
   },
   {
-    name: 'crosspay',
+    name: 'Cross Pay',
     description: 'Verifiable, private, cross-chain payment infrastructure',
     technology: 'Go, Solidity, Svelte, TS',
     href: 'https://github.com/arcbjorn/crosspay',
