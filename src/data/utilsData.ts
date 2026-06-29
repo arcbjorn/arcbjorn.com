@@ -55,6 +55,13 @@ const utils: UtilEntry[] = [
     href: 'https://github.com/archellir/torimemo',
   },
   {
+    name: 'Aqua EQ',
+    description:
+      'Preprocesses local music files for bone-conduction swim headphones by reducing vibration-heavy frequencies and loudness spikes',
+    technology: 'Rust, FFmpeg',
+    href: 'https://github.com/arcbjorn/aqua-eq',
+  },
+  {
     name: 'Ishikura DB',
     description: 'High-performance, ACID-compliant database',
     technology: 'C++',
