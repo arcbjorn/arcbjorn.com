@@ -116,47 +116,10 @@ const utils: UtilEntry[] = [
     href: 'https://github.com/arcbjorn/solidjs-i18n',
   },
   {
-    name: 'dashboard.arcbjorn.com',
-    description: 'Dashboard with public & internal services',
-    technology: 'Astro, Preact, TS',
-    href: 'https://github.com/archellir/dashboard.arcbjorn.com',
-  },
-  {
     name: 'git.station',
     description: 'High-performance, extremely lightweight Git service',
     technology: 'Zig, Svelte',
     href: 'https://github.com/archellir/git.station',
-  },
-  {
-    name: 'pii-autofill-extention',
-    description: 'Browser extension for PII autofill functionality',
-    technology: 'TS',
-    href: 'https://github.com/arcbjorn/pii-autofill-extention',
-  },
-  {
-    name: 'hn-frontend',
-    description: 'Hacker News frontend implementation',
-    technology: 'Hyperapp, TS',
-    href: 'https://github.com/arcbjorn/hn-frontend',
-  },
-  {
-    name: 'gh-activity-graph-sh',
-    description: 'GitHub activity graph generator',
-    technology: 'Rust',
-    href: 'https://github.com/arcbjorn/gh-activity-graph-sh',
-  },
-  {
-    name: 'email-verifier',
-    description: 'Email verification service with MX, SPF, and DMARC record checking',
-    technology: 'Go, gRPC',
-    href: 'https://github.com/arcbjorn/email-verifier',
-  },
-  {
-    name: 'number-base-converter-cli',
-    description:
-      'CLI tool for converting numbers between different base systems (2-36) with fractional support',
-    technology: 'Rust',
-    href: 'https://github.com/arcbjorn/number-base-converter-cli',
   },
 ];
 
